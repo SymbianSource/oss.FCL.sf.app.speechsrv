@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<api id="3fb9c731996e081e959f6d738559b03e" dataversion="2.0">
+  <name>VAS VCommand API</name>
+  <description>High level interface for adding, removing, playing, and reading voice tags for voice commands.</description>
+  <type>c++</type>
+  <collection>srsf</collection>
+  <libs>
+    <lib name="vcommandhandler.lib" />
+  </libs>
+  <release category="platform"/>
+  <attributes>
+     <!-- This indicates wether the api provedes separate html documentation -->
+     <!-- or is the additional documentation generated from headers. -->
+     <!-- If you are unsuere then the value is "no" -->
+     <htmldocprovided>no</htmldocprovided>
+     <adaptation>no</adaptation>
+  </attributes>
+</api>

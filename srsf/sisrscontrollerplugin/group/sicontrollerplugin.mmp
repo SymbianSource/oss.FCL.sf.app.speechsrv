@@ -1,0 +1,90 @@
+/*
+* Copyright (c) 2004-2006 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Project file for SIControllerPlugin
+*
+*/
+
+
+#include <platform_paths.hrh>
+#include "../../group/srsfbldvariant.hrh"
+
+TARGET             nsssicontrollerplugin.dll
+TARGETTYPE         PLUGIN
+UID                0x10009D8D 0x101FF930
+
+VENDORID           VID_DEFAULT
+
+SOURCEPATH        ../src
+
+SOURCE            sicontrollerplugininterface.cpp
+SOURCE            sicontrollerplugin.cpp
+SOURCE            sidatabase.cpp
+SOURCE            sicommondb.cpp
+SOURCE            siresourcehandler.cpp
+SOURCE            asrplugindataloader.cpp
+SOURCE            simodelbankdb.cpp
+SOURCE            sigrammardb.cpp
+SOURCE            silexicondb.cpp
+SOURCE            nssbackupobserver.cpp
+
+#ifdef __SINDE_TRAINING
+SOURCE            sindetraining.cpp
+#endif // __SINDE_TRAINING
+
+START RESOURCE    ../data/101ff930.rss
+TARGET            nsssicontrollerplugin.rsc
+END
+
+START RESOURCE    ../data/nsssisrscontrollerplugin.rss
+HEADER
+TARGET            nsssisrscontrollerplugin.rsc
+TARGETPATH        resource
+END
+
+USERINCLUDE       .
+USERINCLUDE       ../inc ../src
+USERINCLUDE       ../../group // for srsfbldvariant.hrh
+
+// This is a SYSTEMINCLUDE macro containing the middleware
+// layer specific include directories
+APP_LAYER_SYSTEMINCLUDE
+
+SYSTEMINCLUDE     /epoc32/include/ecom
+SYSTEMINCLUDE     /epoc32/include/connect
+SYSTEMINCLUDE     /epoc32/include/mmf/server  // MmfCodec, MmfBuffer
+SYSTEMINCLUDE     /epoc32/include/mmf/common  // TMMFEvent
+
+
+USERINCLUDE	      ../../rubydebug  
+
+LIBRARY           euser.lib
+LIBRARY           edbms.lib     // Database Management System
+LIBRARY           estor.lib     // File store for database
+LIBRARY           efsrv.lib     // File server session for database
+LIBRARY           bafl.lib      // Resource file
+LIBRARY           nssdevasr.lib // DevASR
+LIBRARY           nsssispeechrecognitiondata.lib  // SI Speech Recognition Data
+LIBRARY           mmfcontrollerframework.lib      // TMMFEvent
+LIBRARY           nsssispeechrecognitioncustomcommands.lib  // Speaker Independent Custom Commands
+#ifdef __SIND_AUTOCONF_LID
+LIBRARY           syslangutil.lib // get installed languages
+#endif // __SIND_AUTOCONF_LID
+#ifdef EABI
+LIBRARY           ecom.lib
+#endif
+#ifdef __SINDE_TRAINING
+LIBRARY          numberconversion.lib
+#endif
+
+CAPABILITY        CAP_ECOM_PLUGIN

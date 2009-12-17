@@ -1,0 +1,80 @@
+/*
+* Copyright (c) 2004-2006 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Project file for TtsPlugin.
+*
+*/
+
+
+#include <platform_paths.hrh>
+
+TARGET          nssttscontrollerplugin.dll
+TARGETTYPE      PLUGIN
+UID             0x10009D8D 0x101FF933 // UID: 270530867
+
+VENDORID        VID_DEFAULT
+
+SOURCEPATH      ../src
+SOURCE          ttsplugin.cpp
+SOURCE          ttspluginbody.cpp
+SOURCE          ttsplugindataloader.cpp
+SOURCE          ttspluginresourcehandler.cpp
+
+START RESOURCE  ttspluginsettings.rss
+HEADER
+TARGET          ttspluginsettings.rsc
+TARGETPATH      resource
+END
+
+START RESOURCE  101ff933.rss
+TARGET          nssttscontrollerplugin.rsc
+END
+
+USERINCLUDE     ../inc
+USERINCLUDE     ../src
+USERINCLUDE	    ../../group  // for srsfbldvariant.hrh
+
+// This is a SYSTEMINCLUDE macro containing the middleware
+// layer specific include directories
+APP_LAYER_SYSTEMINCLUDE
+
+SYSTEMINCLUDE   /epoc32/include/libc
+SYSTEMINCLUDE   /epoc32/include/ecom
+SYSTEMINCLUDE   /epoc32/include/mmf
+SYSTEMINCLUDE   /epoc32/include/mmf/server
+SYSTEMINCLUDE   /epoc32/include/mmf/common
+
+// For RUBY_DEBUG
+USERINCLUDE     ../../rubydebug
+
+
+LIBRARY         euser.lib
+LIBRARY         mmfstandardcustomcommands.lib
+LIBRARY         mmfcontrollerframework.lib
+LIBRARY         mmfserverbaseclasses.lib
+LIBRARY         efsrv.lib
+LIBRARY         bafl.lib  // Resource file
+LIBRARY         nssttscommon.lib
+LIBRARY         nssdevtts.lib
+LIBRARY         nssttscustomcommands.lib
+LIBRARY         charconv.lib
+LIBRARY         estlib.lib
+LIBRARY         sysutil.lib // SysUtil
+#ifdef EABI
+LIBRARY         ecom.lib
+#endif
+
+LANG            SC
+
+CAPABILITY      CAP_ECOM_PLUGIN
+

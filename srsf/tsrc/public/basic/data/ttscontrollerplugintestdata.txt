@@ -1,0 +1,1 @@
+(tts)Text input for text-to-speech plugin tests :) 

@@ -1,0 +1,47 @@
+/*
+* Copyright (c) 2004 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Structure definition for resource file.
+*
+*/
+
+
+//  INCLUDES
+#include "sipluginimplementationuids.hrh"
+
+//  STRUCTURE DEFINITIONS
+
+// -----------------------------------------------------------------------------
+// SICONTROLLER_INFO
+// Structure definition for SIControllerPlugin resource file.
+// -----------------------------------------------------------------------------
+//
+STRUCT SICONTROLLER_INFO
+    {
+    /*LONG	voice_encoder_uid = KUidCodecPCM16ToGSM610;	// GSM 6.10 FR encoder
+    LONG	voice_decoder_uid = KUidCodecGSM610ToPCM16;	// GSM 6.10 FR decoder
+    WORD	compression_rate = -1;				// NotSupported by default	
+    */
+	WORD	max_models_per_bank;
+	
+    WORD	max_models_in_system;
+ 	LTEXT	db_file_name;
+	LTEXT	data_file_name_prefix;
+	LTEXT	data_file_name_postfix;
+	LTEXT	data_file_name_seperator;
+    WORD	user_define_1;					// Reserved
+    WORD	user_define_2;					// Reserved
+    WORD	user_define_3;					// Reserved
+    }
+            
+// End of File

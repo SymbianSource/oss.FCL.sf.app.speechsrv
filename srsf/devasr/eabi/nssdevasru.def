@@ -1,0 +1,49 @@
+EXPORTS
+	_ZN7CDevASR10LoadModelsERK12CSIModelBank @ 1 NONAME
+	_ZN7CDevASR10UnloadRuleEtm @ 2 NONAME
+	_ZN7CDevASR11LoadGrammarERK10CSIGrammar @ 3 NONAME
+	_ZN7CDevASR11LoadGrammarERK18CSICompiledGrammar @ 4 NONAME
+	_ZN7CDevASR11LoadLexiconERK10CSILexicon @ 5 NONAME
+	_ZN7CDevASR12InitFrontEndE15TRecognizerMode @ 6 NONAME
+	_ZN7CDevASR12PruneGrammarERK10CSIGrammarmR6RArrayI18TSIRuleVariantInfoE @ 7 NONAME
+	_ZN7CDevASR13EndRecSessionEv @ 8 NONAME
+	_ZN7CDevASR13UnloadGrammarERK10CSIGrammar @ 9 NONAME
+	_ZN7CDevASR13UnloadGrammarERK18CSICompiledGrammar @ 10 NONAME
+	_ZN7CDevASR14SendSpeechDataER6TPtrC8i @ 11 NONAME
+	_ZN7CDevASR15CompileGrammarLER18CSICompiledGrammar @ 12 NONAME
+	_ZN7CDevASR15CustomInterfaceE4TUid @ 13 NONAME
+	_ZN7CDevASR15IsGrammarActiveEt @ 14 NONAME
+	_ZN7CDevASR15IsGrammarLoadedEt @ 15 NONAME
+	_ZN7CDevASR15StartRecSessionE15TRecognizerMode @ 16 NONAME
+	_ZN7CDevASR16ActivateGrammarLEt @ 17 NONAME
+	_ZN7CDevASR16GetUtteranceDataEP5TDes8R27TTimeIntervalMicroSeconds32 @ 18 NONAME
+	_ZN7CDevASR16InitRecognizerBEER12CSIResultSet @ 19 NONAME
+	_ZN7CDevASR18DeactivateGrammarLEt @ 20 NONAME
+	_ZN7CDevASR19SetPrioritySettingsERK20TMMFPrioritySettings @ 21 NONAME
+	_ZN7CDevASR20GetEnginePropertiesLERK6RArrayIiERS1_ @ 22 NONAME
+	_ZN7CDevASR21LoadEngineParametersLERK6RArrayIiES3_ @ 23 NONAME
+	_ZN7CDevASR22ComputeNewGrammarSizeLERK10CSIGrammarmmRK6RArrayIjERS4_Rm @ 24 NONAME
+	_ZN7CDevASR22StartTrainingFromTextLER14CSITtpWordListRK6RArrayI9TLanguageERKS2_ImE @ 25 NONAME
+	_ZN7CDevASR4NewLER15MDevASRObserver @ 26 NONAME
+	_ZN7CDevASR5NewLCER15MDevASRObserver @ 27 NONAME
+	_ZN7CDevASR6AdaptLERK12CSIResultSeti @ 28 NONAME
+	_ZN7CDevASR6CancelEv @ 29 NONAME
+	_ZN7CDevASR6RecordE27TTimeIntervalMicroSeconds32 @ 30 NONAME
+	_ZN7CDevASR9EndRecordEv @ 31 NONAME
+	_ZN7CDevASRD0Ev @ 32 NONAME
+	_ZN7CDevASRD1Ev @ 33 NONAME
+	_ZN7CDevASRD2Ev @ 34 NONAME
+	_ZTI18CRecognitionAlgMgr @ 35 NONAME ; #<TI>#
+	_ZTI19CVMAlgorithmManager @ 36 NONAME ; #<TI>#
+	_ZTI20CSRSAlgorithmManager @ 37 NONAME ; #<TI>#
+	_ZTI22CDevASRResourceHandler @ 38 NONAME ; #<TI>#
+	_ZTI7CDevASR @ 39 NONAME ; #<TI>#
+	_ZTI8CQueItem @ 40 NONAME ; #<TI>#
+	_ZTV18CRecognitionAlgMgr @ 41 NONAME ; #<VT>#
+	_ZTV19CVMAlgorithmManager @ 42 NONAME ; #<VT>#
+	_ZTV20CSRSAlgorithmManager @ 43 NONAME ; #<VT>#
+	_ZTV22CDevASRResourceHandler @ 44 NONAME ; #<VT>#
+	_ZTV7CDevASR @ 45 NONAME ; #<VT>#
+	_ZTV8CQueItem @ 46 NONAME ; #<VT>#
+	_ZN7CDevASR17PreStartSamplingLEv @ 47 NONAME
+

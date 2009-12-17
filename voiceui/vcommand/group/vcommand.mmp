@@ -1,0 +1,109 @@
+/*
+* Copyright (c) 2002 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Project specification file for Voice Commands UI
+*
+*/
+
+
+#include <data_caging_paths.hrh>
+#include <platform_paths.hrh>
+
+TARGET  vcommand.exe
+EPOCSTACKSIZE 0x5000
+TARGETTYPE  exe
+UID  0x100039CE 0x101F8555
+
+VENDORID    VID_DEFAULT
+
+SOURCEPATH ../src
+SOURCE   vcapp.cpp
+SOURCE   vcdocument.cpp
+SOURCE   vcappui.cpp
+SOURCE   vcgenericview.cpp
+SOURCE   vcgenericcontainer.cpp
+SOURCE   vcfolderview.cpp
+SOURCE   vcsettingsengine.cpp
+SOURCE	 vcsettingsview.cpp
+SOURCE	 vcsettingscontainer.cpp
+SOURCE	 vcsettingslist.cpp
+SOURCE	 vctonereader.cpp
+SOURCE	 vcplaybackdialog.cpp
+SOURCE	 vcmodel.cpp
+SOURCE	 vcommanduientry.cpp
+SOURCE	 vcommanduientryarray.cpp
+SOURCE	 vctextquerydialog.cpp
+SOURCE	 vcdoublelargestylelistbox.cpp
+SOURCE	 uiarraysgenerator.cpp
+
+USERINCLUDE  ../rubydebug
+USERINCLUDE  ../inc
+USERINCLUDE  ../../group
+
+
+// This is a SYSTEMINCLUDE macro containing the applications
+// layer specific include directories
+APP_LAYER_SYSTEMINCLUDE
+
+SYSTEMINCLUDE .
+SYSTEMINCLUDE /epoc32/include/mmf/common
+
+START RESOURCE ../data/vcommand.rss
+HEADER
+TARGETPATH APP_RESOURCE_DIR
+LANGUAGE_IDS
+END  // RESOURCE
+
+START RESOURCE ../data/vcommand_reg.rss
+DEPENDS vcommand.rsg
+// Do not change the UID below.
+TARGETPATH /private/10003a3f/apps
+END
+
+CAPABILITY  CAP_APPLICATION MultimediaDD
+
+LIBRARY euser.lib
+LIBRARY apparc.lib
+LIBRARY cone.lib
+LIBRARY eikcore.lib
+LIBRARY eikcoctl.lib
+LIBRARY avkon.lib
+LIBRARY eikctl.lib      // for progressbar
+LIBRARY eikdlg.lib      // for dialogs
+LIBRARY sysutil.lib     // disk space checking
+LIBRARY bafl.lib
+LIBRARY egul.lib        // DrawUtils
+LIBRARY hlplch.lib      // for Help launcher
+LIBRARY profileeng.lib
+LIBRARY estor.lib
+LIBRARY commonengine.lib
+LIBRARY efsrv.lib 
+LIBRARY featmgr.lib
+LIBRARY aknskins.lib
+LIBRARY apgrfx.lib
+LIBRARY mediaclientaudio.lib
+LIBRARY ws32.lib
+LIBRARY nssvasapi.lib
+LIBRARY vcommandhandler.lib
+LIBRARY centralrepository.lib
+
+
+START WINS      
+// wins_specific_information
+END
+
+START MARM
+// marm_specific_information
+END
+
+// End of File

@@ -1,0 +1,97 @@
+EXPORTS	
+	_ZN11CTtsUtility15CreateInstanceLEv @ 1 NONAME
+	_ZN11CTtsUtility10GetBalanceERi @ 2 NONAME
+	_ZN11CTtsUtility10SetBalanceEi @ 3 NONAME
+	_ZN11CTtsUtility10SetRepeatsEiRK25TTimeIntervalMicroSeconds @ 4 NONAME
+	_ZN11CTtsUtility11DeleteStyleEm @ 5 NONAME
+	_ZN11CTtsUtility11GetPositionER25TTimeIntervalMicroSeconds @ 6 NONAME
+	_ZN11CTtsUtility11GetPositionERi @ 7 NONAME
+	_ZN11CTtsUtility11OpenPluginLE4TUid @ 8 NONAME
+	_ZN11CTtsUtility11SetPositionERK25TTimeIntervalMicroSeconds @ 9 NONAME
+	_ZN11CTtsUtility11SetPositionEi @ 10 NONAME
+	_ZN11CTtsUtility11SetPriorityEi22TMdaPriorityPreference @ 11 NONAME
+	_ZN11CTtsUtility12ListPluginsLER6RArrayI4TUidE @ 12 NONAME
+	_ZN11CTtsUtility13DefaultStyleLEv @ 13 NONAME
+	_ZN11CTtsUtility13SpeakingRateLEv @ 14 NONAME
+	_ZN11CTtsUtility14NumberOfStylesEv @ 15 NONAME
+	_ZN11CTtsUtility14SetOutputFileLERK5RFile @ 16 NONAME
+	_ZN11CTtsUtility15OpenAndPlayDesLERK6TDesC8 @ 17 NONAME
+	_ZN11CTtsUtility15OpenAndPlayDesLERK7TDesC16 @ 18 NONAME
+	_ZN11CTtsUtility15OpenParsedTextLER14CTtsParsedText @ 19 NONAME
+	_ZN11CTtsUtility16OpenAndPlayFileLERK7TDesC16 @ 20 NONAME
+	_ZN11CTtsUtility16SetDefaultStyleLERK9TTtsStyle @ 21 NONAME
+	_ZN11CTtsUtility16SetSpeakingRateLEi @ 22 NONAME
+	_ZN11CTtsUtility17CustomCommandSyncERK8TPckgBufI22TMMFMessageDestinationEiRK6TDesC8S7_ @ 23 NONAME
+	_ZN11CTtsUtility17CustomCommandSyncERK8TPckgBufI22TMMFMessageDestinationEiRK6TDesC8S7_R5TDes8 @ 24 NONAME
+	_ZN11CTtsUtility18CustomCommandAsyncERK8TPckgBufI22TMMFMessageDestinationEiRK6TDesC8S7_R14TRequestStatus @ 25 NONAME
+	_ZN11CTtsUtility18CustomCommandAsyncERK8TPckgBufI22TMMFMessageDestinationEiRK6TDesC8S7_R5TDes8R14TRequestStatus @ 26 NONAME
+	_ZN11CTtsUtility19GetSupportedVoicesLE9TLanguageR6RArrayI9TTtsStyleE @ 27 NONAME
+	_ZN11CTtsUtility22GetSupportedLanguagesLER6RArrayI9TLanguageE @ 28 NONAME
+	_ZN11CTtsUtility22OpenAndPlayParsedTextLER14CTtsParsedText @ 29 NONAME
+	_ZN11CTtsUtility26CreateInstanceSecondPhaseLER25MTtsClientUtilityObserver @ 30 NONAME
+	_ZN11CTtsUtility4NewLER25MTtsClientUtilityObserver @ 31 NONAME
+	_ZN11CTtsUtility4PlayEv @ 32 NONAME
+	_ZN11CTtsUtility4StopEv @ 33 NONAME
+	_ZN11CTtsUtility5CloseEv @ 34 NONAME
+	_ZN11CTtsUtility5PauseEv @ 35 NONAME
+	_ZN11CTtsUtility6StyleLEm @ 36 NONAME
+	_ZN11CTtsUtility6StyleLEt @ 37 NONAME
+	_ZN11CTtsUtility8DurationEv @ 38 NONAME
+	_ZN11CTtsUtility8OpenDesLERK6TDesC8 @ 39 NONAME
+	_ZN11CTtsUtility8OpenDesLERK7TDesC16 @ 40 NONAME
+	_ZN11CTtsUtility9AddStyleLERK9TTtsStyle @ 41 NONAME
+	_ZN11CTtsUtility9GetVolumeERi @ 42 NONAME
+	_ZN11CTtsUtility9MaxVolumeEv @ 43 NONAME
+	_ZN11CTtsUtility9OpenFileLERK7TDesC16 @ 44 NONAME
+	_ZN11CTtsUtility9SetVolumeEi @ 45 NONAME
+	_ZN11CTtsUtilityD0Ev @ 46 NONAME
+	_ZN11CTtsUtilityD1Ev @ 47 NONAME
+	_ZN11CTtsUtilityD2Ev @ 48 NONAME
+	_ZTI11CTtsUtility @ 49 NONAME ; #<TI>#
+	_ZTV11CTtsUtility @ 50 NONAME ; #<VT>#
+	_ZThn4_N11CTtsUtility10GetBalanceERi @ 51 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility10SetBalanceEi @ 52 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility10SetRepeatsEiRK25TTimeIntervalMicroSeconds @ 53 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility11DeleteStyleEm @ 54 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility11GetPositionER25TTimeIntervalMicroSeconds @ 55 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility11GetPositionERi @ 56 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility11OpenPluginLE4TUid @ 57 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility11SetPositionERK25TTimeIntervalMicroSeconds @ 58 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility11SetPositionEi @ 59 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility11SetPriorityEi22TMdaPriorityPreference @ 60 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility12ListPluginsLER6RArrayI4TUidE @ 61 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility13DefaultStyleLEv @ 62 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility13SpeakingRateLEv @ 63 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility14NumberOfStylesEv @ 64 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility14SetOutputFileLERK5RFile @ 65 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility15OpenAndPlayDesLERK6TDesC8 @ 66 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility15OpenAndPlayDesLERK7TDesC16 @ 67 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility15OpenParsedTextLER14CTtsParsedText @ 68 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility16OpenAndPlayFileLERK7TDesC16 @ 69 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility16SetDefaultStyleLERK9TTtsStyle @ 70 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility16SetSpeakingRateLEi @ 71 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility17CustomCommandSyncERK8TPckgBufI22TMMFMessageDestinationEiRK6TDesC8S7_ @ 72 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility17CustomCommandSyncERK8TPckgBufI22TMMFMessageDestinationEiRK6TDesC8S7_R5TDes8 @ 73 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility18CustomCommandAsyncERK8TPckgBufI22TMMFMessageDestinationEiRK6TDesC8S7_R14TRequestStatus @ 74 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility18CustomCommandAsyncERK8TPckgBufI22TMMFMessageDestinationEiRK6TDesC8S7_R5TDes8R14TRequestStatus @ 75 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility19GetSupportedVoicesLE9TLanguageR6RArrayI9TTtsStyleE @ 76 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility22GetSupportedLanguagesLER6RArrayI9TLanguageE @ 77 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility22OpenAndPlayParsedTextLER14CTtsParsedText @ 78 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility26CreateInstanceSecondPhaseLER25MTtsClientUtilityObserver @ 79 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility4PlayEv @ 80 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility4StopEv @ 81 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility5CloseEv @ 82 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility5PauseEv @ 83 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility6StyleLEm @ 84 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility6StyleLEt @ 85 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility8DurationEv @ 86 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility8OpenDesLERK6TDesC8 @ 87 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility8OpenDesLERK7TDesC16 @ 88 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility9AddStyleLERK9TTtsStyle @ 89 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility9GetVolumeERi @ 90 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility9MaxVolumeEv @ 91 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility9OpenFileLERK7TDesC16 @ 92 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtility9SetVolumeEi @ 93 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtilityD0Ev @ 94 NONAME ; #<thunk>#
+	_ZThn4_N11CTtsUtilityD1Ev @ 95 NONAME ; #<thunk>#
+

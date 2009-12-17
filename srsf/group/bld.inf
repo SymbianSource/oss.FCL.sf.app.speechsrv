@@ -1,0 +1,73 @@
+/*
+* Copyright (c) 2004-2007 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Project file for all SRSF modules.
+*
+*/
+
+
+#include <platform_paths.hrh>
+#include "srsfbldvariant.hrh"
+
+PRJ_PLATFORMS
+DEFAULT
+
+#include "../sispeechrecognitiondata/group/bld.inf"
+#include "../ttscommon/group/bld.inf"
+#include "../devtts/group/bld.inf"
+#include "../ttscustomcommands/group/bld.inf"
+#include "../ttscontrollerplugin/group/bld.inf"
+#include "../ttsutility/group/bld.inf"
+#include "../speechsynthesis/client/group/bld.inf"
+#include "../speechsynthesis/server/group/bld.inf"
+#include "../devasr/group/bld.inf"
+#include "../sicc/group/bld.inf"
+#include "../sisrscontrollerplugin/group/bld.inf"
+#include "../siutility/group/bld.inf"
+#include "../nssvasapi/group/bld.inf"
+#include "../nssvascontacthdlr/group/bld.inf"
+#include "../vcommandhandler/group/bld.inf"
+#include "../vuiphandler/group/bld.inf"
+#include "../vcommandexecutor/group/bld.inf"
+#include "../vcommandexecutorbearer/group/bld.inf"
+#include "../vcommandmanager/group/bld.inf"
+#include "../vcexecutorapp/group/bld.inf"
+#include "../profileobserverplugin/group/bld.inf"
+
+PRJ_EXPORTS
+
+#include "../rom/exports.inc"
+#include "exports.inc"
+
+// VAS database backup
+backup_registration.xml  /epoc32/data/z/private/10201afe/backup_registration.xml
+backup_registration.xml  /epoc32/release/winscw/udeb/z/private/10201afe/backup_registration.xml
+backup_registration.xml  /epoc32/release/winscw/urel/z/private/10201afe/backup_registration.xml
+
+// Plugin database backup
+backup_registration_plugin.xml  /epoc32/data/z/private/10201aff/backup_registration.xml
+backup_registration_plugin.xml  /epoc32/release/winscw/udeb/z/private/10201aff/backup_registration.xml
+backup_registration_plugin.xml  /epoc32/release/winscw/urel/z/private/10201aff/backup_registration.xml
+
+
+// Generic configuration interface for component cenrep settings  
+../conf/srsf.confml                  APP_LAYER_CONFML(srsf.confml)
+../conf/srsf_10281c7d.crml           APP_LAYER_CRML(srsf_10281c7d.crml)
+// SI custom commands
+
+// version information
+./10201aee.txt                        /epoc32/data/z/private/10208acc/10201aee.txt
+
+
+
+// End of File

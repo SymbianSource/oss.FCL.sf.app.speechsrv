@@ -1,0 +1,30 @@
+/*
+* Copyright (c) 2007 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  VCommand control panel plugin uids.
+*
+*/
+
+#ifndef VCCONTROLPANELPLUGINUIDS_HRH
+#define VCCONTROLPANELPLUGINUIDS_HRH
+
+// DLL uid
+#define KDllUid 0x10282C40
+
+// Implementation uid
+#define KImplUid 0x10282C41
+
+// VCommand application uid
+#define KVCommandAppUid 0x101F8555
+
+#endif  // VCCONTROLPANELPLUGINUIDS_HRH

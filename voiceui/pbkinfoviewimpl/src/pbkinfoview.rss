@@ -1,0 +1,173 @@
+/*
+* Copyright (c) 2006 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  
+*
+*/
+
+
+//  INCLUDES
+
+#include <eikon.rh>
+#include "registryinfov2.rh" 
+#include "pbkinfoview.rh"
+
+// aspsyncutil uses sync app .loc file
+#include <pbkinfoview.loc>
+
+// common avkon strings
+#include <avkon.loc>
+
+#include <avkon.rsg>
+#include <avkon.rh>
+#include <avkon.mbg>
+#include <AvkonIcons.hrh>
+
+
+#include <vuivoicerecognition.loc>
+
+//  RESOURCE IDENTIFIER
+NAME INFV
+
+
+RESOURCE RSS_SIGNATURE { }
+
+
+//
+// STRINGS
+//
+
+STRUCT STRING
+	{
+	LTEXT text;
+	}
+	
+// Dialog title
+RESOURCE TBUF r_infoview_dialog_title { buf=qtn_phob_vc_info_title; }
+
+// Popup texts
+RESOURCE TBUF r_infoview_popup_contact { buf=qtn_pb_voice_info_popup_contact; }
+RESOURCE TBUF r_infoview_popup_general { buf=qtn_pb_voice_info_popup_contact_general; }
+
+// String for a view with no voice commands
+RESOURCE TBUF r_infoview_empty_view { buf=qtn_phob_vc_info_empty_list; }
+// String for a view with a contact not from phone's contacts db 
+// that therefore no voice commands
+RESOURCE TBUF r_infoview_empty_view_sim_contact { buf=qtn_phob_vc_info_empty_list_sim_contact; }
+
+
+RESOURCE TBUF   r_text_call_in_progress         { buf = text_call_in_progress; }
+
+//------------------------------------------------------------------------------
+// r_infoview_app_listbox
+// Listbox resourcee
+//------------------------------------------------------------------------------
+//
+RESOURCE LISTBOX r_infoview_app_listbox 
+	{
+	flags = 0x0001;
+	}
+
+
+// -----------------------------------------------------------------------------
+// r_infoview_dialog
+// infoview dialog resource.
+// -----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_infoview_dialog
+    {
+	  flags=EEikDialogFlagWait | EEikDialogFlagFillAppClientRect | EEikDialogFlagNotifyEsc;
+
+    buttons=R_AVKON_SOFTKEYS_OPTIONS_EXIT; // r_softkeys_options_back__play
+    items=
+        {
+        DLG_LINE
+            {
+            type=EAknCtDoubleGraphicListBox;
+			      itemflags=EEikDlgItemTakesEnterKey;
+			      id=EInfoViewDialogList;
+			      control=LISTBOX
+				        {
+				        flags=0;
+				        height=2;
+				        width=80;
+				        };
+            }
+		    };
+    }
+
+// -----------------------------------------------------------------------------
+// r_infoview_dialog_menu
+// Info view menu bar.
+// -----------------------------------------------------------------------------
+//
+RESOURCE MENU_BAR r_infoview_dialog_menu
+	{
+	titles= 
+		{ 
+		MENU_TITLE 
+			{ 
+			menu_pane=r_infoview_dialog_menu_pane;
+			}
+		};
+	}
+
+// -----------------------------------------------------------------------------
+// r_infoview_dialog_menu_pane
+// Info view menu.
+// -----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_infoview_dialog_menu_pane
+    {
+    items =
+        {
+        MENU_ITEM 
+            {
+            command = EInfoViewMenuCmdPlay;
+            txt = qtn_phob_opt_play;
+            flags = EEikMenuItemAction;
+            },
+		    
+        MENU_ITEM
+            {
+            command = EInfoViewMenuCmdHelp;
+            txt = qtn_options_help;
+            },
+            
+        MENU_ITEM
+            {
+            command = EInfoViewMenuCmdExit;
+            txt = qtn_options_exit;
+            }
+        };
+    }
+	
+//-----------------------------------------------------------------------------
+//  r_softkeys_options_exit__select
+//  Info view softkeys
+//-----------------------------------------------------------------------------
+//
+RESOURCE CBA r_softkeys_options_back__play
+    {
+    buttons =
+        {
+        CBA_BUTTON {id=EAknSoftkeyOptions; txt = text_softkey_option;},
+        CBA_BUTTON {id=EAknSoftkeyBack; txt = text_softkey_back; },
+        AVKON_CBA_BUTTON{id=EAknSoftkeySelect; longpressid=0; txt = qtn_msk_play; }
+        };
+    }
+
+
+// End of file
+
+

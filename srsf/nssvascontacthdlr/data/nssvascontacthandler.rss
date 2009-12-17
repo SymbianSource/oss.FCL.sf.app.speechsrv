@@ -1,0 +1,46 @@
+/*
+* Copyright (c) 2005-2006 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Localized resource file of SINDE commands
+*
+*/
+
+
+//  RESOURCE IDENTIFIER
+NAME COHA
+
+//  INCLUDES
+#include <sindextensioncommands.loc>
+#include <badef.rh>
+#include <uikon.rh>
+
+
+//  RESOURCE DEFINITIONS 
+// -----------------------------------------------------------------------------
+//   
+// Extensions for name dialling
+//
+// -----------------------------------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE { }
+
+RESOURCE LBUF r_sind_extension_mobile  { txt = qan_sind_extension_mobile; }
+RESOURCE LBUF r_sind_extension_general  { txt = qan_sind_extension_general; }
+RESOURCE LBUF r_sind_extension_home  { txt = qan_sind_extension_home; }
+RESOURCE LBUF r_sind_extension_work  { txt = qan_sind_extension_work; }
+RESOURCE LBUF r_sind_extension_video  { txt = qan_sind_extension_video; }
+RESOURCE LBUF r_sind_extension_message  { txt = qan_sind_extension_message; }
+RESOURCE LBUF r_sind_extension_email  { txt = qan_sind_extension_email; }
+RESOURCE LBUF r_sind_extension_voip  { txt =qan_sind_extension_voip; }
+
+// End of File

@@ -1,0 +1,73 @@
+/*
+* Copyright (c) 2002-2007 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Localisation file for pbkinfoview
+*
+*/
+
+
+// d:Command in phonebook's contact info options list. Opens dialog for infoview.
+// l:list_single_pane_t1_cp2
+// r:3.2
+//
+#define qtn_phob_vc_info_options_infoview                "Voice command info"
+
+// d:Title for voice commands info view
+// l:title_pane_t1
+// r:3.2
+//
+#define qtn_phob_vc_info_title                           "Voice command info"
+
+// d:Options list menu item for playing the command
+// l:list_single_pane_t1_cp2
+// r:3.2
+//
+#define qtn_phob_opt_play                                "Play command" 
+
+// d:Options list menu item for help 
+// l:list_single_pane_t1_cp2
+// r:3.2
+//
+#define qtn_options_help                                 "Help"
+
+// d:Options list menu item for exiting voice commands info view
+// l:list_single_pane_t1_cp2
+// r:3.2
+//
+#define qtn_options_exit                                 "Exit"
+
+// d:Tooltip text instructing on how to use a voice command.
+// l:popup_preview_text_window/opt5
+// r:3.2
+//
+#define qtn_pb_voice_info_popup_contact                  "Say \"%U\" to call the contact."
+
+// d:Tooltip text instructing on how to use a voice command.
+// l:popup_preview_text_window/opt5
+// r:3.2
+//
+#define qtn_pb_voice_info_popup_contact_general          "Say \"%U\"."        
+
+// d:Information note displayed when a contact has no voice commands.
+// l:popup_note_window/opt2
+// r:3.2
+//
+#define qtn_phob_vc_info_empty_list                      "There are no voice commands for this contact."
+
+// d:Information note displayed when a contact is not stored in phone memory.
+// l:popup_note_window/opt2
+// r:3.2
+//
+#define qtn_phob_vc_info_empty_list_sim_contact          "Contacts not on phone memory cannot be voice dialed."
+
+// End of File

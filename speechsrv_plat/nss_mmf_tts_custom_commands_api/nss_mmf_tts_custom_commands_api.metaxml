@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<api id="a2fa23d670d4e2050bd512940e6742cb" dataversion="2.0">
+  <name>NSS MMF TTS Custom Commands API</name>
+  <description>MMF extension for speechs synthesis</description>
+  <type>c++</type>
+  <collection>srsf</collection>
+  <libs>
+    <lib name="nssttscustomcommands.lib" />
+  </libs>
+  <release category="platform"/>
+  <attributes>
+     <!-- This indicates wether the api provedes separate html documentation -->
+     <!-- or is the additional documentation generated from headers. -->
+     <!-- If you are unsuere then the value is "no" -->
+     <htmldocprovided>no</htmldocprovided>
+     <adaptation>no</adaptation>
+  </attributes>
+</api>

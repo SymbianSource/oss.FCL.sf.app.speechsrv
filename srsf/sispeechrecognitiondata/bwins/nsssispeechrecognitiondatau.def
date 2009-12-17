@@ -1,0 +1,183 @@
+EXPORTS
+	??0CSICompiledGrammar@@IAE@G@Z @ 1 NONAME ; CSICompiledGrammar::CSICompiledGrammar(unsigned short)
+	??0CSIGrammar@@IAE@G@Z @ 2 NONAME ; CSIGrammar::CSIGrammar(unsigned short)
+	??0CSILexicon@@IAE@G@Z @ 3 NONAME ; CSILexicon::CSILexicon(unsigned short)
+	??0CSIModel@@IAE@G@Z @ 4 NONAME ; CSIModel::CSIModel(unsigned short)
+	??0CSIModelBank@@IAE@G@Z @ 5 NONAME ; CSIModelBank::CSIModelBank(unsigned short)
+	??0CSIParameters@@IAE@XZ @ 6 NONAME ; CSIParameters::CSIParameters(void)
+	??0CSIPronunciation@@IAE@KG@Z @ 7 NONAME ; CSIPronunciation::CSIPronunciation(unsigned long, unsigned short)
+	??0CSIPronunciationInfo@@IAE@V?$RPointerArray@VHBufC8@@@@W4TLanguage@@@Z @ 8 NONAME ; CSIPronunciationInfo::CSIPronunciationInfo(class RPointerArray<class HBufC8>, enum TLanguage)
+	??0CSIResult@@IAE@XZ @ 9 NONAME ; CSIResult::CSIResult(void)
+	??0CSIResultSet@@AAE@XZ @ 10 NONAME ; CSIResultSet::CSIResultSet(void)
+	??0CSIRule@@IAE@K@Z @ 11 NONAME ; CSIRule::CSIRule(unsigned long)
+	??0CSIRuleVariant@@IAE@EG@Z @ 12 NONAME ; CSIRuleVariant::CSIRuleVariant(unsigned char, unsigned short)
+	??0CSITtpWordList@@IAE@XZ @ 13 NONAME ; CSITtpWordList::CSITtpWordList(void)
+	??0TSIDiagnostic@@QAE@XZ @ 14 NONAME ; TSIDiagnostic::TSIDiagnostic(void)
+	??0TSIRuleVariantInfo@@QAE@GKE@Z @ 15 NONAME ; TSIRuleVariantInfo::TSIRuleVariantInfo(unsigned short, unsigned long, unsigned char)
+	??1CSIClientResult@@UAE@XZ @ 16 NONAME ; CSIClientResult::~CSIClientResult(void)
+	??1CSIClientResultSet@@UAE@XZ @ 17 NONAME ; CSIClientResultSet::~CSIClientResultSet(void)
+	??1CSICompiledGrammar@@UAE@XZ @ 18 NONAME ; CSICompiledGrammar::~CSICompiledGrammar(void)
+	??1CSIGrammar@@UAE@XZ @ 19 NONAME ; CSIGrammar::~CSIGrammar(void)
+	??1CSILexicon@@UAE@XZ @ 20 NONAME ; CSILexicon::~CSILexicon(void)
+	??1CSIModel@@UAE@XZ @ 21 NONAME ; CSIModel::~CSIModel(void)
+	??1CSIModelBank@@UAE@XZ @ 22 NONAME ; CSIModelBank::~CSIModelBank(void)
+	??1CSIParameters@@UAE@XZ @ 23 NONAME ; CSIParameters::~CSIParameters(void)
+	??1CSIPronunciation@@UAE@XZ @ 24 NONAME ; CSIPronunciation::~CSIPronunciation(void)
+	??1CSIPronunciationInfo@@UAE@XZ @ 25 NONAME ; CSIPronunciationInfo::~CSIPronunciationInfo(void)
+	??1CSIResult@@UAE@XZ @ 26 NONAME ; CSIResult::~CSIResult(void)
+	??1CSIResultSet@@UAE@XZ @ 27 NONAME ; CSIResultSet::~CSIResultSet(void)
+	??1CSIRule@@UAE@XZ @ 28 NONAME ; CSIRule::~CSIRule(void)
+	??1CSIRuleVariant@@UAE@XZ @ 29 NONAME ; CSIRuleVariant::~CSIRuleVariant(void)
+	??1CSITtpWordList@@UAE@XZ @ 30 NONAME ; CSITtpWordList::~CSITtpWordList(void)
+	??1TSIDiagnostic@@QAE@XZ @ 31 NONAME ; TSIDiagnostic::~TSIDiagnostic(void)
+	??1TSIRuleVariantInfo@@UAE@XZ @ 32 NONAME ; TSIRuleVariantInfo::~TSIRuleVariantInfo(void)
+	?AcousticModel@CSIModel@@UBEAAVTDesC8@@XZ @ 33 NONAME ; class TDesC8 & CSIModel::AcousticModel(void) const
+	?AdaptationData@CSIResultSet@@UAEAAVTDesC8@@XZ @ 34 NONAME ; class TDesC8 & CSIResultSet::AdaptationData(void)
+	?AddL@CSIClientResultSet@@QAEXPBVCSIClientResult@@@Z @ 35 NONAME ; void CSIClientResultSet::AddL(class CSIClientResult const *)
+	?AddL@CSICompiledGrammar@@UAEXPAVCSIRule@@@Z @ 36 NONAME ; void CSICompiledGrammar::AddL(class CSIRule *)
+	?AddL@CSIGrammar@@UAEXPAVCSIRule@@@Z @ 37 NONAME ; void CSIGrammar::AddL(class CSIRule *)
+	?AddL@CSILexicon@@UAEXPAVCSIPronunciation@@@Z @ 38 NONAME ; void CSILexicon::AddL(class CSIPronunciation *)
+	?AddL@CSIModelBank@@UAEXPBVCSIModel@@@Z @ 39 NONAME ; void CSIModelBank::AddL(class CSIModel const *)
+	?AddL@CSIResultSet@@UAEXPBVCSIResult@@@Z @ 40 NONAME ; void CSIResultSet::AddL(class CSIResult const *)
+	?AddL@CSIRule@@UAEXPAVCSIRuleVariant@@@Z @ 41 NONAME ; void CSIRule::AddL(class CSIRuleVariant *)
+	?AddL@CSITtpWordList@@UAEXPAVMDesC16Array@@@Z @ 42 NONAME ; void CSITtpWordList::AddL(class MDesC16Array *)
+	?AppendPronunciationL@CSITtpWordList@@UAEXHPAVCSIPronunciationInfo@@@Z @ 43 NONAME ; void CSITtpWordList::AppendPronunciationL(int, class CSIPronunciationInfo *)
+	?AtL@CSIClientResultSet@@QBEABVCSIClientResult@@H@Z @ 44 NONAME ; class CSIClientResult const & CSIClientResultSet::AtL(int) const
+	?AtL@CSIGrammar@@UBEAAVCSIRule@@H@Z @ 45 NONAME ; class CSIRule & CSIGrammar::AtL(int) const
+	?AtL@CSILexicon@@UBEAAVCSIPronunciation@@H@Z @ 46 NONAME ; class CSIPronunciation & CSILexicon::AtL(int) const
+	?AtL@CSIModelBank@@UBEAAVCSIModel@@H@Z @ 47 NONAME ; class CSIModel & CSIModelBank::AtL(int) const
+	?AtL@CSIResultSet@@UAEAAVCSIResult@@H@Z @ 48 NONAME ; class CSIResult & CSIResultSet::AtL(int)
+	?AtL@CSIResultSet@@UBEABVCSIResult@@H@Z @ 49 NONAME ; class CSIResult const & CSIResultSet::AtL(int) const
+	?AtL@CSIRule@@UBEAAVCSIRuleVariant@@H@Z @ 50 NONAME ; class CSIRuleVariant & CSIRule::AtL(int) const
+	?AtL@CSITtpWordList@@UBEAAVMDesC16Array@@H@Z @ 51 NONAME ; class MDesC16Array & CSITtpWordList::AtL(int) const
+	?CompiledData@CSICompiledGrammar@@UBEAAVTDesC8@@XZ @ 52 NONAME ; class TDesC8 & CSICompiledGrammar::CompiledData(void) const
+	?ConstructL@CSICompiledGrammar@@MAEXXZ @ 53 NONAME ; void CSICompiledGrammar::ConstructL(void)
+	?ConstructL@CSIGrammar@@MAEXXZ @ 54 NONAME ; void CSIGrammar::ConstructL(void)
+	?ConstructL@CSILexicon@@IAEXXZ @ 55 NONAME ; void CSILexicon::ConstructL(void)
+	?ConstructL@CSIModel@@MAEXXZ @ 56 NONAME ; void CSIModel::ConstructL(void)
+	?ConstructL@CSIModelBank@@MAEXXZ @ 57 NONAME ; void CSIModelBank::ConstructL(void)
+	?ConstructL@CSIParameters@@MAEXXZ @ 58 NONAME ; void CSIParameters::ConstructL(void)
+	?ConstructL@CSIPronunciation@@MAEXXZ @ 59 NONAME ; void CSIPronunciation::ConstructL(void)
+	?ConstructL@CSIPronunciationInfo@@MAEXXZ @ 60 NONAME ; void CSIPronunciationInfo::ConstructL(void)
+	?ConstructL@CSIResult@@MAEXXZ @ 61 NONAME ; void CSIResult::ConstructL(void)
+	?ConstructL@CSIResultSet@@EAEXXZ @ 62 NONAME ; void CSIResultSet::ConstructL(void)
+	?ConstructL@CSIRule@@MAEXXZ @ 63 NONAME ; void CSIRule::ConstructL(void)
+	?ConstructL@CSIRuleVariant@@MAEXXZ @ 64 NONAME ; void CSIRuleVariant::ConstructL(void)
+	?ConstructL@CSITtpWordList@@IAEXXZ @ 65 NONAME ; void CSITtpWordList::ConstructL(void)
+	?Count@CSIGrammar@@UBEHXZ @ 66 NONAME ; int CSIGrammar::Count(void) const
+	?Count@CSILexicon@@UBEHXZ @ 67 NONAME ; int CSILexicon::Count(void) const
+	?Count@CSIModelBank@@UBEHXZ @ 68 NONAME ; int CSIModelBank::Count(void) const
+	?Count@CSIPronunciationInfo@@UBEHXZ @ 69 NONAME ; int CSIPronunciationInfo::Count(void) const
+	?Count@CSIResultSet@@UBEHXZ @ 70 NONAME ; int CSIResultSet::Count(void) const
+	?Count@CSIRule@@UBEHXZ @ 71 NONAME ; int CSIRule::Count(void) const
+	?Count@CSITtpWordList@@UBEHXZ @ 72 NONAME ; int CSITtpWordList::Count(void) const
+	?DeleteL@CSIClientResultSet@@QAEXH@Z @ 73 NONAME ; void CSIClientResultSet::DeleteL(int)
+	?DeleteL@CSICompiledGrammar@@UAEXK@Z @ 74 NONAME ; void CSICompiledGrammar::DeleteL(unsigned long)
+	?DeleteL@CSIGrammar@@UAEXK@Z @ 75 NONAME ; void CSIGrammar::DeleteL(unsigned long)
+	?DeleteL@CSILexicon@@UAEXK@Z @ 76 NONAME ; void CSILexicon::DeleteL(unsigned long)
+	?DeleteL@CSIModelBank@@UAEXG@Z @ 77 NONAME ; void CSIModelBank::DeleteL(unsigned short)
+	?DeleteL@CSIResultSet@@UAEXH@Z @ 78 NONAME ; void CSIResultSet::DeleteL(int)
+	?DeleteL@CSIRule@@UAEXE@Z @ 79 NONAME ; void CSIRule::DeleteL(unsigned char)
+	?DeleteL@CSITtpWordList@@UAEXH@Z @ 80 NONAME ; void CSITtpWordList::DeleteL(int)
+	?ExternalizeL@CSIClientResultSet@@UBEXAAVRWriteStream@@@Z @ 81 NONAME ; void CSIClientResultSet::ExternalizeL(class RWriteStream &) const
+	?ExternalizeL@CSICompiledGrammar@@UBEXAAVRWriteStream@@@Z @ 82 NONAME ; void CSICompiledGrammar::ExternalizeL(class RWriteStream &) const
+	?ExternalizeL@CSIGrammar@@UBEXAAVRWriteStream@@@Z @ 83 NONAME ; void CSIGrammar::ExternalizeL(class RWriteStream &) const
+	?ExternalizeL@CSILexicon@@UBEXAAVRWriteStream@@@Z @ 84 NONAME ; void CSILexicon::ExternalizeL(class RWriteStream &) const
+	?ExternalizeL@CSIParameters@@UBEXAAVRWriteStream@@@Z @ 85 NONAME ; void CSIParameters::ExternalizeL(class RWriteStream &) const
+	?ExternalizeL@CSIResultSet@@UBEXAAVRWriteStream@@@Z @ 86 NONAME ; void CSIResultSet::ExternalizeL(class RWriteStream &) const
+	?Find@CSIGrammar@@UBEHK@Z @ 87 NONAME ; int CSIGrammar::Find(unsigned long) const
+	?Find@CSILexicon@@UBEHABVTDesC8@@@Z @ 88 NONAME ; int CSILexicon::Find(class TDesC8 const &) const
+	?Find@CSILexicon@@UBEHK@Z @ 89 NONAME ; int CSILexicon::Find(unsigned long) const
+	?Find@CSIModelBank@@UBEHG@Z @ 90 NONAME ; int CSIModelBank::Find(unsigned short) const
+	?Find@CSIRule@@UBEHE@Z @ 91 NONAME ; int CSIRule::Find(unsigned char) const
+	?GetPronunciationIDsL@CSIRuleVariant@@UBEXAAV?$RArray@K@@@Z @ 92 NONAME ; void CSIRuleVariant::GetPronunciationIDsL(class RArray<unsigned long> &) const
+	?GetPronunciationsL@CSITtpWordList@@UBEXHAAV?$RPointerArray@VCSIPronunciationInfo@@@@@Z @ 93 NONAME ; void CSITtpWordList::GetPronunciationsL(int, class RPointerArray<class CSIPronunciationInfo> &) const
+	?GrammarID@CSIClientResult@@QBEGXZ @ 94 NONAME ; unsigned short CSIClientResult::GrammarID(void) const
+	?GrammarID@CSIGrammar@@UBEGXZ @ 95 NONAME ; unsigned short CSIGrammar::GrammarID(void) const
+	?GrammarID@CSIResult@@UBEGXZ @ 96 NONAME ; unsigned short CSIResult::GrammarID(void) const
+	?GrammarID@TSIRuleVariantInfo@@UBEGXZ @ 97 NONAME ; unsigned short TSIRuleVariantInfo::GrammarID(void) const
+	?InternalizeL@CSIClientResultSet@@UAEXAAVRReadStream@@@Z @ 98 NONAME ; void CSIClientResultSet::InternalizeL(class RReadStream &)
+	?InternalizeL@CSICompiledGrammar@@UAEXAAVRReadStream@@@Z @ 99 NONAME ; void CSICompiledGrammar::InternalizeL(class RReadStream &)
+	?InternalizeL@CSIGrammar@@UAEXAAVRReadStream@@@Z @ 100 NONAME ; void CSIGrammar::InternalizeL(class RReadStream &)
+	?InternalizeL@CSILexicon@@UAEXAAVRReadStream@@@Z @ 101 NONAME ; void CSILexicon::InternalizeL(class RReadStream &)
+	?InternalizeL@CSIParameters@@UAEXAAVRReadStream@@@Z @ 102 NONAME ; void CSIParameters::InternalizeL(class RReadStream &)
+	?InternalizeL@CSIResultSet@@UAEXAAVRReadStream@@@Z @ 103 NONAME ; void CSIResultSet::InternalizeL(class RReadStream &)
+	?Language@CSIPronunciationInfo@@UBE?AW4TLanguage@@XZ @ 104 NONAME ; enum TLanguage CSIPronunciationInfo::Language(void) const
+	?Language@CSIRuleVariant@@UBE?AW4TLanguage@@XZ @ 105 NONAME ; enum TLanguage CSIRuleVariant::Language(void) const
+	?LexiconID@CSILexicon@@UBEGXZ @ 106 NONAME ; unsigned short CSILexicon::LexiconID(void) const
+	?LexiconID@CSIRuleVariant@@UBEGXZ @ 107 NONAME ; unsigned short CSIRuleVariant::LexiconID(void) const
+	?ListParametersL@CSIParameters@@UBEXAAV?$RArray@H@@0@Z @ 108 NONAME ; void CSIParameters::ListParametersL(class RArray<int> &, class RArray<int> &) const
+	?MaxResults@CSIClientResultSet@@QBEHXZ @ 109 NONAME ; int CSIClientResultSet::MaxResults(void) const
+	?ModelBankID@CSIModelBank@@UBEGXZ @ 110 NONAME ; unsigned short CSIModelBank::ModelBankID(void) const
+	?ModelBankID@CSIPronunciation@@UBEGXZ @ 111 NONAME ; unsigned short CSIPronunciation::ModelBankID(void) const
+	?ModelID@CSIModel@@UBEGXZ @ 112 NONAME ; unsigned short CSIModel::ModelID(void) const
+	?NewL@CSIClientResult@@SAPAV1@GK@Z @ 113 NONAME ; class CSIClientResult * CSIClientResult::NewL(unsigned short, unsigned long)
+	?NewL@CSIClientResult@@SAPAV1@XZ @ 114 NONAME ; class CSIClientResult * CSIClientResult::NewL(void)
+	?NewL@CSIClientResultSet@@SAPAV1@XZ @ 115 NONAME ; class CSIClientResultSet * CSIClientResultSet::NewL(void)
+	?NewL@CSICompiledGrammar@@SAPAV1@G@Z @ 116 NONAME ; class CSICompiledGrammar * CSICompiledGrammar::NewL(unsigned short)
+	?NewL@CSIGrammar@@SAPAV1@G@Z @ 117 NONAME ; class CSIGrammar * CSIGrammar::NewL(unsigned short)
+	?NewL@CSILexicon@@SAPAV1@G@Z @ 118 NONAME ; class CSILexicon * CSILexicon::NewL(unsigned short)
+	?NewL@CSIModel@@SAPAV1@G@Z @ 119 NONAME ; class CSIModel * CSIModel::NewL(unsigned short)
+	?NewL@CSIModelBank@@SAPAV1@G@Z @ 120 NONAME ; class CSIModelBank * CSIModelBank::NewL(unsigned short)
+	?NewL@CSIParameters@@SAPAV1@XZ @ 121 NONAME ; class CSIParameters * CSIParameters::NewL(void)
+	?NewL@CSIPronunciation@@SAPAV1@KG@Z @ 122 NONAME ; class CSIPronunciation * CSIPronunciation::NewL(unsigned long, unsigned short)
+	?NewL@CSIPronunciationInfo@@SAPAV1@V?$RPointerArray@VHBufC8@@@@W4TLanguage@@@Z @ 123 NONAME ; class CSIPronunciationInfo * CSIPronunciationInfo::NewL(class RPointerArray<class HBufC8>, enum TLanguage)
+	?NewL@CSIResult@@SAPAV1@XZ @ 124 NONAME ; class CSIResult * CSIResult::NewL(void)
+	?NewL@CSIResultSet@@SAPAV1@XZ @ 125 NONAME ; class CSIResultSet * CSIResultSet::NewL(void)
+	?NewL@CSIRule@@SAPAV1@K@Z @ 126 NONAME ; class CSIRule * CSIRule::NewL(unsigned long)
+	?NewL@CSIRuleVariant@@SAPAV1@EG@Z @ 127 NONAME ; class CSIRuleVariant * CSIRuleVariant::NewL(unsigned char, unsigned short)
+	?NewL@CSITtpWordList@@SAPAV1@XZ @ 128 NONAME ; class CSITtpWordList * CSITtpWordList::NewL(void)
+	?NewLC@CSIClientResult@@SAPAV1@GK@Z @ 129 NONAME ; class CSIClientResult * CSIClientResult::NewLC(unsigned short, unsigned long)
+	?NewLC@CSIClientResult@@SAPAV1@XZ @ 130 NONAME ; class CSIClientResult * CSIClientResult::NewLC(void)
+	?NewLC@CSIClientResultSet@@SAPAV1@XZ @ 131 NONAME ; class CSIClientResultSet * CSIClientResultSet::NewLC(void)
+	?NewLC@CSICompiledGrammar@@SAPAV1@G@Z @ 132 NONAME ; class CSICompiledGrammar * CSICompiledGrammar::NewLC(unsigned short)
+	?NewLC@CSIGrammar@@SAPAV1@G@Z @ 133 NONAME ; class CSIGrammar * CSIGrammar::NewLC(unsigned short)
+	?NewLC@CSILexicon@@SAPAV1@G@Z @ 134 NONAME ; class CSILexicon * CSILexicon::NewLC(unsigned short)
+	?NewLC@CSIModel@@SAPAV1@G@Z @ 135 NONAME ; class CSIModel * CSIModel::NewLC(unsigned short)
+	?NewLC@CSIModelBank@@SAPAV1@G@Z @ 136 NONAME ; class CSIModelBank * CSIModelBank::NewLC(unsigned short)
+	?NewLC@CSIParameters@@SAPAV1@XZ @ 137 NONAME ; class CSIParameters * CSIParameters::NewLC(void)
+	?NewLC@CSIPronunciation@@SAPAV1@KG@Z @ 138 NONAME ; class CSIPronunciation * CSIPronunciation::NewLC(unsigned long, unsigned short)
+	?NewLC@CSIPronunciationInfo@@SAPAV1@V?$RPointerArray@VHBufC8@@@@W4TLanguage@@@Z @ 139 NONAME ; class CSIPronunciationInfo * CSIPronunciationInfo::NewLC(class RPointerArray<class HBufC8>, enum TLanguage)
+	?NewLC@CSIResult@@SAPAV1@XZ @ 140 NONAME ; class CSIResult * CSIResult::NewLC(void)
+	?NewLC@CSIResultSet@@SAPAV1@XZ @ 141 NONAME ; class CSIResultSet * CSIResultSet::NewLC(void)
+	?NewLC@CSIRule@@SAPAV1@K@Z @ 142 NONAME ; class CSIRule * CSIRule::NewLC(unsigned long)
+	?NewLC@CSIRuleVariant@@SAPAV1@EG@Z @ 143 NONAME ; class CSIRuleVariant * CSIRuleVariant::NewLC(unsigned char, unsigned short)
+	?NewLC@CSITtpWordList@@SAPAV1@XZ @ 144 NONAME ; class CSITtpWordList * CSITtpWordList::NewLC(void)
+	?ParameterL@CSIParameters@@UBEHH@Z @ 145 NONAME ; int CSIParameters::ParameterL(int) const
+	?PhonemeSequence@CSIPronunciation@@UBEABVTDesC8@@XZ @ 146 NONAME ; class TDesC8 const & CSIPronunciation::PhonemeSequence(void) const
+	?Pronunciation@CSIResult@@UBEAAVCSIPronunciation@@XZ @ 147 NONAME ; class CSIPronunciation & CSIResult::Pronunciation(void) const
+	?PronunciationID@CSIPronunciation@@UBEKXZ @ 148 NONAME ; unsigned long CSIPronunciation::PronunciationID(void) const
+	?PronunciationL@CSIPronunciationInfo@@UBEAAVTDesC8@@H@Z @ 149 NONAME ; class TDesC8 & CSIPronunciationInfo::PronunciationL(int) const
+	?ResultCount@CSIClientResultSet@@QBEHXZ @ 150 NONAME ; int CSIClientResultSet::ResultCount(void) const
+	?RuleID@CSIClientResult@@QBEKXZ @ 151 NONAME ; unsigned long CSIClientResult::RuleID(void) const
+	?RuleID@CSIResult@@UBEKXZ @ 152 NONAME ; unsigned long CSIResult::RuleID(void) const
+	?RuleID@CSIRule@@UBEKXZ @ 153 NONAME ; unsigned long CSIRule::RuleID(void) const
+	?RuleID@TSIRuleVariantInfo@@UBEKXZ @ 154 NONAME ; unsigned long TSIRuleVariantInfo::RuleID(void) const
+	?RuleL@CSIGrammar@@UBEAAVCSIRule@@K@Z @ 155 NONAME ; class CSIRule & CSIGrammar::RuleL(unsigned long) const
+	?RuleVariantID@CSIResult@@UBEEXZ @ 156 NONAME ; unsigned char CSIResult::RuleVariantID(void) const
+	?RuleVariantID@CSIRuleVariant@@UBEEXZ @ 157 NONAME ; unsigned char CSIRuleVariant::RuleVariantID(void) const
+	?RuleVariantID@TSIRuleVariantInfo@@UBEEXZ @ 158 NONAME ; unsigned char TSIRuleVariantInfo::RuleVariantID(void) const
+	?RuleVariantL@CSIRule@@UBEAAVCSIRuleVariant@@E@Z @ 159 NONAME ; class CSIRuleVariant & CSIRule::RuleVariantL(unsigned char) const
+	?SIResultSet@CSIClientResultSet@@QBEAAVCSIResultSet@@XZ @ 160 NONAME ; class CSIResultSet & CSIClientResultSet::SIResultSet(void) const
+	?Score@CSIResult@@UBEJXZ @ 161 NONAME ; long CSIResult::Score(void) const
+	?SetAcousticModel@CSIModel@@UAEXPAVHBufC8@@@Z @ 162 NONAME ; void CSIModel::SetAcousticModel(class HBufC8 *)
+	?SetAdaptationData@CSIResultSet@@UAEXPAVHBufC8@@@Z @ 163 NONAME ; void CSIResultSet::SetAdaptationData(class HBufC8 *)
+	?SetCompiledData@CSICompiledGrammar@@UAEXPAVHBufC8@@@Z @ 164 NONAME ; void CSICompiledGrammar::SetCompiledData(class HBufC8 *)
+	?SetGrammarID@CSIClientResult@@QAEXG@Z @ 165 NONAME ; void CSIClientResult::SetGrammarID(unsigned short)
+	?SetGrammarID@CSIResult@@UAEXG@Z @ 166 NONAME ; void CSIResult::SetGrammarID(unsigned short)
+	?SetLanguage@CSIRuleVariant@@UAEXW4TLanguage@@@Z @ 167 NONAME ; void CSIRuleVariant::SetLanguage(enum TLanguage)
+	?SetMaxResultsL@CSIClientResultSet@@QAEXH@Z @ 168 NONAME ; void CSIClientResultSet::SetMaxResultsL(int)
+	?SetModelID@CSIModel@@UAEXG@Z @ 169 NONAME ; void CSIModel::SetModelID(unsigned short)
+	?SetParameterL@CSIParameters@@UAEXHH@Z @ 170 NONAME ; void CSIParameters::SetParameterL(int, int)
+	?SetPhonemeSequenceL@CSIPronunciation@@UAEXABVTDesC8@@@Z @ 171 NONAME ; void CSIPronunciation::SetPhonemeSequenceL(class TDesC8 const &)
+	?SetPronunciation@CSIResult@@UAEXPAVCSIPronunciation@@@Z @ 172 NONAME ; void CSIResult::SetPronunciation(class CSIPronunciation *)
+	?SetPronunciationIDsL@CSIRuleVariant@@UAEXABV?$RArray@K@@@Z @ 173 NONAME ; void CSIRuleVariant::SetPronunciationIDsL(class RArray<unsigned long> const &)
+	?SetPronunciationL@CSIPronunciationInfo@@UAEXHPAVHBufC8@@@Z @ 174 NONAME ; void CSIPronunciationInfo::SetPronunciationL(int, class HBufC8 *)
+	?SetResultCount@CSIClientResultSet@@QAEXH@Z @ 175 NONAME ; void CSIClientResultSet::SetResultCount(int)
+	?SetRuleID@CSIClientResult@@QAEXK@Z @ 176 NONAME ; void CSIClientResult::SetRuleID(unsigned long)
+	?SetRuleID@CSIResult@@UAEXK@Z @ 177 NONAME ; void CSIResult::SetRuleID(unsigned long)
+	?SetRuleVariantID@CSIResult@@UAEXE@Z @ 178 NONAME ; void CSIResult::SetRuleVariantID(unsigned char)
+	?SetSIResultSet@CSIClientResultSet@@QAEXPAVCSIResultSet@@@Z @ 179 NONAME ; void CSIClientResultSet::SetSIResultSet(class CSIResultSet *)
+	?SetScore@CSIResult@@UAEXJ@Z @ 180 NONAME ; void CSIResult::SetScore(long)
+	?SetPronunciationID@CSIPronunciation@@UAEXK@Z @ 181 NONAME ; public: virtual void __thiscall CSIPronunciation::SetPronunciationID(unsigned long)
+

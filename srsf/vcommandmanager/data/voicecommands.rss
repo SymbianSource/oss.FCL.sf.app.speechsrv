@@ -1,0 +1,463 @@
+/*
+* Copyright (c) 2006 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  NSS voice commands localization resource
+*
+*/
+
+
+//  INCLUDES
+#include <defaultvoicecommands.loc>
+#include "voicecommands.rh"
+
+//  RESOURCE DEFINITIONS 
+// -----------------------------------------------------------------------------
+//   
+// VCOMMANDS
+// Key value pairs of localized voice command strings
+//
+// -----------------------------------------------------------------------------
+//
+RESOURCE VCOMMANDS voicecommands
+    {
+    items =
+        {
+     
+// --- Folder texts start ---        
+        
+        // Folder qtn_vc_main_media
+        VCOMMANDITEM
+            {
+            key = 20005;
+            txt = qtn_vc_main_media;
+            },
+        // Folder qtn_vc_main_calendar_folder
+        VCOMMANDITEM
+            {
+            key = 20006;
+            txt = qtn_vc_main_calendar_folder;
+            },
+        // Folder qtn_vc_main_statusinfo
+        VCOMMANDITEM
+            {
+            key = 20007;
+            txt = qtn_vc_main_statusinfo;
+            },
+        
+// --- Folder texts end ---
+
+// --- Folder title texts start ---
+
+        // Folder title qtn_vc_title_calendar
+        VCOMMANDITEM
+            {
+            key = 30006;
+            txt = qtn_vc_title_calendar;
+            },
+        // Folder title qtn_vc_title_statusinfo
+        VCOMMANDITEM
+            {
+            key = 30007;
+            txt = qtn_vc_title_statusinfo;
+            },
+
+// --- Folder title texts end ---
+                
+// --- Tooltip texts start ---
+        
+        // Tooltip qtn_vc_info_popup_text_calcommand
+        VCOMMANDITEM
+            {
+            key = 10005;
+            txt = qtn_vc_info_popup_text_calcommand;
+            },
+        // Tooltip qtn_vc_info_popup_text_operator
+        VCOMMANDITEM
+            {
+            key = 10007;
+            txt = qtn_vc_info_popup_text_operator;
+            },
+        // Tooltip qtn_vc_info_popup_text_battery
+        VCOMMANDITEM
+            {
+            key = 10008;
+            txt = qtn_vc_info_popup_text_battery;
+            },
+        // Tooltip qtn_vc_info_popup_text_signal
+        VCOMMANDITEM
+            {
+            key = 10009;
+            txt = qtn_vc_info_popup_text_signal;
+            },
+            
+// --- Tooltip texts end ---        
+        
+
+// --- Voice commands start ---
+        
+        // Show today (written)
+        VCOMMANDITEM
+            {
+            key = 201;
+            txt = qtn_vc_calendar_calendartoday;
+            },
+        // Show today (spoken)
+        VCOMMANDITEM
+            {
+            key = 9201;
+            txt = qan_vc_calendar_calendartoday;
+            },
+        // Show tomorrow (written)
+        VCOMMANDITEM
+            {
+            key = 202;
+            txt = qtn_vc_calendar_calendartomorrow;
+            },
+        // Show tomorrow (spoken)
+        VCOMMANDITEM
+            {
+            key = 9202;
+            txt = qan_vc_calendar_calendartomorrow;
+            },
+        // Show Monday (written)
+        VCOMMANDITEM
+            {
+            key = 203;
+            txt = qtn_vc_calendar_calendarmonday;
+            },
+        // Show Monday (spoken)
+        VCOMMANDITEM
+            {
+            key = 9203;
+            txt = qan_vc_calendar_calendarmonday;
+            },
+        // Show Tuesday (written)
+        VCOMMANDITEM
+            {
+            key = 204;
+            txt = qtn_vc_calendar_calendartuesday;
+            },
+        // Show Tuesday (spoken)
+        VCOMMANDITEM
+            {
+            key = 9204;
+            txt = qan_vc_calendar_calendartuesday;
+            },
+        // Show Wednesday (written)
+        VCOMMANDITEM
+            {
+            key = 205;
+            txt = qtn_vc_calendar_calendarwednesday;
+            },
+        // Show Wednesday (spoken)
+        VCOMMANDITEM
+            {
+            key = 9205;
+            txt = qan_vc_calendar_calendarwednesday;
+            },
+        // Show Thursday (written)
+        VCOMMANDITEM
+            {
+            key = 206;
+            txt = qtn_vc_calendar_calendarthursday;
+            },
+        // Show Thursday (spoken)
+        VCOMMANDITEM
+            {
+            key = 9206;
+            txt = qan_vc_calendar_calendarthursday;
+            },
+        // Show Friday (written)
+        VCOMMANDITEM
+            {
+            key = 207;
+            txt = qtn_vc_calendar_calendarfriday;
+            },
+        // Show Friday (spoken)
+        VCOMMANDITEM
+            {
+            key = 9207;
+            txt = qan_vc_calendar_calendarfriday;
+            },
+        // Show Saturday (written)
+        VCOMMANDITEM
+            {
+            key = 208;
+            txt = qtn_vc_calendar_calendarsaturday;
+            },
+        // Show Saturday (spoken)
+        VCOMMANDITEM
+            {
+            key = 9208;
+            txt = qan_vc_calendar_calendarsaturday;
+            },
+        // Show Sunday (written)
+        VCOMMANDITEM
+            {
+            key = 209;
+            txt = qtn_vc_calendar_calendarsunday;
+            },
+        // Show Sunday (spoken)
+        VCOMMANDITEM
+            {
+            key = 9209;
+            txt = qan_vc_calendar_calendarsunday;
+            },
+        // Show this week (written)
+        VCOMMANDITEM
+            {
+            key = 210;
+            txt = qtn_vc_calendar_calendarthisweek;
+            },
+        // Show this week (spoken)
+        VCOMMANDITEM
+            {
+            key = 9210;
+            txt = qan_vc_calendar_calendarthisweek;
+            },
+        // Show next week (written)
+        VCOMMANDITEM
+            {
+            key = 211;
+            txt = qtn_vc_calendar_calendarnextweek;
+            },
+        // Show next week (spoken)
+        VCOMMANDITEM
+            {
+            key = 9211;
+            txt = qan_vc_calendar_calendarnextweek;
+            },
+        // Show this month (written)
+        VCOMMANDITEM
+            {
+            key = 212;
+            txt = qtn_vc_calendar_calendarthismonth;
+            },
+        // Show this month (spoken)
+        VCOMMANDITEM
+            {
+            key = 9212;
+            txt = qan_vc_calendar_calendarthismonth;
+            },
+        // Show next month (written)
+        VCOMMANDITEM
+            {
+            key = 213;
+            txt = qtn_vc_calendar_calendarnextmonth;
+            },
+        // Show next month (spoken)
+        VCOMMANDITEM
+            {
+            key = 9213;
+            txt = qan_vc_calendar_calendarnextmonth;
+            },
+        // Show January (written)
+        VCOMMANDITEM
+            {
+            key = 214;
+            txt = qtn_vc_calendar_calendarjanuary;
+            },
+        // Show January (spoken)
+        VCOMMANDITEM
+            {
+            key = 9214;
+            txt = qan_vc_calendar_calendarjanuary;
+            },
+        // Show February (written)
+        VCOMMANDITEM
+            {
+            key = 215;
+            txt = qtn_vc_calendar_calendarfebruary;
+            },
+        // Show February (spoken)
+        VCOMMANDITEM
+            {
+            key = 9215;
+            txt = qan_vc_calendar_calendarfebruary;
+            },
+        // Show March (written)
+        VCOMMANDITEM
+            {
+            key = 216;
+            txt = qtn_vc_calendar_calendarmarch;
+            },
+        // Show March (spoken)
+        VCOMMANDITEM
+            {
+            key = 9216;
+            txt = qan_vc_calendar_calendarmarch;
+            },
+        // Show April (written)
+        VCOMMANDITEM
+            {
+            key = 217;
+            txt = qtn_vc_calendar_calendarapril;
+            },
+        // Show April (spoken)
+        VCOMMANDITEM
+            {
+            key = 9217;
+            txt = qan_vc_calendar_calendarapril;
+            },
+        // Show May (written)
+        VCOMMANDITEM
+            {
+            key = 218;
+            txt = qtn_vc_calendar_calendarmay ;
+            },
+        // Show May (spoken)
+        VCOMMANDITEM
+            {
+            key = 9218;
+            txt = qan_vc_calendar_calendarmay ;
+            },
+        // Show June (written)
+        VCOMMANDITEM
+            {
+            key = 219;
+            txt = qtn_vc_calendar_calendarjune;
+            },
+        // Show June (spoken)
+        VCOMMANDITEM
+            {
+            key = 9219;
+            txt = qan_vc_calendar_calendarjune;
+            },
+        // Show July (written)
+        VCOMMANDITEM
+            {
+            key = 220;
+            txt = qtn_vc_calendar_calendarjuly;
+            },
+        // Show July (spoken)
+        VCOMMANDITEM
+            {
+            key = 9220;
+            txt = qan_vc_calendar_calendarjuly;
+            },
+        // Show August (written)
+        VCOMMANDITEM
+            {
+            key = 221;
+            txt = qtn_vc_calendar_calendaraugust;
+            },
+        // Show August (spoken)
+        VCOMMANDITEM
+            {
+            key = 9221;
+            txt = qan_vc_calendar_calendaraugust;
+            },
+        // Show September (written)
+        VCOMMANDITEM
+            {
+            key = 222;
+            txt = qtn_vc_calendar_calendarseptember;
+            },
+        // Show September (spoken)
+        VCOMMANDITEM
+            {
+            key = 9222;
+            txt = qan_vc_calendar_calendarseptember;
+            },
+        // Show October (written)
+        VCOMMANDITEM
+            {
+            key = 223;
+            txt = qtn_vc_calendar_calendaroctober;
+            },
+        // Show October (spoken)
+        VCOMMANDITEM
+            {
+            key = 9223;
+            txt = qan_vc_calendar_calendaroctober;
+            },
+        // Show November (written)
+        VCOMMANDITEM
+            {
+            key = 224;
+            txt = qtn_vc_calendar_calendarnovember;
+            },
+        // Show November (spoken)
+        VCOMMANDITEM
+            {
+            key = 9224;
+            txt = qan_vc_calendar_calendarnovember;
+            },
+        // Show December (written)
+        VCOMMANDITEM
+            {
+            key = 225;
+            txt = qtn_vc_calendar_calendardecember;
+            },
+        // Show December (spoken)
+        VCOMMANDITEM
+            {
+            key = 9225;
+            txt = qan_vc_calendar_calendardecember;
+            },
+        // Who is my operator (written)
+        VCOMMANDITEM
+            {
+            key = 227;
+            txt = qtn_vc_main_operator;
+            },
+        // Who is my operator (spoken)
+        VCOMMANDITEM
+            {
+            key = 9227;
+            txt = qan_vc_main_operator;
+            },
+        // What is the battery strength (written)
+        VCOMMANDITEM
+            {
+            key = 228;
+            txt = qtn_vc_main_battery ;
+            },
+        // What is the battery strength (spoken)
+        VCOMMANDITEM
+            {
+            key = 9228;
+            txt = qan_vc_main_battery ;
+            },
+        // What is the signal strength (written)
+        VCOMMANDITEM
+            {
+            key = 229;
+            txt = qtn_vc_main_signal;
+            },
+        // What is the signal strength (spoken)
+        VCOMMANDITEM
+            {
+            key = 9229;
+            txt = qan_vc_main_signal;
+            }
+// --- Voice commands end ---
+        };
+    }
+
+// -----------------------------------------------------------------------------
+//   
+// VCOMMANDINTEGERS
+// Key value pairs of integers
+//
+// -----------------------------------------------------------------------------
+//
+RESOURCE VCOMMANDINTEGERS vcommandintegers
+    {
+    intitems =
+        {
+        // Nothing
+        };
+    }
+
+// End of File

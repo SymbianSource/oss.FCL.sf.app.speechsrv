@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<api id="393cf43a5845e36306050bd8098a985d" dataversion="2.0">
+  <name>Voice UI accessory button handling API</name>
+  <description>P&amp;S keys for handling accessory button presses from Phone to VoiceUI</description>
+  <type>c++</type>
+  <collection>voiceui</collection>
+  <libs>
+  </libs>
+  <release category="platform"/>
+  <attributes>
+     <!-- This indicates wether the api provedes separate html documentation -->
+     <!-- or is the additional documentation generated from headers. -->
+     <!-- If you are unsuere then the value is "no" -->
+     <htmldocprovided>no</htmldocprovided>
+     <adaptation>no</adaptation>
+  </attributes>
+</api>

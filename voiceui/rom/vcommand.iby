@@ -1,0 +1,40 @@
+/*
+* Copyright (c) 2006 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  IBY file for VCommand UI
+*
+*/
+
+
+#ifndef __VCOMMAND_IBY__
+#define __VCOMMAND_IBY__
+
+#ifdef __SIND
+
+// VCommand app
+S60_APP_EXE(vcommand)
+S60_APP_AIF_ICONS(vcommand)
+S60_APP_AIF_RSC(vcommand)
+
+SCALABLE_IMAGE(APP_BITMAP_DIR,APP_BITMAP_DIR,vcommand)
+
+
+// VcControlPanelPlugin
+ECOM_PLUGIN(vccontrolpanelplugin.dll, vccontrolpanelplugin.rsc)
+SCALABLE_IMAGE(BITMAP_DIR,BITMAP_DIR,vccontrolpanelplugin)
+
+data = ZPRIVATE\101F8555\backup_registration.xml	PRIVATE\101F8555\backup_registration.xml
+
+#endif // __SIND
+
+#endif  // __VCOMMAND_IBY__

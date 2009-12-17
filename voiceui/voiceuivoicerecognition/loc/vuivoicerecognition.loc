@@ -1,0 +1,390 @@
+/*
+* Copyright (c) 2002 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Localisation strings for Voice Recognition UI
+*
+*/
+
+
+// LOCALISATION STRINGS
+
+// d: Error message before launching Voice Dialing.
+// d: Shown if number of saved voice tags was 0.
+// l: popup_note_window/opt2
+// r: 3.1
+//
+#define text_voice_no_tag		        "No voice tags\nsaved"
+
+// d: Text message after failed recognition.
+// d: Shown if recorded speech didn't match to any voice tag.
+// l: popup_note_window/opt2
+// r: 3.1
+//
+#define text_voice_no_matches           "No match found"
+
+// d: Text message during recognition.
+// d: Shown when user is expected to say a name of the contact or an application.
+// l: popup_note_wait_window
+// r: 3.1
+//
+#define text_voice_speak_now            "Please speak now"
+
+// d: Error message before launching Voice Dialing.
+// d: Shown if phone is busy when starting Voice Dialing.
+// l: popup_note_window/opt2
+// r: 3.1
+//
+#define text_call_in_progress           "Call in progress"
+
+// d: Error message after recognition.
+// d: Shown if some other error than "No match found" occurred during recognition
+// l: popup_note_window/opt2
+// r: 3.1
+//
+#define text_voice_system_error         "Voice system error"	
+
+// d: Information message that's played using Text to speech synthesizer.
+// d: %U is the name of the contact being called.
+// d: For example "Dialling Adam" or "Dialling John Smith"
+// l: none
+// r: 3.2
+//
+#define qan_vc_tts_dialling             "Dialling %U"
+
+// d: Title for VoiceUi tutorial page 1.
+// d:
+// l: heading_pane_t1
+// r: 3.2
+//
+#define qtn_vc_tutorial_page1_title     "Voice commanding"
+
+// d: Text for VoiceUi tutorial page 1.
+// d: Upper text part
+// l: none
+// r: 3.2
+//
+#define qtn_vc_tutorial_page1_text_up   "This tutorial shows how voice commanding is used. You can safely practice different voice commands, no actions are carried out in this demo.\nVoice commanding can be activated by a long press of the Voice key or the Right soft key, depending on the device configuration. Right soft key starts voice commands only in idle view. A compatible accessory button can also be used. Next, you will hear a voice dial audio prompt that indicates the start of voice commanding."
+
+// d: Text for VoiceUi tutorial page 1.
+// d: Optional lower text part if all of the text won't fit to upper part
+// d: Should be used at least with following languages:
+// d: Russian, Thai, Bulgarian, Farsi, Greek, Hindi, Ukrainian
+// l: none
+// r: 3.2
+//
+#define qtn_vc_tutorial_page1_text_down   ""
+
+// d: Title for VoiceUi tutorial page 2.
+// d:
+// l: heading_pane_t1
+// r: 3.2
+//
+#define qtn_vc_tutorial_page2_title     "Voice commanding"
+
+// d: Text for VoiceUi tutorial page 2.
+// d: Upper text part
+// l: none
+// r: 3.2
+//
+#define qtn_vc_tutorial_page2_text_up   "You may speak immediately after the prompt playback has finished. You have five seconds time to say the name or the command.\nPractical hints: Say the command as naturally as possible. A short pause between the audio prompt and your speech improves the recognition accuracy. Speak with firm voice, do not whisper or shout."
+
+// d: Text for VoiceUi tutorial page 2.
+// d: Optional lower text part if all of the text won't fit to upper part
+// d: Should be used at least with following languages:
+// d: Russian, Thai, Bulgarian, Farsi, Greek, Hindi, Ukrainian
+// l: none
+// r: 3.2
+//
+#define qtn_vc_tutorial_page2_text_down   ""
+
+// d: Title for VoiceUi tutorial page 3.
+// d:
+// l: heading_pane_t1
+// r: 3.2
+//
+#define qtn_vc_tutorial_page3_title     "Extended commands"
+
+// d: Text for VoiceUi tutorial page 3.
+// d: Upper text part
+// l: none
+// r: 3.2
+//
+#define qtn_vc_tutorial_page3_text_up   "You can dial any contact in your phonebook by voice. Just say the name as it is written in phonebook, including the given and family name, in the order that is natural in your UI language. If you have specified a nick name for the contact, you can also say that name.\nIn addition to plain name, you can say the contact name followed by extension word such as mobile, home or message. More information of all the contact extension commands can be found in phonebook or in the phone manual."
+
+// d: Text for VoiceUi tutorial page 3.
+// d: Optional lower text part if all of the text won't fit to upper part
+// d: Should be used at least with following languages:
+// d: Russian, Thai, Bulgarian, Farsi, Greek, Hindi, Ukrainian
+// l: none
+// r: 3.2
+//
+#define qtn_vc_tutorial_page3_text_down   ""
+
+// d: Title for VoiceUi tutorial page 4.
+// d:
+// l: heading_pane_t1
+// r: 3.2
+//
+#define qtn_vc_tutorial_page4_title     "Launching applications"
+
+// d: Text for VoiceUi tutorial page 4.
+// d: Upper text part
+// l: none
+// r: 3.2
+//
+#define qtn_vc_tutorial_page4_text_up   "You can also activate applications and profiles by voice. To see the active applications go to Voice Commands application.\nIn Voice Commands application you may adjust voice UI settings, listen to the voice commands and edit the voice commands for specific applications."
+
+// d: Text for VoiceUi tutorial page 4.
+// d: Optional lower text part if all of the text won't fit to upper part
+// d: Should be used at least with following languages:
+// d: Russian, Thai, Bulgarian, Farsi, Greek, Hindi, Ukrainian
+// l: none
+// r: 3.2
+//
+#define qtn_vc_tutorial_page4_text_down   ""
+
+// d: Title for VoiceUi tutorial page 5.
+// d:
+// l: heading_pane_t1
+// r: 3.2
+//
+#define qtn_vc_tutorial_page5_title     "Activate voice commanding"
+
+// d: Text for VoiceUi tutorial page 5.
+// d: Upper text part
+// l: none
+// r: 3.2
+//
+#define qtn_vc_tutorial_page5_text_up   "Now, pressing \"Activate\" will start voice dialing. No commands are executed in this Tutorial, so you can for example try how to voice dial phonebook contacts.\nThe voice dial audio prompt is played again and you may speak after it has finished."
+
+// d: Text for VoiceUi tutorial page 5.
+// d: Optional lower text part if all of the text won't fit to upper part
+// d: Should be used at least with following languages:
+// d: Russian, Thai, Bulgarian, Farsi, Greek, Hindi, Ukrainian
+// l: none
+// r: 3.2
+//
+#define qtn_vc_tutorial_page5_text_down   ""
+
+// d: Title for VoiceUi tutorial page 6.
+// d:
+// l: heading_pane_t1
+// r: 3.2
+//
+#define qtn_vc_tutorial_page_results_title "Recognition results"
+
+// d: Text for VoiceUi tutorial page 6.
+// d: Upper text part
+// l: none
+// r: 3.2
+//
+#define qtn_vc_tutorial_page6_text_up   "The recognition is complete and the phone will show you the list of results. If the first item in the list is correct, you do not need to do anything. With default settings phone will automatically execute the command or place a call.\nIf the result is wrong, you may browse result list down and change the command or name to the correct one. If your command is not in the list, please re-try or check the command in question from voice commands application or from the phonebook. Notice that selecting the correct result is important since the recognition system will adjust its parameters to match your voice. Selecting wrong result will not improve the recognition accuracy."
+
+// d: Text for VoiceUi tutorial page 6.
+// d: Optional lower text part if all of the text won't fit to upper part
+// d: Should be used at least with following languages:
+// d: Russian, Thai, Bulgarian, Farsi, Greek, Hindi, Ukrainian
+// l: none
+// r: 3.2
+//
+#define qtn_vc_tutorial_page6_text_down   ""
+
+// d: Title for VoiceUi tutorial page 7.
+// d:
+// l: heading_pane_t1
+// r: 3.2
+//
+#define qtn_vc_tutorial_page7_title     "Command execution"
+
+// d: Text for VoiceUi tutorial page 7.
+// d:
+// l: none
+// r: 3.2
+//
+#define qtn_vc_tutorial_page7_text      "You have selected a result and it is now executed. For more information on the voice dialing functionality, please see Voice Commands application help or the phone manual."
+
+// d: Title for VoiceUi tutorial error page.
+// d:
+// l: heading_pane_t1
+// r: 3.2
+//
+#define qtn_vc_tutorial_page_error_title "Error or no voice command given"
+
+// d: Text for VoiceUi tutorial error page.
+// d: Upper text part
+// l: none
+// r: 3.2
+//
+#define qtn_vc_tutorial_page_error_text_up "This view can result in two cases. Either, you did not say anything or you said something that did not match to the voice recognition system.\nPlease re-try or verify that the command exists. Also, if you said something valid, you may adjust the sensitivity of the speech recognizer in Voice Commands->Settings->Sensitivity."
+
+// d: Text for VoiceUi tutorial error page.
+// d: Optional lower text part if all of the text won't fit to upper part
+// d: Should be used at least with following languages:
+// d: Russian, Thai, Bulgarian, Farsi, Greek, Hindi, Ukrainian
+// l: none
+// r: 3.2
+//
+#define qtn_vc_tutorial_page_error_text_down ""
+
+// d: Text for VoiceUi tutorial first time page.
+// d: Upper text part
+// l: none
+// r: 3.2
+//
+#define qtn_vc_tutorial_first_time1_text_up "To dial, say the full name of any phonebook contact. Alternatively, say the name of an application or profile to activate it.\nYou can say full name or nickname to dial. See Voice Commands for list of all other commands. Press "Activate" and give command. After activating once, this info does not appear again."
+
+// d: Text for VoiceUi tutorial first time page.
+// d: Optional lower text part if all of the text won't fit to upper part
+// d: Should be used at least with following languages:
+// d: Russian, Thai, Bulgarian, Farsi, Greek, Hindi, Ukrainian
+// l: none
+// r: 3.2
+//
+#define qtn_vc_tutorial_first_time1_text_down ""
+
+// d: Command text associated to a softkey in the control pane.
+// d: Changes current view to next view.
+// l: control_pane_t1
+// r: 3.2
+//
+#define qtn_vc_softkey_next     "Next"
+
+// d: Command text associated to a softkey in the control pane.
+// d: Activates voice dialing.
+// l: control_pane_t1
+// r: 3.2
+//
+#define qtn_vc_softkey_activate         "Activate"
+
+// d: Heading for n-best list
+// d:
+// l: heading_pane_t1
+// r: 3.2
+//
+#define qtn_vc_nbest_list_header        "Recognition results"
+
+// d: Command in options menu.
+// d: Selects currently active item.
+// l: list_single_pane_t1_cp2
+// r: 3.2
+//
+#define qtn_vc_options_select           "Select"
+
+// d: Command in options menu.
+// d: Opens next view with more phone numbers from selected contact.
+// l: list_single_pane_t1_cp2
+// r: 3.2
+//
+#define qtn_vc_nbest_options_more       "More numbers"
+
+// d: Command in options menu.
+// d: Opens phonebook view with information of selected contact.
+// l: list_single_pane_t1_cp2
+// r: 3.2
+//
+#define qtn_vc_nbest_options_open_contact "Open contact"
+
+// d: Command in options menu.
+// d: Quits VoiceUi.
+// l: list_single_pane_t1_cp2
+// r: 3.2
+//
+#define qtn_vc_nbest_options_quit       "Quit"
+
+// d: Prompt played with Text to speech synthesizer.
+// d: %U is the name of the recognized contact.
+// d: For example "John Smith, select, other, cancel"
+// d: Select, Other and Cancel are commands that user can select.
+// d: Last character may not be any unspoken character like ? or , or .
+// l: none
+// r: 3.2
+//
+#define qan_vc_verification_query       "%U, select, other, cancel"
+
+// d: Command name shown in list query dialog.
+// d: Activates currently selected item.
+// l: list_single_pane_t1_cp2
+// r: 3.2
+//
+#define qtn_vc_verification_select      "Select"
+
+// d: Spoken command that user can say.
+// d: Text must match to "Select" in qan_vc_verification_query 
+// l: none
+// r: 3.2
+//
+#define qan_vc_verification_select      "Select"
+
+// d: Command name shown in list query dialog.
+// d: Moves selection to next item.
+// l: list_single_pane_t1_cp2
+// r: 3.2
+//
+#define qtn_vc_verification_other       "Other"
+
+// d: Spoken command that user can say.
+// d: Text must match to "Other" in qan_vc_verification_query 
+// l: none
+// r: 3.2
+//
+#define qan_vc_verification_other       "Other"
+
+// d: Command name shown in list query dialog.
+// d: Cancels Voice Dialing.
+// l: list_single_pane_t1_cp2
+// r: 3.2
+//
+#define qtn_vc_verification_cancel      "Cancel"
+
+// d: Spoken command that user can say.
+// d: Text must match to "Cancel" in qan_vc_verification_query 
+// l: none
+// r: 3.2
+//
+#define qan_vc_verification_cancel      "Cancel"
+
+// d: Title pane text for VoiceUi application
+// l: title_pane_t1
+// r: 5.0
+//
+#define qtn_sivc_title                  "Speech recognizer"
+
+// d: VoiceUi application name in Application shell grid layout
+// l: cell_app_pane_t1
+// r: 5.0
+//
+#define qtn_sivc_appl_grid              "Speech recognizer"
+
+// d: VoiceUi application name in Application shell list layout
+// l: list_single_large_graphic_pane_t1_cp2
+// r: 5.0
+//
+#define qtn_sivc_appl_list              "Speech recognizer"
+
+// d: String for Phone settings / Standby mode settings list
+// l: list_set_graphic_pane_t1
+// r: 5.0
+//
+#define qtn_sivc_shortcut_list          "Speech recognizer"
+
+// d: RSK/LSK string for idle shortcut
+// l: control_pane_t1/opt3
+// r: 5.0
+//
+#define qtn_sivc_idle_sk                "Speech recognizer"
+
+// d: MSK string for idle shortcut
+// l: control_pane_t3/opt3
+// r: 5.0
+//
+#define qtn_sivc_idle_msk               "Speech recognizer"

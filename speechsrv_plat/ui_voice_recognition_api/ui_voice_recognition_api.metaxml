@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<api id="a6f43bff71d50ea895ef6be5687f5318" dataversion="2.0">
+  <name>UI Voice Recognition API</name>
+  <description>The Recognition portion of UI</description>
+  <type>c++</type>
+  <collection>voiceui</collection>
+  <libs>
+    <lib name="VoiceUiRecognition.lib" />
+  </libs>
+  <release category="platform"/>
+  <attributes>
+     <!-- This indicates wether the api provedes separate html documentation -->
+     <!-- or is the additional documentation generated from headers. -->
+     <!-- If you are unsuere then the value is "no" -->
+     <htmldocprovided>no</htmldocprovided>
+     <adaptation>no</adaptation>
+  </attributes>
+</api>

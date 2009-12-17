@@ -1,0 +1,79 @@
+/*
+* Copyright (c) 2004-2007 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Project file for DevTTS
+*
+*/
+
+
+#include <platform_paths.hrh>
+#include "../../group/srsfbldvariant.hrh"
+
+TARGET          nssdevtts.dll
+TARGETTYPE      DLL
+UID             0x1000008D 0x101FF928 // UID: 270530865
+
+VENDORID        VID_DEFAULT
+
+// Define this if no TtpHwDevice is available
+//MACRO         DEVTTS_NO_TTP
+
+// Define this if audio buffer should be written to a file
+//MACRO         DEVTTS_AUDIOBUFFER_TO_FILE
+
+SOURCEPATH      ../src
+SOURCE          nssdevtts.cpp
+SOURCE          devttsalgorithmmanager.cpp
+SOURCE          devttsaudio.cpp
+SOURCE          devttscenrep.cpp
+
+START RESOURCE  nssdevtts.rss
+HEADER
+#include "data_caging_paths.hrh"
+TARGETPATH      RESOURCE_FILES_DIR
+END
+
+USERINCLUDE     ../inc
+USERINCLUDE     ../src
+USERINCLUDE     ../../group
+USERINCLUDE     ../../inc
+
+// This is a SYSTEMINCLUDE macro containing the middleware
+// layer specific include directories
+APP_LAYER_SYSTEMINCLUDE
+
+SYSTEMINCLUDE   /epoc32/include/libc
+SYSTEMINCLUDE   /epoc32/include/mmf
+SYSTEMINCLUDE   /epoc32/include/mmf/server
+SYSTEMINCLUDE   /epoc32/include/mmf/common
+
+// For RUBY_DEBUG
+USERINCLUDE     ../../rubydebug
+
+
+LIBRARY         audiooutputrouting.lib
+LIBRARY         euser.lib
+LIBRARY         mmfdevsound.lib
+LIBRARY         efsrv.lib
+LIBRARY         bafl.lib
+LIBRARY         nssttscommon.lib
+LIBRARY         centralrepository.lib
+LIBRARY         asrsttshwdevice.lib
+#ifndef DEVTTS_NO_TPP
+LIBRARY         asrsttphwdevice.lib
+#endif
+LIBRARY         asrsnlphwdevice.lib
+
+LANG            SC
+
+CAPABILITY      CAP_GENERAL_DLL

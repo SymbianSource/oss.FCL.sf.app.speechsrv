@@ -1,0 +1,941 @@
+/*
+* Copyright (c) 2002 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  This file contains all the resources for the Voice Commands UI.
+*
+*/
+
+
+//  RESOURCE IDENTIFIER
+NAME    VCUI // 4 letter ID
+
+//  INCLUDES
+#include <uikon.rh>
+#include <eikon.rsg>
+#include <eikon.rh>
+#include <appinfo.rh>
+#include <avkon.loc>
+#include <avkon.rsg>
+#include <avkon.rh>
+#include <avkon.mbg>
+#include <AvkonIcons.hrh>
+#include <data_caging_paths_strings.hrh>
+
+
+//#include <vcommand.mbg>
+
+
+#include "vcommand.hrh"
+#include "voiceuibldvariant.hrh"
+#include <vcommand.loc>
+#include <vuivoicerecognition.loc>
+
+//  RESOURCE DEFINITIONS 
+
+RESOURCE RSS_SIGNATURE { }
+
+RESOURCE TBUF { buf = r_vc_main_view_title; }
+
+RESOURCE EIK_APP_INFO
+    {
+    status_pane=r_vc_main_status_pane;
+    }
+
+//-----------------------------------------------------------------------------
+//   
+//    r_vc_main_status_pane
+//    Status pane for main view.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE STATUS_PANE_APP_MODEL r_vc_main_status_pane
+    {
+    layout = R_AVKON_STATUS_PANE_LAYOUT_USUAL;
+    panes =
+        {
+        SPANE_PANE
+            {
+            id = EEikStatusPaneUidTitle;
+            type = EAknCtTitlePane;
+            resource = r_vc_main_view_title;
+            }
+        };
+    }
+
+
+//-----------------------------------------------------------------------------
+//   
+//    r_vcommand_localisable_app_info
+//    menu captions and application icon
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE LOCALISABLE_APP_INFO r_vcommand_localisable_app_info
+    {
+    short_caption = qtn_apps_vcommand_grid;
+    caption_and_icon = 
+    CAPTION_AND_ICON_INFO
+        {
+        caption = qtn_apps_vcommand_list;
+
+#ifdef __SCALABLE_ICONS
+        number_of_icons = 1;
+        icon_file = APP_BITMAP_DIR"\\VCommand_aif.mif";
+#else   // __SCALABLE_ICONS
+        number_of_icons = 2;
+        icon_file = APP_BITMAP_DIR"\\VCommand_aif.mbm";
+#endif
+        };
+    }
+
+
+//-----------------------------------------------------------------------------
+//   
+//    r_vc_main_view_title
+//    Main view's title.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TITLE_PANE r_vc_main_view_title
+    {
+    txt = qtn_vc_title;
+    }
+
+
+//-----------------------------------------------------------------------------
+//   
+//    r_vc_settings_view_title
+//    Setting view's title.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TITLE_PANE r_vc_settings_view_title    
+    {
+    txt = qtn_vc_title_settings;
+    }
+
+
+//-----------------------------------------------------------------------------
+//   
+//    r_vcommand_main_view
+//    Applications main view.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_vcommand_main_view
+    {
+    menubar=r_vcommand_menubar;
+#ifdef __VCOMMAND_CONTROL_PANEL
+    cba=r_softkeys_options_back__select;
+#else
+    cba=r_softkeys_options_exit__select;
+#endif
+    }
+
+//-----------------------------------------------------------------------------
+//   
+//    r_vcommand_folder_view
+//    Folder view.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_vcommand_folder_view
+    {
+    menubar=r_vcommand_menubar;
+    cba=r_softkeys_options_back__select;    
+    }
+
+//-----------------------------------------------------------------------------
+//   
+//    r_vcommand_menubar
+//    Menubar for VCommand application
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_BAR r_vcommand_menubar
+    {
+    titles=
+        {
+        MENU_TITLE { menu_pane=r_vcommand_menu; txt="View"; }
+        };
+    }
+
+
+//-----------------------------------------------------------------------------
+//   
+//    r_vcommand_menu
+//    Menu for Main Applications view.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_vcommand_menu
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command = EVCCmdOpen;
+            txt = qtn_voice_open;
+            flags = EEikMenuItemAction;
+            },
+        MENU_ITEM
+            {
+            command = EVCCmdEdit;
+            txt = qtn_vc_edit;
+            flags = EEikMenuItemSpecific;
+            },
+        MENU_ITEM
+            {
+            command = EVCCmdPlayback;
+            txt = text_voice_replay;
+            flags = EEikMenuItemAction;
+            },
+        MENU_ITEM
+            {
+            command = EVCCmdDelete;
+            txt = qtn_vc_options_remove_user_text;
+            flags = EEikMenuItemSpecific;
+            },
+        MENU_ITEM
+            {
+            command = EVCCmdSettings;
+            txt = qtn_vc_settings;
+            },
+        MENU_ITEM
+            {
+            command = EVCCmdStartVui;
+            txt = qtn_vc_tutorial;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdHelp;
+            txt = qtn_options_help;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            txt = qtn_options_exit;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//    
+//  r__softkeys_options_exit__select
+//  Softkeys with an exit button on the right
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE CBA r_softkeys_options_exit__select
+    {
+    buttons =
+        {
+        CBA_BUTTON {id=EAknSoftkeyOptions; txt = text_softkey_option;},
+        CBA_BUTTON {id=EAknSoftkeyExit; txt = text_softkey_exit; },
+        AVKON_CBA_BUTTON{id=EAknSoftkeySelect; longpressid=0; txt= text_softkey_empty; }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//    
+//  r_softkeys_options_back__select
+//  Softkeys with a back button on the right
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE CBA r_softkeys_options_back__select
+    {
+    buttons =
+        {
+        CBA_BUTTON {id=EAknSoftkeyOptions; txt = text_softkey_option;},
+        CBA_BUTTON {id=EAknSoftkeyBack; txt = text_softkey_back; },
+        AVKON_CBA_BUTTON{id=EAknSoftkeySelect; longpressid=0; txt= text_softkey_empty; }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//    
+//  r_softkeys_quit   
+//  Softkey for quitting voice tag playback
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE CBA r_softkeys_quit
+    {
+    buttons = 
+        {
+        CBA_BUTTON {id=0;                    txt=""; },
+        CBA_BUTTON {id=EVCommandSoftKeyQuit; txt=text_softkey_quit;}
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//    
+//  r_playback_voice_command_dialog
+//  Playback voice command dialog
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_playback_voice_command_dialog
+    {
+    flags=EAknProgressNoteFlags | EEikDialogFlagWait;
+    buttons=R_AVKON_SOFTKEYS_QUIT;
+     items=
+        {
+        DLG_LINE
+            {
+            type=EAknCtNote;
+            id=EVoicePlaybackProgressNoteId;
+            control= AVKON_NOTE 
+                { 
+                    layout = EProgressLayout;
+                    imagefile = AVKON_ICON_FILE;
+                    imageid = EMbmAvkonQgn_note_voice;
+                    imagemask = EMbmAvkonQgn_note_voice_mask;   
+                };
+            }
+        };        
+    }
+
+
+//-----------------------------------------------------------------------------
+//    
+//  r_voice_command_too_short_dialog
+//  Voice tag too short dialog
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_voice_command_too_short_dialog
+    {
+    flags=EGeneralQueryFlags;
+    buttons=R_AVKON_SOFTKEYS_YES_NO__YES;
+    items=
+        {
+        DLG_LINE
+            {
+            type=EAknCtQuery;
+            id = EGeneralQuery;
+            control = AVKON_CONFIRMATION_QUERY 
+                { 
+                layout = EConfirmationLayout;
+                label = text_vc_voice_too_short;
+                bmpfile = AVKON_ICON_FILE;
+                bmpid = EMbmAvkonQgn_note_query;
+                bmpmask = EMbmAvkonQgn_note_query_mask; //0xffff;
+                };
+            }
+        };
+    }
+
+
+//-----------------------------------------------------------------------------
+//    
+//  r_remove_application_dialog
+//  Removes user added command from the list
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_remove_application_dialog
+    {
+    flags=EGeneralQueryFlags;
+    buttons=R_AVKON_SOFTKEYS_YES_NO__YES;
+    items=
+        {
+        DLG_LINE
+            {
+            type=EAknCtQuery;
+            id=EGeneralQuery;
+            control= AVKON_CONFIRMATION_QUERY  
+                { 
+                    layout = EConfirmationLayout;
+                    label = qtn_query_common_conf_remove;
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//    
+//  r_cannot_delete_note
+//  Information note for %U cannot be deleted
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AKN_NOTE_WRAPPER r_cannot_delete_note
+    {
+    resId = R_AKN_INFORMATION_NOTE_DIALOG_WAIT;
+    timeout = EAknInformationNoteTimeout;
+    tone = EAknNoteDialogWarningTone;
+    text = qtn_vc_info_cannot_del;
+    }
+
+//
+//-----------------------------------------------------------------------------
+//    
+//  r_vc_already_in_use
+//  Information note for name already in use
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AKN_NOTE_WRAPPER r_vc_already_in_use
+    {
+    resId = R_AKN_ERROR_NOTE_DIALOG_WAIT;
+    timeout = EAknErrorNoteTimeout;
+    tone = EAknNoteDialogErrorTone;
+    text = qtn_vc_error_in_use;
+    }
+
+//-----------------------------------------------------------------------------
+//    
+//  r_vc_reset_adaptation_dialog
+//  Resets user learnings
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_vc_reset_adaptation_dialog
+    {
+    flags=EGeneralQueryFlags;
+    buttons=R_AVKON_SOFTKEYS_YES_NO__YES;
+    items=
+        {
+        DLG_LINE
+            {
+            type=EAknCtQuery;
+            id=EGeneralQuery;
+            control= AVKON_CONFIRMATION_QUERY  
+                { 
+                    layout = EConfirmationLayout;
+                    label = qtn_vc_conf_query_reset;
+                };
+            }
+        };
+    }
+
+
+//-----------------------------------------------------------------------------
+//    
+//      r_vc_data_query
+//      Edit text data query.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_vc_data_query
+    {
+    flags = EEikDialogFlagWait |
+            EEikDialogFlagNoDrag;
+
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL__OK;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+            control = AVKON_DATA_QUERY 
+                { 
+                layout = EStaticSizeDataLayout;
+                label = qtn_vc_heading_edit;
+                control = EDWIN
+                    {
+                    flags = EEikEdwinNoLineOrParaBreaks |
+                            EEikEdwinResizable | 
+                            EEikEdwinAutoSelection;
+                    
+                    width = KMaxEditWidthLength;
+                    lines = 1;
+                    maxlength = KMaxEditableTextLength;
+                    numeric_keymap = EAknEditorStandardNumberModeKeymap;
+                    default_input_mode = EAknEditorTextInputMode;
+                    allowed_input_modes = EAknEditorTextInputMode |
+										  EAknEditorNumericInputMode;
+                    allowed_case_modes = EAknEditorAllCaseModes;
+                    };
+                };
+            }
+        };
+    }
+    
+//-----------------------------------------------------------------------------
+//    
+//      r_vc_data_query
+//      Edit text data query.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_vc_data_query_japanese
+    {
+    flags = EEikDialogFlagWait |
+            EEikDialogFlagNoDrag;
+
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL__OK;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+            control = AVKON_DATA_QUERY 
+                { 
+                layout = EStaticSizeDataLayout;
+                label = qtn_vc_heading_edit;
+                control = EDWIN
+                    {
+                    flags = EEikEdwinNoLineOrParaBreaks |
+                            EEikEdwinResizable | 
+                            EEikEdwinAutoSelection;
+                    
+                    width = KMaxEditWidthLength;
+                    lines = 1;
+                    maxlength = KMaxEditableTextLength;
+                    numeric_keymap = EAknEditorStandardNumberModeKeymap;
+                    default_input_mode = EAknEditorKatakanaInputMode;
+                    allowed_input_modes = EAknEditorNumericInputMode |
+										  EAknEditorKatakanaInputMode |
+										  EAknEditorHalfWidthTextInputMode;
+                    allowed_case_modes = EAknEditorTextCase;
+                    };
+                };
+            }
+        };
+    }
+    
+// -----------------------------------------------------------------------------
+//
+// r_vc_wait_note
+// Wait note "Opening.." for main view and profiles view.
+//
+// -----------------------------------------------------------------------------
+//
+
+RESOURCE DIALOG r_vc_wait_note
+    {
+    flags   = EAknWaitNoteFlags;
+    buttons = R_AVKON_SOFTKEYS_EMPTY;
+    items   =
+        {
+        DLG_LINE
+            {
+            type    = EAknCtNote;
+            id      = EVCWaitNote;
+            control = AVKON_NOTE
+                {
+                layout          = EWaitLayout;
+                singular_label  = "";
+                animation       = R_QGN_GRAF_WAIT_BAR_ANIM;
+                };
+            }
+        };
+    }
+    
+
+//-----------------------------------------------------------------------------
+//   
+//    r_vc_settings_menubar
+//    Menubar visible in the setting view
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_BAR r_vc_settings_menubar
+    {
+    titles = 
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_vc_settings_menu;
+            }
+        };
+    }
+
+
+//-----------------------------------------------------------------------------
+//   
+//    r_vc_setting_list_view
+//    Settings view
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_vc_setting_list_view
+    {
+    menubar = r_vc_settings_menubar;
+
+    cba = r_softkeys_options_back__change;
+    }
+
+//-----------------------------------------------------------------------------
+//    
+//  r_softkeys_options_back__change
+//  Softkeys for main view
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE CBA r_softkeys_options_back__change
+    {
+    buttons =
+        {
+        CBA_BUTTON {id=EAknSoftkeyOptions; txt = text_softkey_option;},
+        CBA_BUTTON {id=EAknSoftkeyBack; txt = text_softkey_back; },
+        AVKON_CBA_BUTTON{id=EVCCmdChange; longpressid=0; txt = text_softkey_empty; }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_vc_setting_item_list
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_ITEM_LIST r_vc_setting_item_list
+    {
+    items =
+        {
+        // Synthesizer
+        AVKON_SETTING_ITEM
+            {
+            identifier = EVCSynthesizerItem;
+            setting_page_resource = r_vc_setting_synthesizer;
+            associated_resource = r_vc_setting_synthesizer_texts;
+            name = qtn_vc_set_synt;
+            },
+        // Volume control
+		AVKON_SETTING_ITEM
+            {
+            identifier = EVCVolumeItem;
+            setting_page_resource = r_vc_setting_volume;
+            name = qtn_vc_set_volume;
+            },
+        // Rejection sensitivity
+        AVKON_SETTING_ITEM
+            {
+            identifier = EVCRejectionItem;
+            setting_page_resource = r_vc_setting_rejection;
+            name = qtn_vc_set_rejection;
+            },
+        // Command verification
+        AVKON_SETTING_ITEM
+            {
+            identifier = EVCVerificationItem;
+            setting_page_resource = r_vc_setting_verification;
+            associated_resource = r_vc_setting_verification_texts;
+            name = qtn_vc_set_verification;
+            },
+        // User learnings
+        AVKON_SETTING_ITEM
+            {
+            identifier = EVCResetItem;
+            name = qtn_vc_set_reset;
+            }
+   		};
+	}
+
+
+//-----------------------------------------------------------------------------
+//
+//    r_vc_setting_syntheriser
+//    Synthesizer setting page
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_PAGE r_vc_setting_synthesizer
+    {
+    label = qtn_vc_set_synt2;
+    softkey_resource = R_AVKON_SOFTKEYS_OK_CANCEL__OK;
+    type =  EAknCtPopupSettingList;
+    editor_resource_id = r_vc_setting_listbox;
+    }
+
+
+//-----------------------------------------------------------------------------
+//
+//    r_vc_setting_synthesizer_texts
+//    Defines list for setting page
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AVKON_POPUP_SETTING_TEXTS r_vc_setting_synthesizer_texts
+    {
+    setting_texts_resource = r_vc_setting_synthesizer_text_array;
+    popped_up_texts_resource = r_binary_switch_on_off_texts_popped_up;
+    }
+
+
+//-----------------------------------------------------------------------------
+//
+//    r_vc_setting_synthesizer_text_array
+//    Choices for synthesizer setting
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_vc_setting_synthesizer_text_array
+    {
+    items =
+        {
+        AVKON_ENUMERATED_TEXT
+            {
+            value = ESynthesizerOn;
+            text = qtn_vc_set_on;
+            },
+        AVKON_ENUMERATED_TEXT
+            {
+            value = ESynthesizerOff;
+            text = qtn_vc_set_off;
+            }
+        };
+    }
+    
+RESOURCE ARRAY r_binary_switch_on_off_texts_popped_up
+    {
+    items =
+        {
+        LBUF { txt = qtn_vc_set_on; },
+        LBUF { txt = qtn_vc_set_off; }
+        };
+    }
+
+
+//-----------------------------------------------------------------------------
+//
+//    r_vc_setting_listbox
+//    Listbox of setting page
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE POPUP_SETTING_LIST r_vc_setting_listbox
+    {
+    flags = 0;
+    }
+
+
+// -----------------------------------------------------------------------------
+//
+// r_vc_setting_volume
+// Volume setting page
+//
+// -----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_PAGE r_vc_setting_volume
+    {
+    label = qtn_vc_set_volume2;
+    softkey_resource = R_AVKON_SOFTKEYS_OK_CANCEL__OK;
+    type = EAknCtVolumeControl;
+    editor_resource_id = r_vc_setting_volume_control;
+    }
+    
+    
+// -----------------------------------------------------------------------------
+//
+// r_vc_setting_volume_control
+// ?description
+//
+// -----------------------------------------------------------------------------
+//
+RESOURCE VOLUME r_vc_setting_volume_control
+    {
+    flags = ESettingsVolumeControl;
+    value = 7; // Has to have a value, otherwise crashes
+    }
+    
+
+// -----------------------------------------------------------------------------
+//
+// r_vc_setting_rejection
+// Rejection setting page
+//
+// -----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_PAGE r_vc_setting_rejection
+    {
+    number = EAknSettingPageNoOrdinalDisplayed;
+    label = qtn_vc_set_rejection2;
+    softkey_resource = R_AVKON_SOFTKEYS_OK_CANCEL__OK;
+    type = EAknCtSlider;
+    editor_resource_id = r_vc_setting_rejection_control;
+    }
+    
+    
+//-----------------------------------------------------------------------------
+//    
+//  r_vc_setting_rejection_control    
+//  Slider resource setting page.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE SLIDER r_vc_setting_rejection_control 
+    {
+    layout = EAknSettingsItemSliderLayout;
+    minvalue = 0;
+    maxvalue = 10;
+    step = 1;
+    valuetype = EAknSliderValueBareFigure;
+    minlabel = qtn_vc_rejection_low;
+    maxlabel = qtn_vc_rejection_high;
+    }
+
+
+//-----------------------------------------------------------------------------
+//
+//    r_vc_setting_verification
+//    Verification setting page
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_PAGE r_vc_setting_verification
+    {
+    label = qtn_vc_set_verification2;
+    softkey_resource = R_AVKON_SOFTKEYS_OK_CANCEL__OK;
+    type =  EAknCtPopupSettingList;
+    editor_resource_id = r_vc_setting_listbox;
+    }
+
+
+//-----------------------------------------------------------------------------
+//
+//    r_vc_setting_verification_texts
+//    Defines list for setting page
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AVKON_POPUP_SETTING_TEXTS r_vc_setting_verification_texts
+    {
+    setting_texts_resource = r_vc_setting_verification_text_array;
+    }
+
+
+//-----------------------------------------------------------------------------
+//
+//    r_vc_setting_verification_text_array
+//    Choices for verification setting
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_vc_setting_verification_text_array
+    {
+    items =
+        {
+        AVKON_ENUMERATED_TEXT
+            {
+            value = EAutomatic;
+            text = qtn_vc_set_verification_automatic;
+            },
+        AVKON_ENUMERATED_TEXT
+            {
+            value = EManual;
+            text = qtn_vc_set_verification_manual;
+            },
+        AVKON_ENUMERATED_TEXT
+            {
+            value = EVoice;
+            text = qtn_vc_set_verification_voice;
+            }
+        };
+    }
+
+
+//-----------------------------------------------------------------------------
+//   
+//    r_vc_settings_menu
+//    Menu visible in the setting view
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_vc_settings_menu
+    {
+    items = 
+        {
+        MENU_ITEM
+            { 
+            command = EVCMenuCmdChange;
+            txt = qtn_options_change;
+            flags = EEikMenuItemAction;
+            },
+        MENU_ITEM
+            { 
+            command = EVCCmdReset;
+            txt = qtn_vc_options_reset;
+            flags = EEikMenuItemAction;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdHelp;
+            txt = qtn_options_help;
+            },
+        MENU_ITEM 
+            {
+            command = EAknCmdExit;
+            txt = qtn_options_exit;
+            }
+        };
+    }
+
+
+RESOURCE TBUF   r_text_voice_system_error                   { buf = text_voice_system_error; }
+RESOURCE TBUF   r_qtn_vc_delete_command                     { buf = qtn_query_common_conf_remove; }
+RESOURCE TBUF   r_qtn_vc_playing                            { buf = text_vc_voice_replaying; }
+RESOURCE TBUF   r_qtn_vc_open                               { buf = qtn_msk_open; }
+RESOURCE TBUF   r_qtn_vc_edit                               { buf = qtn_msk_edit; }
+RESOURCE TBUF   r_text_call_in_progress                     { buf = text_call_in_progress; }
+RESOURCE TBUF   r_qtn_vc_wait_note_removing                 { buf = qtn_vc_wait_note_removing; }
+RESOURCE TBUF   r_qtn_vc_wait_note_creating_command         { buf = qtn_vc_wait_note_creating_command; }
+RESOURCE TBUF   r_qtn_vc_info_note_synthesizer_on           { buf = qtn_vc_info_note_synthesizer_on; }
+RESOURCE TBUF   r_qtn_vc_info_note_voice_verification_off   { buf = qtn_vc_info_note_voice_verification_off; }
+RESOURCE TBUF   r_qtn_vc_error_note_invalid_text            { buf = qtn_vc_error_note_invalid_text; }
+
+// Command editing error texts
+RESOURCE TBUF   r_qtn_vc_info_cannot_del                    { buf = qtn_vc_info_cannot_del; }
+RESOURCE TBUF   r_qtn_vc_error_short                        { buf = qtn_vc_error_short; }
+RESOURCE TBUF   r_qtn_vc_error_in_use                       { buf = qtn_vc_error_in_use; }
+
+// Settings
+RESOURCE TBUF   r_qtn_vc_set_synt                           { buf = qtn_vc_set_synt; }
+RESOURCE TBUF   r_qtn_vc_set_synt2                          { buf = qtn_vc_set_synt2; }
+RESOURCE TBUF   r_qtn_vc_set_volume                         { buf = qtn_vc_set_volume; }
+RESOURCE TBUF   r_qtn_vc_set_rejection                      { buf = qtn_vc_set_rejection; }
+RESOURCE TBUF   r_qtn_vc_set_verification                   { buf = qtn_vc_set_verification; }
+RESOURCE TBUF   r_qtn_vc_set_verification2                  { buf = qtn_vc_set_verification2; }
+RESOURCE TBUF   r_qtn_vc_set_reset                          { buf = qtn_vc_set_reset; }
+RESOURCE TBUF   r_qtn_vc_set_on                             { buf = qtn_vc_set_on; }
+RESOURCE TBUF   r_qtn_vc_set_off                            { buf = qtn_vc_set_off; }
+RESOURCE TBUF   r_qtn_vc_set_verification_automatic         { buf = qtn_vc_set_verification_automatic; }
+RESOURCE TBUF   r_qtn_vc_set_verification_manual            { buf = qtn_vc_set_verification_manual; }
+RESOURCE TBUF   r_qtn_vc_set_verification_voice             { buf = qtn_vc_set_verification_voice; }
+RESOURCE TBUF   r_qtn_vc_conf_note_reset                    { buf = qtn_vc_conf_note_reset; }
+RESOURCE TBUF	  r_qtn_set_pers_voicecmd			                { buf = qtn_set_pers_voicecmd; }
+RESOURCE TBUF	  r_qtn_vc_set_msk_change                     { buf = qtn_msk_change; }
+RESOURCE TBUF	  r_qtn_vc_set_msk_reset                      { buf = qtn_vc_msk_reset; }
+
+//----------------------------------------------------
+//    
+//  r_not_enough_memory_dialog
+//  "No memory" dialog
+//
+//----------------------------------------------------
+//
+RESOURCE DIALOG r_not_enough_memory_dialog
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_EMPTY;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+            control = AVKON_CONFIRMATION_QUERY 
+                { 
+                layout = EConfirmationLayout;
+                label = qtn_memlo_not_enough_memory;
+                };
+            }
+        };
+    }    
+
+// End of File

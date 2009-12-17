@@ -1,0 +1,42 @@
+/*
+* Copyright (c) 2006-2007 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  IBY file for VoiceUI
+*
+*/
+
+
+#ifndef VOICEUI_IBY_
+#define VOICEUI_IBY_
+
+#ifdef __SIND
+
+SCALABLE_IMAGE(BITMAP_DIR,BITMAP_DIR,voiceui)
+
+file=ABI_DIR\BUILD_DIR\voiceUiRecognition.dll                               SHARED_LIB_DIR\voiceUiRecognition.dll
+
+// Voiceui app
+S60_APP_EXE(vuivoicerecognition)
+S60_APP_AIF_ICONS(vuivoicerecognition)
+S60_APP_AIF_RSC(vuivoicerecognition)
+
+data=ABI_DIR\BUILD_DIR\z\system\sounds\digital\NameDiallerStartTone.wav     System\sounds\digital\NameDiallerStartTone.wav
+data=ABI_DIR\BUILD_DIR\z\system\sounds\digital\namediallerconfirmtone.wav   System\sounds\digital\namediallerconfirmtone.wav
+
+// PbkInfoView
+ECOM_PLUGIN(aiwpbkinfoviewprovider.dll, 10281c81.rsc)
+file=ABI_DIR\BUILD_DIR\pbkinfoview.dll      		SHARED_LIB_DIR\pbkinfoview.dll
+
+#endif // __SIND
+
+#endif

@@ -1,0 +1,26 @@
+/*
+* Copyright (c) 2006 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Variant-specific IBY file for SRSF
+*
+*/
+
+
+#ifndef __SRSF_VARIANT_IBY__
+#define __SRSF_VARIANT_IBY__
+
+#ifdef FF_INCLUDE_CHINESE_DICTIONARY
+data=ZPRIVATE\102818E7\dictvoicecommands.xml        private\102818E7\dictvoicecommands.xml
+#endif // FF_INCLUDE_CHINESE_DICTIONARY
+
+#endif //__SRSF_VARIANT_IBY__

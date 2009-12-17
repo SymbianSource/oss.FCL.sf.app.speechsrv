@@ -1,0 +1,146 @@
+EXPORTS
+	_ZN12CNssVASDBMgr11InitializeLEv @ 1 NONAME
+	_ZN12CNssVASDBMgr13GetContextMgrEv @ 2 NONAME
+	_ZN12CNssVASDBMgr19ResetFactoryModelsLEP28MNssResetFactoryModelsClient @ 3 NONAME
+	_ZN12CNssVASDBMgr20GetTagSelectNotifierEv @ 4 NONAME
+	_ZN12CNssVASDBMgr21GetVASDBEventNotifierEv @ 5 NONAME
+	_ZN12CNssVASDBMgr4NewLEv @ 6 NONAME
+	_ZN12CNssVASDBMgr5NewLCEv @ 7 NONAME
+	_ZN12CNssVASDBMgr9GetTagMgrEv @ 8 NONAME
+	_ZN14CNssVASDBEvent3TagEv @ 9 NONAME
+	_ZN14CNssVASDBEvent4TypeEv @ 10 NONAME
+	_ZN15CVasVPbkHandler10FieldTypeLEv @ 11 NONAME
+	_ZN15CVasVPbkHandler10FindFieldLEP7MNssTag @ 12 NONAME
+	_ZN15CVasVPbkHandler10FindFieldLEi @ 13 NONAME
+	_ZN15CVasVPbkHandler11InitializeLEv @ 14 NONAME
+	_ZN15CVasVPbkHandler12FindContactLEP7MNssTag @ 15 NONAME
+	_ZN15CVasVPbkHandler12FindContactLEli @ 16 NONAME
+	_ZN15CVasVPbkHandler13CloseContactLEi @ 17 NONAME
+	_ZN15CVasVPbkHandler13IsFieldEmptyLEv @ 18 NONAME
+	_ZN15CVasVPbkHandler16ContactIdArrayLCEv @ 19 NONAME
+	_ZN15CVasVPbkHandler17FindContactFieldLEP7MNssTag @ 20 NONAME
+	_ZN15CVasVPbkHandler20ChangeVoiceTagFieldLEi @ 21 NONAME
+	_ZN15CVasVPbkHandler22CreateContactObserverLEP19MVasContactObserver @ 22 NONAME
+	_ZN15CVasVPbkHandler24FindDefaultContactFieldLEi @ 23 NONAME
+	_ZN15CVasVPbkHandler4NewLEv @ 24 NONAME
+	_ZN15CVasVPbkHandler5TextLEv @ 25 NONAME
+	_ZN15CVasVPbkHandler6LabelLEv @ 26 NONAME
+	_ZN15CVasVPbkHandler8FieldIdLEv @ 27 NONAME
+	_ZN15CVasVPbkHandler9CompressLEv @ 28 NONAME
+	_ZN15CVasVPbkHandlerD0Ev @ 29 NONAME
+	_ZN15CVasVPbkHandlerD1Ev @ 30 NONAME
+	_ZN15CVasVPbkHandlerD2Ev @ 31 NONAME
+	_ZN18CNssAdaptationItem4NewLEP22CNssRecognitionHandlerP18CSIClientResultSet @ 32 NONAME
+	_ZN18CNssAdaptationItem6AdaptLEP26MNssAdaptationEventHandlerR7MNssTag @ 33 NONAME
+	_ZN18CNssAdaptationItem6AdaptLEP26MNssAdaptationEventHandleri @ 34 NONAME
+	_ZN18CNssAdaptationItem7DisableEv @ 35 NONAME
+	_ZN18CNssAdaptationItemD0Ev @ 36 NONAME
+	_ZN18CNssAdaptationItemD1Ev @ 37 NONAME
+	_ZN18CNssAdaptationItemD2Ev @ 38 NONAME
+	_ZN22CNssTrainingParameters12SetLanguagesEP6RArrayI9TLanguageE @ 39 NONAME
+	_ZN22CNssTrainingParameters12SetSeparatorE5TChar @ 40 NONAME
+	_ZN22CNssTrainingParameters17SetSindeLanguagesERK6RArrayIS0_I9TLanguageEE @ 41 NONAME
+	_ZN22CNssTrainingParameters4NewLEv @ 42 NONAME
+	_ZN22CNssTrainingParameters5NewLCEv @ 43 NONAME
+	_ZN22CNssTrainingParametersD0Ev @ 44 NONAME
+	_ZN22CNssTrainingParametersD1Ev @ 45 NONAME
+	_ZN22CNssTrainingParametersD2Ev @ 46 NONAME
+	_ZN29CNssRecognitionHandlerBuilder11InitializeLEv @ 47 NONAME
+	_ZN29CNssRecognitionHandlerBuilder21GetRecognitionHandlerEv @ 48 NONAME
+	_ZN29CNssRecognitionHandlerBuilder4NewLEv @ 49 NONAME
+	_ZN29CNssRecognitionHandlerBuilder5NewLCEv @ 50 NONAME
+	_ZN29CNssSelectNotificationBuilder11InitializeLEv @ 51 NONAME
+	_ZN29CNssSelectNotificationBuilder24GetTagSelectNotificationEv @ 52 NONAME
+	_ZN29CNssSelectNotificationBuilder4NewLEv @ 53 NONAME
+	_ZN29CNssSelectNotificationBuilder5NewLCEv @ 54 NONAME
+	_ZNK22CNssTrainingParameters15SindeLanguagesLEv @ 55 NONAME
+	_ZNK22CNssTrainingParameters9LanguagesEv @ 56 NONAME
+	_ZNK22CNssTrainingParameters9SeparatorEv @ 57 NONAME
+	_ZTI10CNssTagMgr @ 58 NONAME ; #<TI>#
+	_ZTI11CNssContext @ 59 NONAME ; #<TI>#
+	_ZTI12CNssVASDBMgr @ 60 NONAME ; #<TI>#
+	_ZTI14CNssContextMgr @ 61 NONAME ; #<TI>#
+	_ZTI14CNssSpeechItem @ 62 NONAME ; #<TI>#
+	_ZTI14CNssVASDBEvent @ 63 NONAME ; #<TI>#
+	_ZTI15CNssVASDatabase @ 64 NONAME ; #<TI>#
+	_ZTI15CVasVPbkHandler @ 65 NONAME ; #<TI>#
+	_ZTI16CNssTagReference @ 66 NONAME ; #<TI>#
+	_ZTI16CNssVASDBBuilder @ 67 NONAME ; #<TI>#
+	_ZTI17CNssTagSelectData @ 68 NONAME ; #<TI>#
+	_ZTI18CNssAdaptationItem @ 69 NONAME ; #<TI>#
+	_ZTI18CNssContextBuilder @ 70 NONAME ; #<TI>#
+	_ZTI20CNssContextSrsPortal @ 71 NONAME ; #<TI>#
+	_ZTI21CNssSpeechItemBuilder @ 72 NONAME ; #<TI>#
+	_ZTI21CNssSpeechItemTrainer @ 73 NONAME ; #<TI>#
+	_ZTI21CNssVASDBEventMonitor @ 74 NONAME ; #<TI>#
+	_ZTI22CNssRecognitionHandler @ 75 NONAME ; #<TI>#
+	_ZTI22CNssTrainingParameters @ 76 NONAME ; #<TI>#
+	_ZTI22CNssVASDBEventNotifier @ 77 NONAME ; #<TI>#
+	_ZTI23CNssDBTagSelectNotifier @ 78 NONAME ; #<TI>#
+	_ZTI23CNssSpeechItemSrsPortal @ 79 NONAME ; #<TI>#
+	_ZTI25CNssTagSelectNotification @ 80 NONAME ; #<TI>#
+	_ZTI29CNssRecognitionHandlerBuilder @ 81 NONAME ; #<TI>#
+	_ZTI29CNssSelectNotificationBuilder @ 82 NONAME ; #<TI>#
+	_ZTI7CNssRRD @ 83 NONAME ; #<TI>#
+	_ZTI7CNssTag @ 84 NONAME ; #<TI>#
+	_ZTV10CNssTagMgr @ 85 NONAME ; #<VT>#
+	_ZTV11CNssContext @ 86 NONAME ; #<VT>#
+	_ZTV12CNssVASDBMgr @ 87 NONAME ; #<VT>#
+	_ZTV14CNssContextMgr @ 88 NONAME ; #<VT>#
+	_ZTV14CNssSpeechItem @ 89 NONAME ; #<VT>#
+	_ZTV14CNssVASDBEvent @ 90 NONAME ; #<VT>#
+	_ZTV15CNssVASDatabase @ 91 NONAME ; #<VT>#
+	_ZTV15CVasVPbkHandler @ 92 NONAME ; #<VT>#
+	_ZTV16CNssTagReference @ 93 NONAME ; #<VT>#
+	_ZTV16CNssVASDBBuilder @ 94 NONAME ; #<VT>#
+	_ZTV17CNssTagSelectData @ 95 NONAME ; #<VT>#
+	_ZTV18CNssAdaptationItem @ 96 NONAME ; #<VT>#
+	_ZTV18CNssContextBuilder @ 97 NONAME ; #<VT>#
+	_ZTV20CNssContextSrsPortal @ 98 NONAME ; #<VT>#
+	_ZTV21CNssSpeechItemBuilder @ 99 NONAME ; #<VT>#
+	_ZTV21CNssSpeechItemTrainer @ 100 NONAME ; #<VT>#
+	_ZTV21CNssVASDBEventMonitor @ 101 NONAME ; #<VT>#
+	_ZTV22CNssRecognitionHandler @ 102 NONAME ; #<VT>#
+	_ZTV22CNssTrainingParameters @ 103 NONAME ; #<VT>#
+	_ZTV22CNssVASDBEventNotifier @ 104 NONAME ; #<VT>#
+	_ZTV23CNssDBTagSelectNotifier @ 105 NONAME ; #<VT>#
+	_ZTV23CNssSpeechItemSrsPortal @ 106 NONAME ; #<VT>#
+	_ZTV25CNssTagSelectNotification @ 107 NONAME ; #<VT>#
+	_ZTV29CNssRecognitionHandlerBuilder @ 108 NONAME ; #<VT>#
+	_ZTV29CNssSelectNotificationBuilder @ 109 NONAME ; #<VT>#
+	_ZTV7CNssRRD @ 110 NONAME ; #<VT>#
+	_ZTV7CNssTag @ 111 NONAME ; #<VT>#
+	_ZThn12_N15CVasVPbkHandlerD0Ev @ 112 NONAME ; #<thunk>#
+	_ZThn12_N15CVasVPbkHandlerD1Ev @ 113 NONAME ; #<thunk>#
+	_ZThn16_N15CVasVPbkHandlerD0Ev @ 114 NONAME ; #<thunk>#
+	_ZThn16_N15CVasVPbkHandlerD1Ev @ 115 NONAME ; #<thunk>#
+	_ZThn24_N15CVasVPbkHandlerD0Ev @ 116 NONAME ; #<thunk>#
+	_ZThn24_N15CVasVPbkHandlerD1Ev @ 117 NONAME ; #<thunk>#
+	_ZThn28_N15CVasVPbkHandlerD0Ev @ 118 NONAME ; #<thunk>#
+	_ZThn28_N15CVasVPbkHandlerD1Ev @ 119 NONAME ; #<thunk>#
+	_ZThn4_N15CVasVPbkHandler10FieldTypeLEv @ 120 NONAME ; #<thunk>#
+	_ZThn4_N15CVasVPbkHandler10FindFieldLEP7MNssTag @ 121 NONAME ; #<thunk>#
+	_ZThn4_N15CVasVPbkHandler10FindFieldLEi @ 122 NONAME ; #<thunk>#
+	_ZThn4_N15CVasVPbkHandler11InitializeLEv @ 123 NONAME ; #<thunk>#
+	_ZThn4_N15CVasVPbkHandler12FindContactLEP7MNssTag @ 124 NONAME ; #<thunk>#
+	_ZThn4_N15CVasVPbkHandler12FindContactLEli @ 125 NONAME ; #<thunk>#
+	_ZThn4_N15CVasVPbkHandler13CloseContactLEi @ 126 NONAME ; #<thunk>#
+	_ZThn4_N15CVasVPbkHandler13IsFieldEmptyLEv @ 127 NONAME ; #<thunk>#
+	_ZThn4_N15CVasVPbkHandler16ContactIdArrayLCEv @ 128 NONAME ; #<thunk>#
+	_ZThn4_N15CVasVPbkHandler17FindContactFieldLEP7MNssTag @ 129 NONAME ; #<thunk>#
+	_ZThn4_N15CVasVPbkHandler20ChangeVoiceTagFieldLEi @ 130 NONAME ; #<thunk>#
+	_ZThn4_N15CVasVPbkHandler22CreateContactObserverLEP19MVasContactObserver @ 131 NONAME ; #<thunk>#
+	_ZThn4_N15CVasVPbkHandler24FindDefaultContactFieldLEi @ 132 NONAME ; #<thunk>#
+	_ZThn4_N15CVasVPbkHandler5TextLEv @ 133 NONAME ; #<thunk>#
+	_ZThn4_N15CVasVPbkHandler6LabelLEv @ 134 NONAME ; #<thunk>#
+	_ZThn4_N15CVasVPbkHandler8FieldIdLEv @ 135 NONAME ; #<thunk>#
+	_ZThn4_N15CVasVPbkHandler9CompressLEv @ 136 NONAME ; #<thunk>#
+	_ZThn4_N15CVasVPbkHandlerD0Ev @ 137 NONAME ; #<thunk>#
+	_ZThn4_N15CVasVPbkHandlerD1Ev @ 138 NONAME ; #<thunk>#
+	_ZThn4_N18CNssAdaptationItem6AdaptLEP26MNssAdaptationEventHandlerR7MNssTag @ 139 NONAME ; #<thunk>#
+	_ZThn4_N18CNssAdaptationItem6AdaptLEP26MNssAdaptationEventHandleri @ 140 NONAME ; #<thunk>#
+	_ZThn4_N18CNssAdaptationItemD0Ev @ 141 NONAME ; #<thunk>#
+	_ZThn4_N18CNssAdaptationItemD1Ev @ 142 NONAME ; #<thunk>#
+	_ZThn8_N15CVasVPbkHandlerD0Ev @ 143 NONAME ; #<thunk>#
+	_ZThn8_N15CVasVPbkHandlerD1Ev @ 144 NONAME ; #<thunk>#
+
