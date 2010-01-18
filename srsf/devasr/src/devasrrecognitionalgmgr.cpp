@@ -753,7 +753,7 @@ void CRecognitionAlgMgr::HandleLoadLexicon()
         }
     
     // Do not load empty lexicon
-    if ( iSILexicon->Count() == 0 )
+    if ( iSILexicon && iSILexicon->Count() == 0 )
         {
         iSILexicon = NULL;
         iRecAlgMgrObserver->LoadLexiconComplete( KErrArgument );
@@ -844,7 +844,7 @@ void CRecognitionAlgMgr::HandleLoadModels()
         error = KErrArgument;
         }
 
-    if ( iSIModelBank->Count() < 1 )
+    if ( iSIModelBank && iSIModelBank->Count() < 1 )
         {
         iSIModelBank = NULL;
         iRecAlgMgrObserver->LoadModelsComplete( KErrArgument );

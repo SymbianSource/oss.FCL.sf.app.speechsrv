@@ -18,7 +18,7 @@
 
 // INCLUDE FILES
 #include <e32std.h>
-#include <NssVasCContactHandler.h>
+#include <nssvasccontacthandler.h>
 #include <eikstart.h>
 #include "nssvoiceuipluginhandler.h"
 #include "vcmanagerapp.h"

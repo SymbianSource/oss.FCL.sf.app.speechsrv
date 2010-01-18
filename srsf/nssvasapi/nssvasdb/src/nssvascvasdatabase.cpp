@@ -403,6 +403,8 @@ TInt CNssVASDatabase::SaveTags( RPointerArray<CNssTag>* aTagArray )
         
     RArray<TInt> tagIdArray;
     
+    ASSERT( aTagArray );
+    
     TInt arrayCount = aTagArray ? aTagArray->Count() : 0;
     if( arrayCount == 0 )
         {

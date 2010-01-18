@@ -514,7 +514,7 @@ void CContactResultsState::FillDialContextBufferL( MNssTag* aTag, TDes& aBuffer 
     
     DataStorage().PbkHandler()->FindContactFieldL( aTag );
                            
-    TBufC<KMaxPhoneNumberLength> phoneNumber = DataStorage().PbkHandler()->TextL();
+    TBufC<KMaxFieldLength> phoneNumber = DataStorage().PbkHandler()->TextL();
     type.Set( GetContactIconType( DataStorage().PbkHandler()->FieldTypeL() ) );
 
     aBuffer.Zero();

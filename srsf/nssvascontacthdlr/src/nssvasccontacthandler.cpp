@@ -18,7 +18,7 @@
 
 
 // INCLUDE FILES
-#include "NssVasCContactHandler.h"
+#include "nssvasccontacthandler.h"
 #include "nssvasccontacthandlerimpl.h"
 #include "rubydebug.h"
 

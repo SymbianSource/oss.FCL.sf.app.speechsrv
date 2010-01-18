@@ -27,6 +27,7 @@ const TInt KKRecogInterval = 125000;
 
 const TInt KMaxPhoneNumberLength = 48;  // taken from Phonebook
 const TInt KMaxNameLength = 110;    // taken from Phonebook
+const TInt KMaxFieldLength = 150;    // taken from Phonebook, EMail address length
 
 const TInt KSindMaxResults = 6;    // The number of voice tags needed for the N-Best List.
 

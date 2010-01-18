@@ -315,6 +315,7 @@ void CGlobalProgressDialog::SetSkinIds( TAknsItemID aImageId, TInt aImageBitmapI
         // Don't set blank icon
         if ( aIconId != KAknsIIDQgnStatBtBlank )
             {
+            ASSERT ( iconId < KSindNumberOfIcons );
             TRAP_IGNORE(
                 AknsUtils::CreateIconL( skin, aIconId, bitmap, mask, fileName,
                                         KBitmapId[ iconId ], KMaskId[ iconId ] );

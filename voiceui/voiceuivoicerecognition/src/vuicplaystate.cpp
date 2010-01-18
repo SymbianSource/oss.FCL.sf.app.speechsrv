@@ -167,7 +167,7 @@ void CPlayState::ExecuteL()
 
     if ( iInternalState == ENotStarted )
         {
-        TBuf<KMaxPhoneNumberLength> phoneNumber;        
+        TBuf<KMaxFieldLength> phoneNumber;        
         TFieldType fieldType;        
         TName name;
         

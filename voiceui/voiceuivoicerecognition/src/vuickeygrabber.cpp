@@ -88,6 +88,9 @@ void CKeyGrabber::RunL()
         iWsSession.EventReady( &iStatus );
         SetActive();
         
+        //fix for ESLI-7YSA3 we terminate Vcommand when received EKeyNull.
+        if ( event.Key()->iCode == EKeyNull )
+        	iKeyObserver->HandleKeypressL( event.Key()->iCode );
         if ( event.Key()->iCode == EKeyCamera ||
              event.Key()->iCode == EKeyPoC ||
              event.Key()->iCode == EKeyPowerOff ||

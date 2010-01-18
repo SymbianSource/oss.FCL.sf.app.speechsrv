@@ -3343,10 +3343,13 @@ void CSIControllerPlugin::RunL()
                 RUBY_DEBUG1( "CSIControllerPlugin::RunL. KAddVoiceTags. HandleLoadGrammarL Left with error [%d]", iResult );
 
                 // Clean up the iTrainArrays
-                iTrainArrays->ResetAndDestroy();
-                iTrainArrays->Close();
-                delete iTrainArrays;
-                iTrainArrays = NULL;
+                if ( iTrainArrays )
+                    {
+                    iTrainArrays->ResetAndDestroy();
+                    iTrainArrays->Close();
+                    delete iTrainArrays;
+                    iTrainArrays = NULL;
+                    }
                 // Send error message
                 iControllerIf.SendSrsEvent( KUidAsrEventAddVoiceTags, iResult );
                 }

@@ -18,11 +18,11 @@
 #ifndef VCCONTROLPANELPLUGIN_H
 #define VCCONTROLPANELPLUGIN_H
 
-#include <GSPluginInterface.h>
+#include <gsplugininterface.h>
 #include <aknview.h>
-#include <ConeResLoader.h>
+#include <coneresloader.h>
 #include <eikclb.h>
-#include <AknServerApp.h>
+#include <aknserverapp.h>
 #include "vccontrolpanelpluginuids.hrh"
 
 class CAknNavigationDecorator;
