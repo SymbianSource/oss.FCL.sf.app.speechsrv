@@ -98,6 +98,10 @@ void CGlobalNote::DisplayGlobalNoteL( TGlobalNoteState aState )
                                 EMbmAvkonQgn_note_error_mask );
             break;
             
+        case ENoMemory:
+            DisplayGlobalNoteL( EAknGlobalErrorNote, R_QTN_VC_MEMORY_LOW,
+                                SecondaryDisplay::ECmdVoiceNoNote );
+            break;
         default:
             RUBY_ERROR0( "CGlobalNote::DisplayGlobalNoteL - Invalid state" );
             break;

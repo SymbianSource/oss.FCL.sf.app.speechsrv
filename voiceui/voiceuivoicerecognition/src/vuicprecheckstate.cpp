@@ -21,6 +21,9 @@
 #include <coreapplicationuisdomainpskeys.h>
 #include <ctsydomainpskeys.h>
 #include <PSVariables.h>        // Property values
+#include <apgwgnam.h> 
+#include <coemain.h>
+#include <coedef.h>
 
 #include "vuicstate.h"
 #include "vuicprecheckstate.h"
@@ -34,6 +37,8 @@
 
 #include "rubydebug.h"
     
+//fix for the error ECWG-7WDA9G
+const TUid KAknnfysrvUid = {0x10281ef2};
 // -----------------------------------------------------------------------------
 // CPrecheckState::NewL
 // Two-phased constructor.
@@ -109,6 +114,12 @@ void CPrecheckState::ExecuteL()
         {
         DataStorage().SetDeviceLockMode( EFalse );
         }
+		
+	// Check if lockphone dialog is active
+    if ( IsLockPhoneDialogL() )
+    	{
+    	error = KErrGeneral;
+    	}
 
     // Check if phone or video call is currently active
     TInt state = CheckCallState();
@@ -193,6 +204,24 @@ TBool CPrecheckState::IsVideoCall()
     return callType == EPSCTsyCallTypeH324Multimedia;
     }    
 
+// -----------------------------------------------------------------------------
+// CPrecheckState::IsLockPhoneDialogL
+// -----------------------------------------------------------------------------
+//
+TBool CPrecheckState::IsLockPhoneDialogL()
+	{
+	//fix for the error ECWG-7WDA9G,if we found the first windows is "lockphone" dialog we will terminate the App.
+	TBool islock = EFalse;
+	RWsSession &ws = CCoeEnv::Static()->WsSession();
+	TInt wgId = ws.GetFocusWindowGroup(); 
+	CApaWindowGroupName *WindowsGroupName = CApaWindowGroupName::NewL( ws, wgId );
+	if ( ( KAknnfysrvUid == WindowsGroupName->AppUid() ) && 
+	      ( ws.GetWindowGroupOrdinalPriority( wgId ) >= ECoeWinPriorityAlwaysAtFront ) )
+	    {
+	    islock = ETrue;
+	    }
+	return islock;
+	}
     
 // End of File
 

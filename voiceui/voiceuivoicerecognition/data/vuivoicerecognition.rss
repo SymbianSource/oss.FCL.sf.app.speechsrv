@@ -403,6 +403,8 @@ RESOURCE TBUF   r_qan_vc_verification_select    { buf = qan_vc_verification_sele
 RESOURCE TBUF   r_qan_vc_verification_other     { buf = qan_vc_verification_other; }
 RESOURCE TBUF   r_qan_vc_verification_cancel    { buf = qan_vc_verification_cancel; }
 
+RESOURCE TBUF   r_qtn_vc_memory_low             { buf = qtn_err_eikon_mem; }
+
 // SIND Demo
 RESOURCE TBUF   r_text_sind_tutorial_page_intro_title        { buf = qtn_vc_tutorial_page1_title; }
 RESOURCE TBUF   r_text_sind_tutorial_page_intro_text_up      { buf = qtn_vc_tutorial_page1_text_up; }

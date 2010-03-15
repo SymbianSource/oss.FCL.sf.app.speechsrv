@@ -81,6 +81,12 @@ NONSHARABLE_CLASS( CPrecheckState ) : public CState
         * @return ETrue if video call else EFalse
         */
         TBool IsVideoCall();
+        
+        /**
+        * Checks if "lockphone" dialog is active
+        * @return ETrue if lockphone dialog else EFalse
+        */
+        TBool IsLockPhoneDialogL();
                 
     private:    // Data
 

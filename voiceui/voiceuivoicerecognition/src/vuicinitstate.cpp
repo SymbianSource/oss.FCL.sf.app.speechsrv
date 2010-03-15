@@ -109,6 +109,10 @@ void CInitState::HandleEventL( TInt aEvent )
             nextState = CErrorState::NewL( DataStorage(), UiModel(), aEvent );
             break;
             
+        case KErrNoMemory:
+            nextState = CErrorState::NewL( DataStorage(), UiModel(), aEvent );
+            break;
+            
         case ELongKeypress:
         case EEndCallKeypress:
         
@@ -149,16 +153,23 @@ void CInitState::ExecuteL()
 #endif // __WINS__  
         // Initialize phonebook handler
         TRAPD( error, DataStorage().PbkHandler()->InitializeL() );
-        if ( error != KErrAlreadyExists )
+        if ( error == KErrNoMemory )
             {
-            User::LeaveIfError( error );
+            HandleEventL ( KErrNoMemory );
             }
-        
-        // Initialize start tone
-        DataStorage().TonePlayer()->InitToneL( EAvkonSIDNameDiallerStartTone );
-
-        // Initialize recognition
-        RecognizeInitL();
+        else
+            {
+            if ( error != KErrAlreadyExists )
+                {
+                User::LeaveIfError( error );
+                }
+            
+            // Initialize start tone
+            DataStorage().TonePlayer()->InitToneL( EAvkonSIDNameDiallerStartTone );
+    
+            // Initialize recognition
+            RecognizeInitL();
+            }
         }
     else
         {

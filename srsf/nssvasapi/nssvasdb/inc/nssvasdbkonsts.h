@@ -42,8 +42,8 @@ _LIT( KTagIdCol, "tagid" );
 
 const TInt KNssVasDbContextName          =50;
 const TInt KNssVasDbRRDText              =64;
-const TInt KNssVasDbSpeechItemName       =102;
-const TInt KNssVasDbTagName              =102;
+const TInt KNssVasDbSpeechItemName       =128;
+const TInt KNssVasDbTagName              =128;
 const TInt KNssStatementLength           =300; // can be really long, but 300 can be enough
 const TInt KNssMaxSQLLength              =KNssVasDbContextName + KNssStatementLength;
 const TInt KNssMaxNumLength              =10;

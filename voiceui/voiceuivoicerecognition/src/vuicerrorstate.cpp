@@ -207,6 +207,11 @@ CGlobalNote::TGlobalNoteState CErrorState::NoteType()
             type = CGlobalNote::ESystemError;
             break;
             }
+        case KErrNoMemory:
+            {
+            type = CGlobalNote::ENoMemory;
+            break;
+            }
         default:
             {
             type = CGlobalNote::ENotRecognizedPermanent;

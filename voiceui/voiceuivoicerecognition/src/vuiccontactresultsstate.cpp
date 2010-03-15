@@ -486,7 +486,7 @@ CDesC16ArrayFlat* CContactResultsState::CreateItemsArrayL()
     CDesC16ArrayFlat* items = new ( ELeave ) CDesC16ArrayFlat( KSindMaxResults );
     CleanupStack::PushL( items );
 
-    TName buffer;
+    TFullName buffer;
     
     for ( TInt i = 0; i < count; ++i )
         {

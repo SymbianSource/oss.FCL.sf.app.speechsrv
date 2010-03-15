@@ -53,7 +53,8 @@ NONSHARABLE_CLASS( CGlobalNote ) : public CBase
             ESystemError,
             ENoTag,
             ENoMatchPermanent,
-            ENotRecognizedPermanent
+            ENotRecognizedPermanent,
+            ENoMemory
             };
                                 
     public:     // New functions
