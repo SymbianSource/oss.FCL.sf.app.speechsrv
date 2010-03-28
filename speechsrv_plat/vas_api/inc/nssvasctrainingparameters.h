@@ -126,7 +126,7 @@ class CNssTrainingParameters: public CBase
         /**
         * Destroys SIND language array.
         */
-        void CNssTrainingParameters::ResetSindeLanguageArray();
+        void ResetSindeLanguageArray();
 
     private:
 

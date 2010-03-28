@@ -529,7 +529,7 @@ private:
         * @since 3.1
         * @param aMessage Message containing the information of the request.
         */
-        void CSISpeechRecognitionCustomCommandParser::DoAddSindeVoiceTagL( TMMFMessage& aMessage );
+        void DoAddSindeVoiceTagL( TMMFMessage& aMessage );
 
         /**
         * Adds an array of voice tags.
@@ -537,7 +537,7 @@ private:
         * @since 3.1
         * @param aMessage Message containing the information of the request.
         */
-        void CSISpeechRecognitionCustomCommandParser::DoAddSindeVoiceTagsL( TMMFMessage& aMessage );
+        void DoAddSindeVoiceTagsL( TMMFMessage& aMessage );
 
         /**
         * Pre-starts sampling

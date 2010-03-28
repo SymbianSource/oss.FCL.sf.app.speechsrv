@@ -64,9 +64,9 @@ class CVCGenericContainer : public CCoeControl,
          * @param aMenubar a menubar
          * @param aView a pointer to view class
          */
-        CVCGenericContainer::CVCGenericContainer( CEikMenuBar* aMenuBar,
-                                                  CVCModel& aModel, 
-                                                  CVCGenericView& aView );
+        CVCGenericContainer( CEikMenuBar* aMenuBar,
+                             CVCModel& aModel, 
+                             CVCGenericView& aView );
 
         /**
          * Symbian default constructor.
