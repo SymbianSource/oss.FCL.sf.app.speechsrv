@@ -75,7 +75,7 @@
 #include <aiwdialdata.h>
 #include <AiwDialDataTypes.h>
 #include <AiwServiceHandler.h>
-#include <GSLauncher.h>
+#include <gslauncher.h>
 
 
 // Cover UI start

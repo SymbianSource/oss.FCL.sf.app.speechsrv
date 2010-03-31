@@ -21,7 +21,7 @@
 #include <akntitle.h>
 #include <f32file.h>
 #include <apgwgnam.h>
-#include <aknsgcc.h>
+#include <AknSgcc.h>
 #include <nssvasccontacthandler.h>
 #include <data_caging_path_literals.hrh>
 #include "nssvoiceuipluginhandler.h"

@@ -19,7 +19,7 @@
 #include "vuipprofileobserverplugin.h"
 
 #include <implementationproxy.h>
-#include <NssVuipf.hrh>
+#include <nssvuipf.hrh>
 
 
 const TImplementationProxy ImplementationTable[] = 

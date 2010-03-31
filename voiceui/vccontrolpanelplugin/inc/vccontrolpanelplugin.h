@@ -20,9 +20,9 @@
 
 #include <gsplugininterface.h>
 #include <aknview.h>
-#include <coneresloader.h>
+#include <ConeResLoader.h>
 #include <eikclb.h>
-#include <aknserverapp.h>
+#include <AknServerApp.h>
 #include "vccontrolpanelpluginuids.hrh"
 
 class CAknNavigationDecorator;

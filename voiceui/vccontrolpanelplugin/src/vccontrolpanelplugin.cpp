@@ -19,11 +19,11 @@
 // GS Framework and this plugin.
 #include    "vccontrolpanelplugin.h"
 #include    <vccontrolpanelplugin.mbg>
-#include    <GSParentPlugin.h>
-#include    <GSCommon.hrh>
+#include    <gsparentplugin.h>
+#include    <gscommon.hrh>
 #include    <vccontrolpanelpluginrsc.rsg>
-#include    <GSPrivatePluginProviderIds.h>
-#include    <GSFWViewUIDs.h>
+#include    <gsprivatepluginproviderids.h>
+#include    <gsfwviewuids.h>
 #include    <AknsUtils.h> 
 
 // General services.

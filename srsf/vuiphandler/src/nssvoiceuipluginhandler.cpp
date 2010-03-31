@@ -18,7 +18,7 @@
 
 // INCLUDE FILES
 #include <ecom.h>
-#include <NssVuipf.hrh>
+#include <nssvuipf.hrh>
 #include "nssvoiceuipluginhandler.h" 
 #include "rubydebug.h"
 #include <nssvoicestatus.h>
