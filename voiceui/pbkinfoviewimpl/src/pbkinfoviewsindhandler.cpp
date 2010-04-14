@@ -33,7 +33,25 @@
 
 #include "rubydebug.h"
 
-
+// ----------------------------------------------------------------------------
+// RemapCommand
+// Remap command to the correct order.
+// @param aCommandId 
+// ----------------------------------------------------------------------------
+static TInt RemapCommand( TInt aCommandId )
+    {
+    switch (aCommandId)
+        {
+        case EEmailCommand:
+            return EMessageCommand;
+        case EVoipCommand:
+            return EEmailCommand;
+        case EMessageCommand:
+            return EVoipCommand;
+        default:
+            return aCommandId;
+        }
+    }
 // ================= MEMBER FUNCTIONS =======================
 
 inline CPbkInfoViewSindHandler::CPbkInfoViewSindHandler()
@@ -485,6 +503,16 @@ TInt CPbkInfoViewSindHandler::IconIdL( TInt aIndex )
     }
 
 // ----------------------------------------------------------------------------
+// CPbkInfoViewSindHandler::FieldIdL
+// Returns an field id for the contact field.
+// @return TInt the field id
+// ----------------------------------------------------------------------------
+TInt CPbkInfoViewSindHandler::FieldIdL( )
+	{
+	return iPbkHandler->FieldIdL();
+	}
+
+// ----------------------------------------------------------------------------
 // CPbkInfoViewSindHandler::CreateVoiceTagListL
 // Fetches voice tag list from vas db.
 // @param aContactId Contact id for the contact whose voice tags are
@@ -812,26 +840,29 @@ TInt CPbkInfoViewSindHandler::CompareL( const MNssTag& aTag1, const MNssTag& aTa
         return 1;
         }
             
-    // compare the two neighbors
-    TInt ret = field1->Compare( *field2 );
-    
-    // Sorting for normal call, sms, and multimedia msg fields
-    if ( ret == 0)
-        {
-        TInt actionId1 = tag1.RRD()->IntArray()->At( KVasExtensionRrdLocation );
-        TInt actionId2 = tag2.RRD()->IntArray()->At( KVasExtensionRrdLocation );
-        
-        if ( actionId1 != actionId2 )
-            {
-            if ( actionId1 < actionId2 )
-                {
-                return -1;
-                }
-            return 1;
-            }
-        }
-        
-    return ret;
+//    // compare the two neighbors
+//    TInt ret = field1->Compare( *field2 );
+//    
+//    // Sorting for normal call, sms, and multimedia msg fields
+//    if ( ret == 0)
+//        {
+//        TInt actionId1 = tag1.RRD()->IntArray()->At( KVasExtensionRrdLocation );
+//        TInt actionId2 = tag2.RRD()->IntArray()->At( KVasExtensionRrdLocation );
+//        
+//        if ( actionId1 != actionId2 )
+//            {
+//            if ( actionId1 < actionId2 )
+//                {
+//                return -1;
+//                }
+//            return 1;
+//            }
+//        }
+//        
+//    return ret;
+    TInt cmdId1 = tag1.RRD()->IntArray()->At( KVasExtensionCommandRrdLocation );
+    TInt cmdId2 = tag2.RRD()->IntArray()->At( KVasExtensionCommandRrdLocation );
+    return ( RemapCommand( cmdId1 ) - RemapCommand( cmdId2 ));    
     }
 
 // -----------------------------------------------------------------------------

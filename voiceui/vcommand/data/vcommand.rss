@@ -275,7 +275,8 @@ RESOURCE CBA r_softkeys_quit
     buttons = 
         {
         CBA_BUTTON {id=0;                    txt=""; },
-        CBA_BUTTON {id=EVCommandSoftKeyQuit; txt=text_softkey_quit;}
+        //CBA_BUTTON {id=EVCommandSoftKeyQuit; txt=text_softkey_quit;}
+        CBA_BUTTON {id=EAknSoftkeyDone; txt=text_softkey_quit;}
         };
     }
 

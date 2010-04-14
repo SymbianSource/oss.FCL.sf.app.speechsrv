@@ -38,6 +38,29 @@
 #include <aknnotewrappers.h>  // For information note
 #include <StringLoader.h>
 
+#include <MPbk2FieldPropertyArray.h>
+#include <VPbkEng.rsg>
+#include <CPbk2StoreConfiguration.h>
+#include <CVPbkContactStoreUriArray.h>
+#include <CVPbkContactManager.h>
+#include <VPbkContactStoreUris.h>
+#include <CVPbkFieldTypeRefsList.h>	
+#include <CPbk2IconFactory.h>
+#include <Pbk2FieldPropertiesFactory.h>
+#include <MPbk2FieldProperty.h>
+#include <TVPbkContactStoreUriPtr.h>
+#include <PbkFields.hrh>
+
+const TUint KFieldIds[] = 
+    {
+    R_VPBK_FIELD_TYPE_LANDPHONEGEN,    
+    R_VPBK_FIELD_TYPE_MOBILEPHONEGEN,  
+    R_VPBK_FIELD_TYPE_VIDEONUMBERGEN,
+    R_VPBK_FIELD_TYPE_VOIPGEN,
+    R_VPBK_FIELD_TYPE_EMAILGEN,
+    R_VPBK_FIELD_TYPE_IMPP
+    };
+
 // ============================ MEMBER FUNCTIONS ===============================
 
 // -----------------------------------------------------------------------------
@@ -447,45 +470,13 @@ void CPbkInfoViewDialog::PreLayoutDynInitL()
 	CleanupStack::PopAndDestroy( des );
     
     // Set icons
-	TFileName bitmapName;
-	CPbkInfoViewResHandler::GetBitmapFileName( bitmapName );
+
 	CArrayPtr<CGulIcon>* icons = new (ELeave) CAknIconArray( KDefaultArraySize );
 	CleanupStack::PushL( icons );
 	
-	// NOTE: icons must be appended in the order of enumeration 
-	// TInfoViewDialogIconIndex
-	icons->AppendL( TDialogUtil::CreateIconL(
-	                KAknsIIDQgnPropNrtypMobile, bitmapName,
-	                EMbmAvkonQgn_prop_nrtyp_mobile, 
-	                EMbmAvkonQgn_prop_nrtyp_mobile_mask ) );
-	
-	icons->AppendL( TDialogUtil::CreateIconL( 
-	                KAknsIIDQgnPropNrtypPhone, bitmapName,
-	                EMbmAvkonQgn_prop_nrtyp_phone,
-	                EMbmAvkonQgn_prop_nrtyp_phone_mask ) );
-	                
-	icons->AppendL( TDialogUtil::CreateIconL( 
-	                KAknsIIDQgnPropFolderVideo, bitmapName,
-	                EMbmAvkonQgn_prop_nrtyp_video,
-	                EMbmAvkonQgn_prop_nrtyp_video_mask ) );
-	                
-	icons->AppendL( TDialogUtil::CreateIconL(
-	                KAknsIIDQgnPropMceEmailTitle, bitmapName,
-	                EMbmAvkonQgn_prop_nrtyp_email,
-	                EMbmAvkonQgn_prop_nrtyp_email_mask ) );
-	                
-	icons->AppendL( TDialogUtil::CreateIconL(
-	                KAknsIIDQgnIndiVoipCallActive, bitmapName,
-	                EMbmAvkonQgn_prop_nrtyp_voip,
-	                EMbmAvkonQgn_prop_nrtyp_voip_mask ) );
-	
-	icons->AppendL( TDialogUtil::CreateIconL(
-	                KAknsIIDQgnLogoEmpty, bitmapName,
-	                EMbmAvkonQgn_prop_empty,
-	                EMbmAvkonQgn_prop_empty_mask ) );
-	
-	iListBox->ItemDrawer()->FormattedCellData()->SetIconArrayL( icons );
-	CleanupStack::Pop( icons );
+	CreateFieldIconsL( icons );
+    
+    CleanupStack::Pop( icons );
 
 	CreateListBoxItemsL();
 	
@@ -543,7 +534,14 @@ TInt CPbkInfoViewDialog::IconIndex( TInt aIconId )
 		    iconIndex = EIconIndexEmail;
 		    break;
 		case EPbkqgn_prop_nrtyp_voip:
-		    iconIndex = EIconIndexVoip;
+			if ( isXsp )
+				{
+				iconIndex = EIconIndexXsp;
+				}
+			else
+				{
+				iconIndex = EIconIndexVoip;
+				}
 		    break;
 		default:
 		    iconIndex = EIconIndexEmpty;    
@@ -576,6 +574,11 @@ void CPbkInfoViewDialog::CreateListBoxItemsL()
 		HBufC* firstLine = iSindHandler->VoiceTagLabelLC( i );
 		// Phone number, email address, etc...
 		HBufC* secondLine = iSindHandler->VoiceTagValueL( i ).AllocLC();
+        isXsp = EFalse;
+		if( iSindHandler->FieldIdL() == EPbkFieldIdXsp )
+			{
+			isXsp = ETrue;
+			}
 		TInt iconIndex = IconIndex( iSindHandler->IconIdL( i ) );
 
 		TPtr ptr1 = firstLine->Des();
@@ -702,4 +705,59 @@ void CPbkInfoViewDialog::ShowInformationNoteL( TInt aResourceId )
     CleanupStack::PopAndDestroy( noteText );
 	}
 
+void CPbkInfoViewDialog::CreateFieldIconsL(CArrayPtr<CGulIcon>* aIconArray)
+	{
+    CPbk2StoreConfiguration* configuration = CPbk2StoreConfiguration::NewL();
+    CleanupStack::PushL(configuration);
+	    
+    CVPbkContactStoreUriArray* uriArray = configuration->CurrentConfigurationL();
+    CleanupStack::PushL( uriArray ); 
+    if ( uriArray->IsIncluded(VPbkContactStoreUris::DefaultCntDbUri()) == EFalse )
+        {
+        uriArray->AppendL( VPbkContactStoreUris::DefaultCntDbUri() );	
+	    }    
+    
+    CVPbkContactManager* contactManager = CVPbkContactManager::NewL(*uriArray);
+    CleanupStack::PushL( contactManager );
+	    
+    TInt arraySize = sizeof KFieldIds / sizeof KFieldIds[0];
+    TInt count =0;
+    const MVPbkFieldType* fieldType = NULL;
+    CGulIcon* icon = NULL;
+			
+    CVPbkFieldTypeRefsList* fieldTypeList = CVPbkFieldTypeRefsList::NewL();
+    CleanupStack::PushL( fieldTypeList );
+    
+    for( count = 0; count < arraySize;  ++count )
+        {
+        fieldType = contactManager->FieldTypes().Find( KFieldIds[count] );
+        fieldTypeList->AppendL(*fieldType);	
+        }
+			
+    MPbk2FieldPropertyArray* propertyArray = Pbk2FieldPropertiesFactory::CreateLC(*fieldTypeList,
+                                                 &contactManager->FsSession() );
+    
+    CPbk2IconFactory* pbk2IconFactory = CPbk2IconFactory::NewL();
+    CleanupStack::PushL( pbk2IconFactory );
+    
+    for( count = 0; count < propertyArray->Count(); ++ count)
+        {
+        icon = pbk2IconFactory->CreateIconL( propertyArray->At(count).IconId());
+        aIconArray->AppendL(icon);
+        }
+
+	iListBox->ItemDrawer()->FormattedCellData()->SetIconArrayL( aIconArray );
+	
+    //Destroy: configuration,uriArray,contactManager
+    //fieldTypeList,propertyArray,pbk2IconFactory
+    CleanupStack::PopAndDestroy( 6,configuration ); 	
+    
+	TFileName bitmapName;
+	CPbkInfoViewResHandler::GetBitmapFileName( bitmapName );
+	
+	aIconArray->AppendL( TDialogUtil::CreateIconL(
+	                KAknsIIDQgnLogoEmpty, bitmapName,
+	                EMbmAvkonQgn_prop_empty,
+	                EMbmAvkonQgn_prop_empty_mask ) );
+	}
 //  End of File  

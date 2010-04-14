@@ -1076,6 +1076,12 @@ TBool CVasVPbkHandler::AcceptDefaultField( MVPbkStoreContactField& aField, TInt 
         {
         accept = EFalse;
         }
+    else if ( aCommandType == EVoipCommand &&
+              aField.BestMatchingFieldType()->FieldTypeResId() != R_VPBK_FIELD_TYPE_MOBILEPHONEGEN &&
+              aField.BestMatchingFieldType()->FieldTypeResId() != R_VPBK_FIELD_TYPE_LANDPHONEGEN )
+        {
+        accept = EFalse;
+        }
         
     RUBY_DEBUG0( "CVasVPbkHandler::AcceptDefaultField EXIT" );
         

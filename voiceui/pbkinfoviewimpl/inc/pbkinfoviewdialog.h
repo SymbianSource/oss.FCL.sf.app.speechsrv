@@ -39,16 +39,17 @@
 */
 NONSHARABLE_CLASS (CPbkInfoViewDialog) : public CAknDialog, public MEikListBoxObserver
 	{
-	enum TInfoViewDialogIconIndex
+    enum TInfoViewDialogIconIndex
 		{
-	    EIconIndexMobile = 0,
-        EIconIndexPhone,
+		EIconIndexPhone = 0,
+		EIconIndexMobile,
 	    EIconIndexVideo,
-	    EIconIndexEmail,
 	    EIconIndexVoip,
+	    EIconIndexEmail,
+	    EIconIndexXsp,
 	    EIconIndexEmpty
-		};
-	
+		};	
+
     public:// Constructors and destructor
 
         /**
@@ -203,6 +204,11 @@ NONSHARABLE_CLASS (CPbkInfoViewDialog) : public CAknDialog, public MEikListBoxOb
 	    */		
 		void CallInProgressNoteL();
 		
+		/**
+	    * Create field icons
+	    */			
+		void CreateFieldIconsL(CArrayPtr<CGulIcon>* aIconArray);
+		
 	private: // from MEikListBoxObserver
         /**
         * From MEikListBoxObserver, called by framework.
@@ -243,6 +249,9 @@ NONSHARABLE_CLASS (CPbkInfoViewDialog) : public CAknDialog, public MEikListBoxOb
 		
 		// SIND handler
 		CPbkInfoViewSindHandler* iSindHandler;
+		
+		// Xsp flag
+		TBool isXsp;
     };
 
 #endif    // PBKINFOVIEWDIALOG_H

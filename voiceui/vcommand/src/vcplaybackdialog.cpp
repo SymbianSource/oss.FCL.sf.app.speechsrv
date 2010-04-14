@@ -142,7 +142,8 @@ TBool CVCPlaybackDialog::OkToExitL( TInt aButtonId )
         	break;
             }
             
-        case EVCommandSoftKeyQuit:
+        //case EVCommandSoftKeyQuit:
+        case EAknSoftkeyDone:
             {
             iOkToExit = ETrue;
 

@@ -120,6 +120,12 @@ class CPbkInfoViewSindHandler : public CBase,
          * @return TInt the icon id
          */
          TInt IconIdL( TInt aIndex );
+		 
+         /**
+         * Returns an field id
+		 * @return TInt the field id
+         */
+         TInt FieldIdL();
          
          /**
          * Calls CompareL and catches possible leaves
