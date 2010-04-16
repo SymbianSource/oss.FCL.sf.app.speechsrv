@@ -1,7 +1,0 @@
-EXPORTS
-	??0CVoiceRecognitionDialog@@QAE@XZ @ 1 NONAME ; CVoiceRecognitionDialog::CVoiceRecognitionDialog(void)
-	??1CVoiceRecognitionDialog@@UAE@XZ @ 2 NONAME ; CVoiceRecognitionDialog::~CVoiceRecognitionDialog(void)
-	?ExecuteLD@CVoiceRecognitionDialog@@QAEHXZ @ 3 NONAME ; int CVoiceRecognitionDialog::ExecuteLD(void)
-	?NewL@CVoiceRecog@@SAPAV1@XZ @ 4 NONAME ; class CVoiceRecog * CVoiceRecog::NewL(void)
-	?NewLC@CVoiceRecog@@SAPAV1@XZ @ 5 NONAME ; class CVoiceRecog * CVoiceRecog::NewLC(void)
-

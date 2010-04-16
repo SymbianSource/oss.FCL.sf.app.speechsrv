@@ -1,4 +1,0 @@
-EXPORTS
-	?NewL@CPbkInfoViewApi@@SAPAV1@XZ @ 1 NONAME ; class CPbkInfoViewApi * CPbkInfoViewApi::NewL(void)
-	?ShowInfoViewL@CPbkInfoViewApi@@QAEXH@Z @ 2 NONAME ; void CPbkInfoViewApi::ShowInfoViewL(int)
-

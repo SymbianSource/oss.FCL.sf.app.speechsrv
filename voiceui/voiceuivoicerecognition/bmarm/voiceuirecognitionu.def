@@ -1,8 +1,0 @@
-EXPORTS
-	E32Dll__F10TDllReason @ 1 NONAME R3UNUSED ; E32Dll(TDllReason)
-	ExecuteLD__23CVoiceRecognitionDialog @ 2 NONAME R3UNUSED ; CVoiceRecognitionDialog::ExecuteLD(void)
-	NewLC__11CVoiceRecog @ 3 NONAME R3UNUSED ; CVoiceRecog::NewLC(void)
-	NewL__11CVoiceRecog @ 4 NONAME R3UNUSED ; CVoiceRecog::NewL(void)
-	"_._23CVoiceRecognitionDialog" @ 5 NONAME R3UNUSED ; CVoiceRecognitionDialog::~CVoiceRecognitionDialog(void)
-	__23CVoiceRecognitionDialog @ 6 NONAME R3UNUSED ; CVoiceRecognitionDialog::CVoiceRecognitionDialog(void)
-

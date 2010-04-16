@@ -1,8 +1,0 @@
-EXPORTS
-	_ZN24CNssVoiceUIPluginHandler4NewLEv @ 1 NONAME
-	_ZN24CNssVoiceUIPluginHandlerD0Ev @ 2 NONAME
-	_ZN24CNssVoiceUIPluginHandlerD1Ev @ 3 NONAME
-	_ZN24CNssVoiceUIPluginHandlerD2Ev @ 4 NONAME
-	_ZTI24CNssVoiceUIPluginHandler @ 5 NONAME ; #<TI>#
-	_ZTV24CNssVoiceUIPluginHandler @ 6 NONAME ; #<VT>#
-

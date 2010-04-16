@@ -1,4 +1,0 @@
-EXPORTS
-	??1CNssVoiceUIPluginHandler@@UAE@XZ @ 1 NONAME ; public: virtual __thiscall CNssVoiceUIPluginHandler::~CNssVoiceUIPluginHandler(void)
-	?NewL@CNssVoiceUIPluginHandler@@SAPAV1@XZ @ 2 NONAME ; public: static class CNssVoiceUIPluginHandler * __cdecl CNssVoiceUIPluginHandler::NewL(void)
-

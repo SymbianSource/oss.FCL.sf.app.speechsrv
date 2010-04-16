@@ -1,8 +1,0 @@
-EXPORTS
-	??0CVoiceRecognitionDialog@@QAE@XZ @ 1 NONAME ; public: __thiscall CVoiceRecognitionDialog::CVoiceRecognitionDialog(void)
-	??1CVoiceRecognitionDialog@@UAE@XZ @ 2 NONAME ; public: virtual __thiscall CVoiceRecognitionDialog::~CVoiceRecognitionDialog(void)
-	?E32Dll@@YAHW4TDllReason@@@Z @ 3 NONAME ; int __cdecl E32Dll(enum TDllReason)
-	?ExecuteLD@CVoiceRecognitionDialog@@QAEHXZ @ 4 NONAME ; public: int __thiscall CVoiceRecognitionDialog::ExecuteLD(void)
-	?NewL@CVoiceRecog@@SAPAV1@XZ @ 5 NONAME ; public: static class CVoiceRecog * __cdecl CVoiceRecog::NewL(void)
-	?NewLC@CVoiceRecog@@SAPAV1@XZ @ 6 NONAME ; public: static class CVoiceRecog * __cdecl CVoiceRecog::NewLC(void)
-
