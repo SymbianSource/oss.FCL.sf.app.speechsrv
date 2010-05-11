@@ -137,3 +137,6 @@ LIBRARY         ccaclient.lib
 LIBRARY         estor.lib
 LIBRARY         etel3rdparty.lib
 
+LIBRARY         VPbkEng.lib
+LIBRARY         ecom.lib 
+

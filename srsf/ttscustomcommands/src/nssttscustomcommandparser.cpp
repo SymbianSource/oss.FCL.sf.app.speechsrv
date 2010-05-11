@@ -427,10 +427,11 @@ void CTtsCustomCommandParser::DoGetSupportedLanguagesCountL( TMMFMessage& aMessa
     TInt* languageCount = intPtrPckg();
     
     RArray<TLanguage> languages;
+    CleanupClosePushL( languages ); 
     iImplementor.MttscGetSupportedLanguagesL( languages );
     *languageCount = languages.Count();
 
-    languages.Close();
+    CleanupStack::PopAndDestroy();
     }
     
 // -----------------------------------------------------------------------------
@@ -484,9 +485,10 @@ void CTtsCustomCommandParser::DoGetSupportedVoicesCountL( TMMFMessage& aMessage 
     TInt* voiceCount = intPtrPckg();
     
     RArray<TTtsStyle> voices;
+    CleanupClosePushL( voices ); 
     iImplementor.MttscGetSupportedVoicesL( language, voices );
     *voiceCount = voices.Count();
 
-    voices.Close();    
+    CleanupStack::PopAndDestroy( );
     }
 // End of File

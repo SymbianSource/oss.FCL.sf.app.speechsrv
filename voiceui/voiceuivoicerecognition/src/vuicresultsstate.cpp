@@ -42,6 +42,14 @@
 #include "vuicttsplayer.h"
 #include "vuivoiceicondefs.h"
 
+#include <CVPbkContactStoreUriArray.h>
+#include <CVPbkContactManager.h>
+#include <VPbkContactStoreUris.h>
+#include <TVPbkContactStoreUriPtr.h>
+#include <CVPbkContactIdConverter.h>
+#include <MVPbkContactStore.h>
+#include <MVPbkContactStoreList.h>
+
 #include "rubydebug.h"
 
 _LIT( KTab, "\t" );
@@ -731,16 +739,39 @@ void CResultsState::OpenPhonebookContactL()
     CleanupClosePushL( *parameter );
 
     parameter->SetConnectionFlag( MCCAParameter::ENormal );
-    parameter->SetContactDataFlag( MCCAParameter::EContactId );
+    parameter->SetContactDataFlag( MCCAParameter::EContactLink );
+        
+    // Create a Contact Manager and bind it with the default contact database 
+    CVPbkContactStoreUriArray* uriArray = CVPbkContactStoreUriArray::NewL();
+    CleanupStack::PushL( uriArray );
+    
+    TVPbkContactStoreUriPtr uri( VPbkContactStoreUris::DefaultCntDbUri() );
+    uriArray->AppendL( uri );  
+    
+    CVPbkContactManager* contactManager = CVPbkContactManager::NewL(*uriArray);
+    CleanupStack::PushL( contactManager );
+    
+    // Find Contacts Model store URI from the contact manager (copied from Phonebook app)
+    MVPbkContactStore* defaultStore = contactManager->ContactStoresL().Find( uri );
+    User::LeaveIfNull( defaultStore );
+    
+    // Create a ContactIdConverter object for the ContactId-to-ContactLink conversion 
+    CVPbkContactIdConverter* idConverter = CVPbkContactIdConverter::NewL( *defaultStore );
+    CleanupStack::PushL( idConverter );
+    
+    MVPbkContactLink* link = idConverter->IdentifierToLinkLC(
+            DataStorage().Tag()->RRD()->IntArray()->At( KVasContactIdRrdLocation ));
+    
+    HBufC8*  link8  = link->PackLC(); 
+    HBufC16* link16 = HBufC16::NewLC( link8->Length() );
+    link16->Des().Copy( *link8 );
 
-    TBuf<10> idString;
-    idString.Num( DataStorage().Tag()->RRD()->IntArray()->At( KVasContactIdRrdLocation ) );
-
-    parameter->SetContactDataL( idString );
+    parameter->SetContactDataL( link16->Des() );
 
     iConnection->LaunchAppL( *parameter, this );
     
-    CleanupStack::Pop(); // parameter
+    CleanupStack::PopAndDestroy(6,uriArray);    
+    CleanupStack::Pop();//parameter
     }
     
 // End of File

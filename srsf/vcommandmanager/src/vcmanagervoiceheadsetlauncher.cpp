@@ -80,6 +80,7 @@ CVCommandManagerVoiceHeadSetLauncher::~CVCommandManagerVoiceHeadSetLauncher()
     
     // iCallHandlingTarget will be destroyed when iSelector is destroyed.  
     delete iSelector;
+    iProperty.Close();
     
     RUBY_DEBUG0( "CVCommandManagerVoiceHeadSetLauncher::~CVCommandManagerVoiceHeadSetLauncher - EXIT" );
     }
@@ -237,6 +238,7 @@ void CVCommandManagerVoiceHeadSetLauncher::LaunchVoiceUiL( TBool aDeviceLockMode
             {
             RApaLsSession apaLsSession;
             User::LeaveIfError( apaLsSession.Connect() );
+            CleanupClosePushL(apaLsSession);
             
             TApaAppInfo appInfo;
             User::LeaveIfError( apaLsSession.GetAppInfo( appInfo, KVoiceUiUID ) );
@@ -256,7 +258,7 @@ void CVCommandManagerVoiceHeadSetLauncher::LaunchVoiceUiL( TBool aDeviceLockMode
             User::LeaveIfError ( apaLsSession.StartApp( *apaCommandLine ) );
             CleanupStack::PopAndDestroy( apaCommandLine );
 
-            apaLsSession.Close();
+            CleanupStack::PopAndDestroy(&apaLsSession);
             }    
         }
     }

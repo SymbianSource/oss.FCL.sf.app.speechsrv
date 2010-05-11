@@ -67,3 +67,4 @@ LIBRARY	    egul.lib
 LIBRARY	    aknskins.lib
 LIBRARY	    aknskinsrv.lib 
 LIBRARY	    aknswallpaperutils.lib 
+LIBRARY     cone.lib 

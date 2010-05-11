@@ -176,6 +176,7 @@ void CVCommandManagerVoiceKeyLauncher::LaunchVoiceUiL()
         {
         RApaLsSession apaLsSession;
         User::LeaveIfError( apaLsSession.Connect() );
+        CleanupClosePushL(apaLsSession);
         
         TApaAppInfo appInfo;
         User::LeaveIfError( apaLsSession.GetAppInfo( appInfo, KVoiceUiUID ) );
@@ -188,7 +189,7 @@ void CVCommandManagerVoiceKeyLauncher::LaunchVoiceUiL()
         User::LeaveIfError ( apaLsSession.StartApp( *apaCommandLine ) );
         CleanupStack::PopAndDestroy( apaCommandLine );
     
-        apaLsSession.Close();
+        CleanupStack::PopAndDestroy(&apaLsSession);
         }    
     }
     

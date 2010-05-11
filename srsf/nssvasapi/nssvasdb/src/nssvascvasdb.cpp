@@ -841,6 +841,8 @@ void CNssVasDb::SaveTagL( CNssTag& aTag, TInt& aNewId )
 //
 void CNssVasDb::SaveTagsL( CArrayPtrFlat<CNssTag>* aTagArray, RArray<TInt>& aTagIdArray )
     {
+	CleanupClosePushL( aTagIdArray );
+
     TInt k( 0 );
     TInt error( KErrNone );
 
@@ -912,6 +914,7 @@ void CNssVasDb::SaveTagsL( CArrayPtrFlat<CNssTag>* aTagArray, RArray<TInt>& aTag
     // Pop rollback cleanup
     // (which would have made database rollback, if a leave had happened)
     CleanupStack::Pop();  // Rollback cleanup item
+	CleanupStack::Pop();
     }
 
 // ---------------------------------------------------------

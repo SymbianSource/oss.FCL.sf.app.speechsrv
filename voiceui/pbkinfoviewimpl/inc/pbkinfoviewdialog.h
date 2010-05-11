@@ -32,6 +32,9 @@
 #include "pbkinfoviewreshandler.h"
 #include "pbkinfoviewsindhandler.h"
 
+// FORWARD DECLARATIONS
+class TXspIconHelper;
+
 // CLASS DECLARATION
 
 /**
@@ -46,7 +49,6 @@ NONSHARABLE_CLASS (CPbkInfoViewDialog) : public CAknDialog, public MEikListBoxOb
 	    EIconIndexVideo,
 	    EIconIndexVoip,
 	    EIconIndexEmail,
-	    EIconIndexXsp,
 	    EIconIndexEmpty
 		};	
 
@@ -165,9 +167,10 @@ NONSHARABLE_CLASS (CPbkInfoViewDialog) : public CAknDialog, public MEikListBoxOb
 	    /**
         * Returns TInfoViewDialogIconIndex enumeration icon index.
 		* @param aIconId enumeration TPbkIconId from PbkIconId.hrh.
+		*        aTagIndex voice tag index
         * @return Icon index.
         */
-		TInt IconIndex( TInt aIconId );
+		TInt IconIndex( TInt aIconId,TInt aTagIndex );
 		
 		/**
         * Creates listbox items.
@@ -250,8 +253,8 @@ NONSHARABLE_CLASS (CPbkInfoViewDialog) : public CAknDialog, public MEikListBoxOb
 		// SIND handler
 		CPbkInfoViewSindHandler* iSindHandler;
 		
-		// Xsp flag
-		TBool isXsp;
+		//XSp icon helper
+		RArray<TXspIconHelper>   iXspIconHelper;
     };
 
 #endif    // PBKINFOVIEWDIALOG_H

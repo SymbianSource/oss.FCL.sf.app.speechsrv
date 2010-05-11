@@ -621,6 +621,7 @@ EXPORT_C TInt RSISpeechRecognitionCustomCommands::LoadEngineParameters(
 EXPORT_C void RSISpeechRecognitionCustomCommands::GetPronunciationIDArrayL(
 	RArray<TSIPronunciationID>& aPronunciationIDs)
 	{
+	CleanupClosePushL( aPronunciationIDs );
 	
 	TPckgBuf<TInt> pckgSize;
 	
@@ -649,7 +650,7 @@ EXPORT_C void RSISpeechRecognitionCustomCommands::GetPronunciationIDArrayL(
 		}
 
 	CleanupStack::PopAndDestroy(2);//stream, buf
-		
+	CleanupStack::Pop();
 	}
 
 // -----------------------------------------------------------------------------
@@ -660,6 +661,7 @@ EXPORT_C void RSISpeechRecognitionCustomCommands::GetPronunciationIDArrayL(
 EXPORT_C void RSISpeechRecognitionCustomCommands::GetRuleIDArrayL(
 	RArray<TSIRuleID>& aRuleIDs)
 	{
+	CleanupClosePushL( aRuleIDs );
 
 	TPckgBuf<TInt> pckgSize;
 	
@@ -687,7 +689,7 @@ EXPORT_C void RSISpeechRecognitionCustomCommands::GetRuleIDArrayL(
 		}
 
 	CleanupStack::PopAndDestroy(2);//stream, buf
-	
+	CleanupStack::Pop();
 	}
 
 // -----------------------------------------------------------------------------
@@ -698,6 +700,7 @@ EXPORT_C void RSISpeechRecognitionCustomCommands::GetRuleIDArrayL(
 EXPORT_C void RSISpeechRecognitionCustomCommands::GetModelIDArrayL(
 	RArray<TSIModelID>& aModelIDs)
 	{
+	CleanupClosePushL( aModelIDs );
 
 	TPckgBuf<TInt> pckgSize;
 	
@@ -725,7 +728,7 @@ EXPORT_C void RSISpeechRecognitionCustomCommands::GetModelIDArrayL(
 		}
 
 	CleanupStack::PopAndDestroy( 2 );//stream, buf
-	
+	CleanupStack::Pop();
 	}
 
 // -----------------------------------------------------------------------------
@@ -736,7 +739,8 @@ EXPORT_C void RSISpeechRecognitionCustomCommands::GetModelIDArrayL(
 EXPORT_C void RSISpeechRecognitionCustomCommands::GetGrammarIDArrayL(
 	RArray<TSIGrammarID>& aGrammarIDs)
 	{
-
+	CleanupClosePushL( aGrammarIDs );
+	
 	TPckgBuf<TInt> pckgSize;
 	
 	User::LeaveIfError(iController.CustomCommandSync(iDestinationPckg, 
@@ -763,7 +767,7 @@ EXPORT_C void RSISpeechRecognitionCustomCommands::GetGrammarIDArrayL(
 		}
 
 	CleanupStack::PopAndDestroy( 2 );//stream, buf
-	
+	CleanupStack::Pop();//aGrammarIDs
 	}
 
 // -----------------------------------------------------------------------------
@@ -774,6 +778,7 @@ EXPORT_C void RSISpeechRecognitionCustomCommands::GetGrammarIDArrayL(
 EXPORT_C void RSISpeechRecognitionCustomCommands::GetLexiconIDArrayL(
 	RArray<TSILexiconID>& aLexiconIDs)
 	{
+	CleanupClosePushL( aLexiconIDs );
 
 	TPckgBuf<TInt> pckgSize;
 
@@ -802,7 +807,7 @@ EXPORT_C void RSISpeechRecognitionCustomCommands::GetLexiconIDArrayL(
 		}
 
 	CleanupStack::PopAndDestroy(2);//stream, buf
-	
+	CleanupStack::Pop();
 	}
 
 // -----------------------------------------------------------------------------
@@ -813,6 +818,7 @@ EXPORT_C void RSISpeechRecognitionCustomCommands::GetLexiconIDArrayL(
 EXPORT_C void RSISpeechRecognitionCustomCommands::GetModelBankIDArrayL(
 	RArray<TSIModelBankID>& aModelBankIDs)
 	{
+	CleanupClosePushL( aModelBankIDs );
 
 	TPckgBuf<TInt> pckgSize;
 	
@@ -840,7 +846,7 @@ EXPORT_C void RSISpeechRecognitionCustomCommands::GetModelBankIDArrayL(
 		}
 
 	CleanupStack::PopAndDestroy(2);//stream, buf
-	
+	CleanupStack::Pop();
 	}
 
 // -----------------------------------------------------------------------------
@@ -1001,6 +1007,7 @@ void RSISpeechRecognitionCustomCommands::InternalizeIntArrayL(
 	TInt aNumberElements, 
 	RArray<TInt>& aArray)
 	{
+	CleanupClosePushL( aArray );
 
 	RDesReadStream stream(aDes);
 	CleanupClosePushL(stream);
@@ -1011,7 +1018,7 @@ void RSISpeechRecognitionCustomCommands::InternalizeIntArrayL(
 		}
 
 	CleanupStack::PopAndDestroy();//stream
-
+	CleanupStack::Pop();
 	}
 
 /************************** New SI functions start here ***********************/

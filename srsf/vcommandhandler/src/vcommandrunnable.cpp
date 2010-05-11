@@ -23,6 +23,8 @@
 #include <apaid.h>
 #include <apgcli.h>
 #include <apacmdln.h>
+#include <apgtask.h>
+#include <eikappui.h>
 
 /**
 * The version of the streamed data protocol
@@ -232,6 +234,21 @@ EXPORT_C void CVCRunnable::ExecuteL() const
 		}
 	else 
 		{
+        const TUid KLogsUID3 = { 270486741 };//101F4CD5
+        //In case logs.exe run in background [EDCN-84B68Q]
+        //todo: General support for this kind of case,
+		//      eg, add "view" keyworkd in defaultvoicecommands.xml...
+        if ( iExeUid == KLogsUID3 )
+            {
+            TApaTaskList taskList( CCoeEnv::Static()->WsSession() );
+            TApaTask task = taskList.FindApp( iExeUid );
+            if( task.Exists() ) //Logs already open. Request it to
+                {               //activate the correct view
+                task.SendMessage( iExeUid, *iArguments );
+                return;
+                }
+            }
+        
 		TApaAppInfo appInfo;
 		RApaLsSession apaLsSession;
 		CleanupClosePushL( apaLsSession );

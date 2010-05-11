@@ -461,6 +461,7 @@ void CSpeechSynthesisServer::GetSupportedVoicesL( TLanguage aLanguage,
                                                   RArray<TVoice>& aVoices )
     {
     RUBY_DEBUG_BLOCK( "CSpeechSynthesisServer::GetSupportedVoicesL" );
+    CleanupClosePushL( aVoices );
     
     UpdateSynthesisConfigurationIfNeededL();
     
@@ -477,6 +478,7 @@ void CSpeechSynthesisServer::GetSupportedVoicesL( TLanguage aLanguage,
             aVoices.AppendL( voice );
             }
         }
+    CleanupStack::Pop(); 
     }
  
 // ----------------------------------------------------------------------------

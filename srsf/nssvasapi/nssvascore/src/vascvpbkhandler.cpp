@@ -487,6 +487,12 @@ EXPORT_C TPtrC CVasVPbkHandler::LabelL()
     __ASSERT_ALWAYS( iField, User::Leave( KErrArgument ) );
     __ASSERT_ALWAYS( !iOperation, User::Leave( KErrArgument ) );
     
+    if ( iField->BestMatchingFieldType()->FieldTypeResId() == R_VPBK_FIELD_TYPE_IMPP && 
+         iField->FieldData().DataType() == EVPbkFieldStorageTypeUri )
+        {
+        return MVPbkContactFieldUriData::Cast( iField->FieldData()).Scheme();
+        }
+
     return iField->FieldLabel();
     }
     

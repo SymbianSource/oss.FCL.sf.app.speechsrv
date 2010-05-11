@@ -179,7 +179,7 @@ void CVCommandManager::ParseAllFilesFromDirectoryL( const TDesC& aDirectory )
         }
     else
         {
-        RUBY_ERROR1( "CVCommandManager::ParseAllFilesFromDirectoryL - GetDir returns [%d]", error );
+        RUBY_DEBUG1( "CVCommandManager::ParseAllFilesFromDirectoryL - GetDir returns [%d]", error );
         }
     }
     

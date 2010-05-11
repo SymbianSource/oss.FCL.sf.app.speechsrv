@@ -206,6 +206,8 @@ void CUiArraysGenerator::FillArraysL( const CVCModel& aSource, const TDesC& aCur
 				  CAknIconArray& aIconArray, CDesC16ArrayFlat& aFolderTitles, 
 				  RArray<TBool>& aItemIsFolder, CDesC16ArrayFlat& aItemArray )
 	{
+	CleanupClosePushL( aItemIsFolder ); 
+	
 	aIconArray.ResetAndDestroy();
 	aFolderTitles.Reset();
 	aItemIsFolder.Reset();
@@ -241,7 +243,9 @@ void CUiArraysGenerator::FillArraysL( const CVCModel& aSource, const TDesC& aCur
         }
     
     CleanupStack::PopAndDestroy( entries );  // ResetAndDestroy
-    CleanupStack::PopAndDestroy( entries );  // delete    
+    CleanupStack::PopAndDestroy( entries );  // delete
+    
+    CleanupStack::Pop(); //aItemIsFolder
 	}
 
 /**

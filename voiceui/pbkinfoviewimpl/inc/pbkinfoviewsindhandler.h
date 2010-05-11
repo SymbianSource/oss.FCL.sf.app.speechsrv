@@ -122,10 +122,20 @@ class CPbkInfoViewSindHandler : public CBase,
          TInt IconIdL( TInt aIndex );
 		 
          /**
-         * Returns an field id
-		 * @return TInt the field id
+         * Returns an field id that the voice tage is associated
+         * @param aIndex index for the voice tag.
+         *        0 <= aIndex <= VoiceTagCount() - 1
+		 * @return TInt field id
          */
-         TInt FieldIdL();
+         TInt FieldIdL( TInt aIndex );
+         
+         /**
+         * Returns a tag label that the voice tage is associated
+         * @param aIndex index for the voice tag.
+         *        0 <= aIndex <= VoiceTagCount() - 1
+         * @return TPtrC the tag label
+         */
+         TPtrC LabelL( TInt aIndex );
          
          /**
          * Calls CompareL and catches possible leaves

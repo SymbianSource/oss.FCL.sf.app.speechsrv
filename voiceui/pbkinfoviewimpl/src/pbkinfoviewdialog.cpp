@@ -51,6 +51,10 @@
 #include <TVPbkContactStoreUriPtr.h>
 #include <PbkFields.hrh>
 
+#include <MPbk2FieldPropertyArray2.h>
+#include <MPbk2FieldProperty2.h>
+#include <MPbk2FieldProperty.h>
+
 const TUint KFieldIds[] = 
     {
     R_VPBK_FIELD_TYPE_LANDPHONEGEN,    
@@ -60,6 +64,31 @@ const TUint KFieldIds[] =
     R_VPBK_FIELD_TYPE_EMAILGEN,
     R_VPBK_FIELD_TYPE_IMPP
     };
+
+NONSHARABLE_CLASS( TXspIconHelper )
+    {
+    public:    
+        TXspIconHelper( TInt aIndex, const TDesC& aLable );
+        TDesC& LableText();
+        TInt   Index();
+    private:
+        TBuf<KPbkSIPMaxLength> iLable;
+        TInt iIndex;
+    };
+
+TXspIconHelper::TXspIconHelper( TInt aIndex, const TDesC& aLable ):
+    iLable(aLable),iIndex(aIndex)
+    {
+    }
+
+inline TInt TXspIconHelper::Index()
+    {
+    return iIndex;
+    }
+inline TDesC& TXspIconHelper::LableText()
+    {
+    return iLable;
+    }
 
 // ============================ MEMBER FUNCTIONS ===============================
 
@@ -153,6 +182,8 @@ CPbkInfoViewDialog::~CPbkInfoViewDialog()
         {
         iNaviPane->Pop();
         }
+    
+    iXspIconHelper.Close();
     }
 
 //------------------------------------------------------------------------------
@@ -515,7 +546,7 @@ void CPbkInfoViewDialog::DynInitMenuPaneL( TInt aResourceID,
 // @return TInt Icon index.
 // -----------------------------------------------------------------------------
 //
-TInt CPbkInfoViewDialog::IconIndex( TInt aIconId )
+TInt CPbkInfoViewDialog::IconIndex( TInt aIconId, TInt aTagIndex )
 	{
 	TInt iconIndex;
 	
@@ -534,17 +565,20 @@ TInt CPbkInfoViewDialog::IconIndex( TInt aIconId )
 		    iconIndex = EIconIndexEmail;
 		    break;
 		case EPbkqgn_prop_nrtyp_voip:
-			if ( isXsp )
+		    iconIndex = EIconIndexVoip;
+			if ( iSindHandler->FieldIdL( aTagIndex ) == EPbkFieldIdXsp )
 				{
-				iconIndex = EIconIndexXsp;
-				}
-			else
-				{
-				iconIndex = EIconIndexVoip;
+				for ( TInt i=0; i<iXspIconHelper.Count();i++)
+				    {
+                    if ( !iXspIconHelper[i].LableText().Compare(iSindHandler->LabelL(aTagIndex)) )
+                        {
+                        iconIndex = iXspIconHelper[i].Index();
+                        }
+				    }                
 				}
 		    break;
 		default:
-		    iconIndex = EIconIndexEmpty;    
+		    iconIndex = EIconIndexPhone;    
 		    break;
 		}
 		
@@ -574,12 +608,8 @@ void CPbkInfoViewDialog::CreateListBoxItemsL()
 		HBufC* firstLine = iSindHandler->VoiceTagLabelLC( i );
 		// Phone number, email address, etc...
 		HBufC* secondLine = iSindHandler->VoiceTagValueL( i ).AllocLC();
-        isXsp = EFalse;
-		if( iSindHandler->FieldIdL() == EPbkFieldIdXsp )
-			{
-			isXsp = ETrue;
-			}
-		TInt iconIndex = IconIndex( iSindHandler->IconIdL( i ) );
+
+		TInt iconIndex = IconIndex( iSindHandler->IconIdL( i ), i );
 
 		TPtr ptr1 = firstLine->Des();
 		AknTextUtils::DisplayTextLanguageSpecificNumberConversion( ptr1 );
@@ -743,6 +773,17 @@ void CPbkInfoViewDialog::CreateFieldIconsL(CArrayPtr<CGulIcon>* aIconArray)
     for( count = 0; count < propertyArray->Count(); ++ count)
         {
         icon = pbk2IconFactory->CreateIconL( propertyArray->At(count).IconId());
+        // Append xSP icon info to helper array
+        if ( propertyArray->At(count).FieldType().FieldTypeResId() == R_VPBK_FIELD_TYPE_IMPP 
+                && icon && icon->Bitmap()->Handle() )
+            {
+            const MPbk2FieldProperty& property = propertyArray->At(count);
+            MPbk2FieldProperty2* property2 = reinterpret_cast<MPbk2FieldProperty2*>
+                ( const_cast<MPbk2FieldProperty&> (property).FieldPropertyExtension(
+                        KMPbk2FieldPropertyExtension2Uid ) );      
+            TXspIconHelper xsp( count, property2->XSpName() );
+            iXspIconHelper.Append( xsp );
+            }
         aIconArray->AppendL(icon);
         }
 
@@ -750,14 +791,6 @@ void CPbkInfoViewDialog::CreateFieldIconsL(CArrayPtr<CGulIcon>* aIconArray)
 	
     //Destroy: configuration,uriArray,contactManager
     //fieldTypeList,propertyArray,pbk2IconFactory
-    CleanupStack::PopAndDestroy( 6,configuration ); 	
-    
-	TFileName bitmapName;
-	CPbkInfoViewResHandler::GetBitmapFileName( bitmapName );
-	
-	aIconArray->AppendL( TDialogUtil::CreateIconL(
-	                KAknsIIDQgnLogoEmpty, bitmapName,
-	                EMbmAvkonQgn_prop_empty,
-	                EMbmAvkonQgn_prop_empty_mask ) );
+    CleanupStack::PopAndDestroy( 6,configuration );
 	}
 //  End of File  

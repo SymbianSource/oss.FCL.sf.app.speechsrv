@@ -228,6 +228,8 @@ void CSICommonDB::GetAllClientIDsL(
 	TUid aClientUid,
 	RArray<TUint32>& aIDs )
 	{
+	CleanupClosePushL( aIDs ); 
+	
 	TBuf<100> KSQLStatement;
 	// Declare a literal string to hold the SQL statement
 	// SELECT aIdColumn, KUsedColumn FROM aIdTable WHERE KClientUidColumn = uid
@@ -279,6 +281,7 @@ void CSICommonDB::GetAllClientIDsL(
 
 	// Cleanup view
     CleanupStack::PopAndDestroy();
+    CleanupStack::Pop();
 	}
 
 // -----------------------------------------------------------------------------
@@ -291,6 +294,8 @@ void CSICommonDB::GetAllIDsL(
 	const TDesC& aIdColumn,
 	RArray<TUint32>& aIDs )
 	{
+	CleanupClosePushL( aIDs ); 
+	
 	TBuf<100> KSQLStatement;
 	// Declare a literal string to hold the SQL statement
 	// SELECT aIdColumn FROM aIdTable WHERE KUsedColumn = KUsed
@@ -333,6 +338,7 @@ void CSICommonDB::GetAllIDsL(
 
 	// Cleanup view
     CleanupStack::PopAndDestroy();
+    CleanupStack::Pop(); 
 	}
 
 // -----------------------------------------------------------------------------

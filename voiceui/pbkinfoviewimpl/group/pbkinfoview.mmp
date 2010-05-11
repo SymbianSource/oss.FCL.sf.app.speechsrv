@@ -85,6 +85,8 @@ LIBRARY nssttscommon.lib
 LIBRARY VPbkEng.lib
 LIBRARY Pbk2Presentation.lib
 LIBRARY Pbk2CommonUI.lib
+LIBRARY	fbscli.lib
+LIBRARY	egul.lib 
 //EXPORTUNFROZEN
 
 

@@ -178,7 +178,15 @@ void CTagNameSet::TrainTagL( const MNssTag& aTag,
             DecreaseCallbacksExpected();
             WaitUntilOperationsAreCompletedL();
             
-            User::Leave( nssErr );
+            switch( nssErr )
+                {
+                case MNssSpeechItem::EVasInvalidParameter:
+                    User::Leave( KErrArgument );
+                case MNssSpeechItem::EVasTrainFailed:
+                    User::Leave( KErrGeneral );
+                default:
+                    User::Leave( nssErr );
+                } 
             }        
         }
     RUBY_DEBUG0( "CTagNameSet::TrainTagL Tag training has been initiated" );

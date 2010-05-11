@@ -608,6 +608,8 @@ void CSIGrammarDB::GetAllGrammarIDsL( RArray<TSIGrammarID>& aGrammarIDs )
 void CSIGrammarDB::GetAllRuleIDsL( TSIGrammarID aGrammarID,
                                    RArray<TSIRuleID>& aRuleIDs )
     {
+	CleanupClosePushL( aRuleIDs );
+	
     // Construct the table name using the provided grammar ID
     TBuf<40> KGrammarName(KSIGrammarTable);
     KGrammarName.AppendNumUC(aGrammarID);
@@ -622,6 +624,7 @@ void CSIGrammarDB::GetAllRuleIDsL( TSIGrammarID aGrammarID,
         User::LeaveIfError(aRuleIDs.Append(RuleId));
         } 
     CleanupStack::PopAndDestroy(newgrammar);
+    CleanupStack::Pop();
     }
 
 // -----------------------------------------------------------------------------

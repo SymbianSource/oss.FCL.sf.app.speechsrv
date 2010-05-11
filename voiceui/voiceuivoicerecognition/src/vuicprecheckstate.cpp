@@ -214,12 +214,13 @@ TBool CPrecheckState::IsLockPhoneDialogL()
 	TBool islock = EFalse;
 	RWsSession &ws = CCoeEnv::Static()->WsSession();
 	TInt wgId = ws.GetFocusWindowGroup(); 
-	CApaWindowGroupName *WindowsGroupName = CApaWindowGroupName::NewL( ws, wgId );
+	CApaWindowGroupName *WindowsGroupName = CApaWindowGroupName::NewLC( ws, wgId );
 	if ( ( KAknnfysrvUid == WindowsGroupName->AppUid() ) && 
 	      ( ws.GetWindowGroupOrdinalPriority( wgId ) >= ECoeWinPriorityAlwaysAtFront ) )
 	    {
 	    islock = ETrue;
 	    }
+	CleanupStack::PopAndDestroy( WindowsGroupName );
 	return islock;
 	}
     

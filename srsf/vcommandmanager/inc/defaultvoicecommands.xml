@@ -37,7 +37,7 @@
             <tooltip locindex="10001"/>
             <executes uid="0x101F4CD5"/>
             <cmdlineparams>
-            
+            counters
             </cmdlineparams>
             <icon uid="0x101F4CD5"/>
         </vcommand>

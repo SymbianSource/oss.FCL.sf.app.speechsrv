@@ -226,6 +226,13 @@ void CListQueryDialog::HandleListBoxEventL( CEikListBox* aListBox, TListBoxEvent
             iObserver->ProcessCommandL( EVoiceTagSoftKeySelect );
             }
         }
+    else if ( aEventType == EEventFlickStopped )
+        {
+        if ( iObserver )
+            {
+            iObserver->ProcessCommandL( EDragKeypress );
+            }
+        }
         
     if ( forwardEvent )
         {

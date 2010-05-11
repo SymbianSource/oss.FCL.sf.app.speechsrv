@@ -2877,6 +2877,8 @@ void CSIControllerPlugin::UpdateGrammarAndLexiconDBL( CSITtpWordList* aSITtpWord
                                                       RArray<TSIRuleID>& aRuleIDs )
     {
     RUBY_DEBUG_BLOCK( "CSIControllerPlugin::UpdateGrammarAndLexiconDBL" );
+    CleanupClosePushL( aRuleIDs ); 
+    
     iSITtpWordList = aSITtpWordList;
     iLexiconID = aLexiconID;
     iGrammarID = aGrammarID;
@@ -2963,6 +2965,8 @@ void CSIControllerPlugin::UpdateGrammarAndLexiconDBL( CSITtpWordList* aSITtpWord
     iSILexiconDB->UpdateLexiconL( iClientUid,aLexicon );
     iSIDatabase->CommitChangesL( ETrue );  
     CleanupStack::PopAndDestroy( 2 ); // aGrammar aLexicon	
+    
+    CleanupStack::Pop(); //aRuleIDs
     }
 
 // -----------------------------------------------------------------------------

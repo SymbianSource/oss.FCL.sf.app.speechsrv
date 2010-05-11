@@ -257,6 +257,7 @@ EXPORT_C TTimeIntervalMicroSeconds RSpeechSynthesis::DurationL()
 //
 EXPORT_C void RSpeechSynthesis::GetLanguagesL( RArray<TLanguage>& aLanguages )
     {
+	CleanupClosePushL( aLanguages ); 
     if ( Handle() == 0 )
         {
         User::Leave( KErrBadHandle );
@@ -288,6 +289,7 @@ EXPORT_C void RSpeechSynthesis::GetLanguagesL( RArray<TLanguage>& aLanguages )
 
         CleanupStack::PopAndDestroy( data );
         }
+    CleanupStack::Pop(); 
     }
 
 // ----------------------------------------------------------------------------
@@ -298,6 +300,7 @@ EXPORT_C void RSpeechSynthesis::GetLanguagesL( RArray<TLanguage>& aLanguages )
 EXPORT_C void RSpeechSynthesis::GetVoicesL( RArray<TVoice>& aVoices,
                                             TLanguage aLanguage )
     {
+	CleanupClosePushL( aVoices ); 
     if ( Handle() == 0 )
         {
         User::Leave( KErrBadHandle );
@@ -330,6 +333,7 @@ EXPORT_C void RSpeechSynthesis::GetVoicesL( RArray<TVoice>& aVoices,
         
         CleanupStack::PopAndDestroy( data );   
         }
+    CleanupStack::Pop(); 
     }
 
 // ----------------------------------------------------------------------------

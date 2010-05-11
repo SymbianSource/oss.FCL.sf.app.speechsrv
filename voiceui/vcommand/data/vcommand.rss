@@ -196,6 +196,11 @@ RESOURCE MENU_PANE r_vcommand_menu
             },
         MENU_ITEM
             {
+            command = EVCCmdStartVui;
+            txt = qtn_vc_tutorial;
+            },			
+        MENU_ITEM
+            {
             command = EVCCmdPlayback;
             txt = text_voice_replay;
             flags = EEikMenuItemAction;
@@ -210,12 +215,7 @@ RESOURCE MENU_PANE r_vcommand_menu
             {
             command = EVCCmdSettings;
             txt = qtn_vc_settings;
-            },
-        MENU_ITEM
-            {
-            command = EVCCmdStartVui;
-            txt = qtn_vc_tutorial;
-            },
+            },       
         MENU_ITEM
             {
             command = EAknCmdHelp;

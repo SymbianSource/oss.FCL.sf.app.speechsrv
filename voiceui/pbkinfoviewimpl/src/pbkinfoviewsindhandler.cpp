@@ -505,12 +505,38 @@ TInt CPbkInfoViewSindHandler::IconIdL( TInt aIndex )
 // ----------------------------------------------------------------------------
 // CPbkInfoViewSindHandler::FieldIdL
 // Returns an field id for the contact field.
+// @param aIndex index for the voice tag. 0 <= aIndex <= VoiceTagCount() - 1
 // @return TInt the field id
 // ----------------------------------------------------------------------------
-TInt CPbkInfoViewSindHandler::FieldIdL( )
-	{
+TInt CPbkInfoViewSindHandler::FieldIdL( TInt aIndex )
+	{    
+    RUBY_DEBUG_BLOCK( "CPbkInfoViewSindHandler::FieldIdL" );
+    
+    __ASSERT_ALWAYS( aIndex >= 0 && aIndex < VoiceTagCount(),
+                     User::Leave( KErrArgument ) );
+        
+    iPbkHandler->FindContactFieldL( iTagArray[aIndex] );
+    
 	return iPbkHandler->FieldIdL();
 	}
+
+// ----------------------------------------------------------------------------
+// CPbkInfoViewSindHandler::LabelL
+// Returns label for the contact field.
+// @param aIndex index for the voice tag. 0 <= aIndex <= VoiceTagCount() - 1
+// @return TPtrC the tag label
+// ----------------------------------------------------------------------------
+TPtrC CPbkInfoViewSindHandler::LabelL( TInt aIndex )
+    {
+    RUBY_DEBUG_BLOCK( "CPbkInfoViewSindHandler::LabelL" );
+    
+    __ASSERT_ALWAYS( aIndex >= 0 && aIndex < VoiceTagCount(),
+                     User::Leave( KErrArgument ) );
+        
+    iPbkHandler->FindContactFieldL( iTagArray[aIndex] );
+    
+    return iPbkHandler->LabelL();
+    }
 
 // ----------------------------------------------------------------------------
 // CPbkInfoViewSindHandler::CreateVoiceTagListL

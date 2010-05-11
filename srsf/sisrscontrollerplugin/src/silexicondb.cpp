@@ -334,6 +334,8 @@ void CSILexiconDB::GetAllLexiconIDsL( RArray<TSILexiconID>& aLexiconIDs )
 //
 void CSILexiconDB::GetAllPronunciationIDsL( TSILexiconID aLexiconID, RArray<TSIPronunciationID>& aPronunciationIDs )
     {
+	CleanupClosePushL( aPronunciationIDs ); 
+	
     // Construct the table name using the provided Lexicon ID
     TBuf<40> KLexiconName(KSILexiconTable);
     KLexiconName.AppendNumUC(aLexiconID);
@@ -350,6 +352,7 @@ void CSILexiconDB::GetAllPronunciationIDsL( TSILexiconID aLexiconID, RArray<TSIP
     
     CleanupStack::PopAndDestroy(newLexicon); // newLexicon
     //	GetAllIDsL(KLexiconName, KPronunciationIDColumn, aPronunciationIDs);
+    CleanupStack::Pop(); 
     }
 
 // -----------------------------------------------------------------------------
