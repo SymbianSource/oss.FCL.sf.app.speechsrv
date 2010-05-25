@@ -75,6 +75,14 @@ NONSHARABLE_CLASS (CPbkInfoViewDialog) : public CAknDialog, public MEikListBoxOb
         */
         TInt ExecuteLD( TInt aResourceId );
         
+        /** 
+         * Responds to a change in focus.
+         *
+         * @param aDrawNow Contains the value that was passed to it by 
+         *        @c SetFocus(). 
+         */         
+        void FocusChanged(TDrawNow aDrawNow); 
+        
     private:
 
         /**

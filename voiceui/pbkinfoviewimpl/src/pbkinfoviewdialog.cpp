@@ -217,6 +217,15 @@ TInt CPbkInfoViewDialog::ExecuteLD( TInt aResourceId )
     }
 
 //------------------------------------------------------------------------------
+// CPbkInfoViewDialog::FocusChanged (from CCoeControl)
+//------------------------------------------------------------------------------
+//
+void CPbkInfoViewDialog::FocusChanged( TDrawNow aDrawNow )
+    {
+    CAknDialog::FocusChanged(aDrawNow);
+	TRAP_IGNORE( iStatusPaneHandler->SetTitleL(R_INFOVIEW_DIALOG_TITLE) );
+    }
+//------------------------------------------------------------------------------
 // CPbkInfoViewDialog::ActivateL (from CCoeControl)
 // Called by system when dialog is activated.
 //------------------------------------------------------------------------------
