@@ -20,7 +20,6 @@
 // INCLUDE FILES
 #include <e32std.h>
 #include <s32mem.h>
-#include <mmf\common\mmfcontrollerpluginresolver.h>
 #include "nsssispeechrecognitiondatadevasr.h"
 #include "nsssispeechrecognitiondatatest.h"
 #include "nsssidataserialize.h"
@@ -2129,7 +2128,7 @@ EXPORT_C void CSITtpWordList::GetPronunciationsL(
 												 const TInt aIndex,
 												 RPointerArray<CSIPronunciationInfo>& aPronunciations ) const
 {
-	CleanupResetAndDestroyPushL( aPronunciations ); 
+    CleanupClosePushL( aPronunciations ); 
 	// clear given array
 	aPronunciations.Reset();
 	

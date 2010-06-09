@@ -164,18 +164,6 @@
             <icon uid="0x10005902"/>
         </vcommand>
 
-        <!-- Converter -->
-        <vcommand tts="true" modifiable="true">
-            <spoken locindex="9119"/>
-            <written locindex="119"/>
-            <tooltip locindex="10001"/>
-            <executes uid="0x101f4668"/>
-            <cmdlineparams>
-            
-            </cmdlineparams>
-            <icon uid="0x101f4668"/>
-        </vcommand>
-
         <!-- Data synchronisation -->
         <vcommand tts="true" modifiable="true">
             <spoken locindex="9120"/>
