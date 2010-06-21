@@ -51,6 +51,13 @@
 // 
 #define qtn_vc_info_popup_text_msg                  "Say %U to create a new message"
 
+// d:Tooltip text shown when a mail related voice command is highlighted
+// d:%U is the application name (either default or user edited)
+// l:popup_preview_text_window/opt5
+// r:3.2
+// 
+#define qtn_vc_info_popup_text_mail                  "Say %U to create a new mail" 
+
 // d:Tooltip text shown when qtn_vc_main_time is highlighted.
 // d:%U is qan_vc_main_time or user edited voice command
 // l:popup_preview_text_window/opt5

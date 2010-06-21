@@ -139,4 +139,6 @@ LIBRARY         etel3rdparty.lib
 
 LIBRARY         VPbkEng.lib
 LIBRARY         ecom.lib 
+LIBRARY         accpolicy.lib
+LIBRARY         accclient.lib
 

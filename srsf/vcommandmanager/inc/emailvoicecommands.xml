@@ -12,7 +12,7 @@
         <vcommand tts="true" modifiable="true">
             <spoken locindex="9129"/>
             <written locindex="129"/>
-            <tooltip locindex="10003"/>
+            <tooltip locindex="10021"/>
             <executes uid="0x10281D15"/>
             <cmdlineparams>
             4

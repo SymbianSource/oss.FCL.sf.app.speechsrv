@@ -32,6 +32,7 @@ S60_APP_AIF_RSC(vuivoicerecognition)
 
 data=ABI_DIR\BUILD_DIR\z\system\sounds\digital\NameDiallerStartTone.wav     System\sounds\digital\NameDiallerStartTone.wav
 data=ABI_DIR\BUILD_DIR\z\system\sounds\digital\namediallerconfirmtone.wav   System\sounds\digital\namediallerconfirmtone.wav
+data=ABI_DIR\BUILD_DIR\z\system\sounds\digital\btnamediallerstarttone.wav   System\sounds\digital\btnamediallerstarttone.wav
 
 // PbkInfoView
 ECOM_PLUGIN(aiwpbkinfoviewprovider.dll, 10281c81.rsc)

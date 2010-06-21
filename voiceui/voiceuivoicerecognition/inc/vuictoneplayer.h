@@ -70,6 +70,12 @@ NONSHARABLE_CLASS( CTonePlayer ) : public CBase,
         * @param aSid The sound ID
         */
         void PlayTone( TInt aSid );
+        
+        /**
+        * Check Bt Accessory Status
+        * @
+        */
+        void ChekcAccesoryStatusL();
 
     public: // Functions from base classes
 
@@ -117,11 +123,17 @@ NONSHARABLE_CLASS( CTonePlayer ) : public CBase,
         // Start sound path
         HBufC*                          iStartSound;
         
+        // Bluetooth start sound path
+        HBufC*                          iBtStartSound;
+        
         // Confirmation sound path
         HBufC*                          iConfirmationSound;
 
         // Volume
         TInt                            iVolume;
+        
+        //BT Accessory flag
+        TBool                           iBTAcc;
         };
 
 #endif      // VUICTONEPLAYER_H

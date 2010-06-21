@@ -19,6 +19,8 @@
 // INCLUDE FILES
 #include <aknsoundsystem.h>
 #include <aknappui.h>
+#include <AccessoryServer.h>        //RAccessoryServer
+#include <AccessoryConnection.h>    //RAccessoryConnection
 
 #include <centralrepository.h>
 
@@ -67,6 +69,7 @@ CTonePlayer::~CTonePlayer()
 
     delete iStartSound;
     delete iConfirmationSound;
+    delete iBtStartSound;
 
     iObserver = NULL;
     
@@ -104,6 +107,10 @@ void CTonePlayer::ConstructL()
 
     iStartSound = StringLoader::LoadL( R_VOICE_START_SOUND_PATH );
     iConfirmationSound = StringLoader::LoadL( R_VOICE_CONFIRMATION_SOUND_PATH );
+    iBtStartSound = StringLoader::LoadL( R_VOICE_BT_START_SOUND_PATH );
+    iBTAcc = EFalse;
+    
+    ChekcAccesoryStatusL();
     }
   
  // ---------------------------------------------------------
@@ -135,8 +142,15 @@ void CTonePlayer::InitToneL( TInt aSid )
     if ( aSid == EAvkonSIDNameDiallerStartTone )
         {
         RUBY_DEBUG0( "CTonePlayer::InitToneL - case: EAvkonSIDNameDiallerStartTone" );
-
-        TRAPD( err, iAudioPlayer->OpenFileL( *iStartSound ) );
+        TInt err = KErrNone;
+        if ( iBTAcc )
+            {
+            TRAP( err, iAudioPlayer->OpenFileL( *iBtStartSound ) );
+            }
+        else
+            {
+            TRAP( err, iAudioPlayer->OpenFileL( *iStartSound ) );
+            }
         if ( err )
             {
             RUBY_ERROR1( "CTonePlayer::InitToneL - err [%d]", err );
@@ -246,6 +260,48 @@ TInt CTonePlayer::ScaledVolume()
         }
         
     return volume;
+    }
+
+// ---------------------------------------------------------
+// CTonePlayer::ChekcAccesoryStatus
+// ---------------------------------------------------------
+//  
+void CTonePlayer::ChekcAccesoryStatusL()
+    {    
+    // Connection to the accessory server
+    RAccessoryServer accessoryServer;    
+    // Subsession for server
+    RAccessoryConnection accessoryConnection;    
+    //Generic ID array for accessories
+    TAccPolGenericIDArray accessoryArray;
+    
+    TInt err = KErrNone;
+    //connect to accessory server
+    err = accessoryServer.Connect();
+    if ( err == KErrNone )
+        {
+        //create subsession to accessory server
+        err = accessoryConnection.CreateSubSession( accessoryServer );
+        if ( err == KErrNone )
+            {
+            accessoryConnection.GetAccessoryConnectionStatus( accessoryArray );
+            
+            TAccPolGenericID genId;
+            for ( TInt i = 0; i < accessoryArray.Count(); i++ )
+                {
+                genId = accessoryArray.GetGenericIDL( i );
+
+                if ( genId.PhysicalConnectionCaps( KPCBluetooth ) && 
+                    ( genId.DeviceTypeCaps( KDTHeadset ) || genId.DeviceTypeCaps( KDTCarKit ) ) )
+                    {
+                    iBTAcc = ETrue;
+                    }
+                }
+            }
+        }
+
+    accessoryConnection.CloseSubSession();
+    accessoryServer.Close();
     }
 
 //  End of File

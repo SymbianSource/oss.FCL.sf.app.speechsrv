@@ -35,6 +35,7 @@ NAME RAPI
 // CONSTANTS
 #define KVoiceStartSoundFile           "z:\\system\\sounds\\digital\\namediallerstarttone.wav"
 #define KVoiceConfirmationSoundFile    "z:\\system\\sounds\\digital\\namediallerconfirmtone.wav"
+#define KVoiceBTStartSoundFile         "z:\\system\\sounds\\digital\\btnamediallerstarttone.wav"
 
 RESOURCE RSS_SIGNATURE { }
 
@@ -374,6 +375,18 @@ RESOURCE TBUF r_nbest_row_format
 RESOURCE TBUF r_voice_start_sound_path
     {
     buf = KVoiceStartSoundFile;
+    }
+
+//----------------------------------------------------
+//   
+//    r_voice_bt_start_sound_path
+//    Path to a sound file to play when starting voice dialing from bluetooth accessory
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF r_voice_bt_start_sound_path
+    {
+    buf = KVoiceBTStartSoundFile;
     }
     
 //----------------------------------------------------

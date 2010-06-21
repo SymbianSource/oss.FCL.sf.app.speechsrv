@@ -1,7 +1,7 @@
 /*
 * ==============================================================================
 *        %name: exports.inc %
-*     %version: tr1nss#18.2.19 %
+*     %version: be1sido#18.2.20 %
 *      Part of: VoiceUI / VoiceUiNameDialer
 *  Description: VoiceUiNameDialer exports
 *
@@ -37,6 +37,11 @@
 ../data/namediallerconfirmtone.wav  /epoc32/release/thumb/udeb/z/system/sounds/digital/namediallerconfirmtone.wav
 ../data/namediallerconfirmtone.wav  /epoc32/release/armv5/urel/z/system/sounds/digital/namediallerconfirmtone.wav
 ../data/namediallerconfirmtone.wav  /epoc32/release/armv5/udeb/z/system/sounds/digital/namediallerconfirmtone.wav
+
+../data/btnamediallerstarttone.wav  /epoc32/release/winscw/urel/z/system/sounds/digital/btnamediallerstarttone.wav
+../data/btnamediallerstarttone.wav  /epoc32/release/winscw/udeb/z/system/sounds/digital/btnamediallerstarttone.wav
+../data/btnamediallerstarttone.wav  /epoc32/release/armv5/urel/z/system/sounds/digital/btnamediallerstarttone.wav
+../data/btnamediallerstarttone.wav  /epoc32/release/armv5/udeb/z/system/sounds/digital/btnamediallerstarttone.wav
 
 ../loc/vuivoicerecognition.loc      APP_LAYER_LOC_EXPORT_PATH(vuivoicerecognition.loc)
 

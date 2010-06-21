@@ -138,7 +138,14 @@ RESOURCE VCOMMANDS voicecommands
             key = 10020;
             txt = qtn_vc_info_popup_text_vdown;
             },
-
+        
+        // Tooltip logical string - New Mail
+        VCOMMANDITEM
+            {
+            key = 10021;
+            txt = qtn_vc_info_popup_text_mail;
+            },
+                
         // Logical string (written) - Browser
         VCOMMANDITEM
             {
