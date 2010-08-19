@@ -24,14 +24,14 @@
 
 #include <cntdef.h> 
 
-#include <vpbkfieldtype.hrh>
+#include <VPbkFieldType.hrh>
 
-#include <mvpbkcontactstorelistobserver.h>
-#include <mvpbksinglecontactoperationobserver.h>
-#include <mvpbkcontactobserver.h>
-#include <mvpbkcontactattributemanager.h>
-#include <mvpbkbatchoperationobserver.h> 
-#include <mvpbkcontactviewobserver.h> 
+#include <MVPbkContactStoreListObserver.h>
+#include <MVPbkSingleContactOperationObserver.h>
+#include <MVPbkContactObserver.h>
+#include <MVPbkContactAttributeManager.h>
+#include <MVPbkBatchOperationObserver.h> 
+#include <MVPbkContactViewObserver.h> 
 
 #include <vasmbasepbkhandler.h>
 #include <vasmcontactobserver.h>

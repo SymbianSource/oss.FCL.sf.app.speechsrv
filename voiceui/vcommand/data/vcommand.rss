@@ -770,8 +770,9 @@ RESOURCE AVKON_SETTING_PAGE r_vc_setting_rejection
 //
 //-----------------------------------------------------------------------------
 //
-RESOURCE SLIDER r_vc_setting_rejection_control 
+RESOURCE SLIDER_WITH_FEEDBACK_STYLE  r_vc_setting_rejection_control 
     {
+    feedbackstyle = EAknSliderFbDynamic;
     layout = EAknSettingsItemSliderLayout;
     minvalue = 0;
     maxvalue = 10;

@@ -1914,7 +1914,23 @@ void CNssContactHandlerImplementation::DoAddNamesL()
                             CleanupStack::PushL( extIds );
 
                             extIds->AppendL( iContactQueue[k].iID ); 
-                            extIds->AppendL( fieldId ); 
+                            if ( iExtensionList[i].iCommand == EMessageCommand ||
+                                  iExtensionList[i].iCommand == EVideoCommand )
+                                {
+                                TInt id = iPbkHandler->FieldIdL();
+                                if ( id )
+                                    {
+                                    extIds->AppendL( id );
+                                    }
+                                else
+                                    {
+                                    extIds->AppendL( fieldId );
+                                    }
+                                }
+                            else
+                                {
+                                extIds->AppendL( fieldId );
+                                }
                             extIds->AppendL( action );
                             extIds->AppendL( iContactQueue[k].iType );
                             extIds->AppendL( iExtensionList[i].iCommand );

@@ -22,6 +22,8 @@
 #include <avkon.hrh>
 #include <centralrepository.h>
 #include <vcommanddomaincrkeys.h>
+#include <e32property.h>
+#include <ScreensaverInternalPSKeys.h>
 
 #include <vuivoicerecognition.rsg>
 
@@ -341,6 +343,12 @@ void CTutorial::LoadSettingsL()
                                      iTutorialMode ) );
 
     CleanupStack::PopAndDestroy( client );
+    
+    if ( iTutorialMode )
+        {
+        //Allow screensaver if in tutorial mode
+        RProperty::Set( KPSUidScreenSaver, KScreenSaverAllowScreenSaver, 0 );
+        }
     }
 
 // ---------------------------------------------------------------------------
