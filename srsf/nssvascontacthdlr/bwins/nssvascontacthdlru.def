@@ -1,6 +1,0 @@
-EXPORTS
-	??1CNssContactHandler@@UAE@XZ @ 1 NONAME ; CNssContactHandler::~CNssContactHandler(void)
-	?DisableEventHandling@CNssContactHandler@@QAEXXZ @ 2 NONAME ; void CNssContactHandler::DisableEventHandling(void)
-	?EnableEventHandling@CNssContactHandler@@QAEXXZ @ 3 NONAME ; void CNssContactHandler::EnableEventHandling(void)
-	?NewL@CNssContactHandler@@SAPAV1@XZ @ 4 NONAME ; class CNssContactHandler * CNssContactHandler::NewL(void)
-

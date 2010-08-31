@@ -1,3 +1,0 @@
-SRSF
-%full_filespec: 10201aee.txt-18:ascii:tr1nss#1 %
-%date_modified: Mon Apr 10 11:57:24 2006 %
