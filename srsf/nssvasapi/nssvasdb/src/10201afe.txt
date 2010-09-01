@@ -1,0 +1,10 @@
+;Security policy for NSS VAS DB
+[database]
+read
+capability = ReadUserData
+write
+capability = WriteUserData
+schema
+capability = WriteUserData
+[backup]
+sid = 10201AFE

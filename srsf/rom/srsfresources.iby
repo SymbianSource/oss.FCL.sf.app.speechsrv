@@ -1,0 +1,31 @@
+/*
+* Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+*
+*/
+#ifndef __SRSFRESOURCES_IBY__
+#define __SRSFRESOURCES_IBY__
+
+#ifdef __SIND
+
+S60_APP_RESOURCE(vcexecutorapp)  // vcexecutorapp.rsc
+
+data = DATAZ_\resource\nssvascontacthandler.rsc   RESOURCE_FILES_DIR\nssvascontacthandler.rsc
+data = DATAZ_\resource\defaultvoicecommands.rsc   RESOURCE_FILES_DIR\defaultvoicecommands.rsc
+data = DATAZ_\resource\vcommandexecutor.rsc       RESOURCE_FILES_DIR\vcommandexecutor.rsc
+data = DATAZ_\resource\vcprofileobserver.rsc      RESOURCE_FILES_DIR\vcprofileobserver.rsc
+
+#endif // __SIND
+
+#endif // __SRSFRESOURCES_IBY__

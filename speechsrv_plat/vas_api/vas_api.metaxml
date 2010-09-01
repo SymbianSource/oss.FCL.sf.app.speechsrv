@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<api id="619514c387e474fcf5b76cd83c03b28a" dataversion="2.0">
+  <name>VAS API</name>
+  <description>A composite of all Voice Application Services APIs.</description>
+  <type>c++</type>
+  <collection>srsf</collection>
+  <libs>
+    <lib name="nssvasapi.lib" />
+  </libs>
+  <release category="platform"/>
+  <attributes>
+     <!-- This indicates wether the api provedes separate html documentation -->
+     <!-- or is the additional documentation generated from headers. -->
+     <!-- If you are unsuere then the value is "no" -->
+     <htmldocprovided>no</htmldocprovided>
+     <adaptation>no</adaptation>
+  </attributes>
+</api>

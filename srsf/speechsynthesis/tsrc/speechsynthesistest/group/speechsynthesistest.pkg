@@ -1,0 +1,44 @@
+;
+; Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+; All rights reserved.
+; This component and the accompanying materials are made available
+; under the terms of "Eclipse Public License v1.0"
+; which accompanies this distribution, and is available
+; at the URL "http://www.eclipse.org/legal/epl-v10.html".
+;
+; Initial Contributors:
+; Nokia Corporation - initial contribution.
+;
+; Contributors:
+;
+; Description:
+;
+;
+; Installation package creation file for speechsynthesis STIF test module.
+;
+
+; Languages
+&EN
+
+; Package header
+#{"NSS speechsynthesis STIF"},(0x1001ABAA),0,1,0,TYPE=SA
+
+; Localised Vendor name
+%{"Nokia"}
+
+; Unique Vendor name
+:"Nokia/TP/SP/SWD/UIG/MUI"
+
+; Dependency to indicate compatibility with S60 3.1
+[0x102752AE],0,0,0,{"S60ProductID"}
+
+; Start of Package body
+
+; Test itself
+"\epoc32\release\armv5\urel\speechsynthesistest.dll" - "c:\sys\bin\speechsynthesistest.dll"
+
+; Config and data files
+"..\data\testframework.ini"          - "C:\TestFramework\testframework.ini"
+"..\data\speechsynthesistest.cfg"    - "C:\TestFramework\speechsynthesistest.cfg"
+
+; End of Package body

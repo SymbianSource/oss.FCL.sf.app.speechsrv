@@ -1,0 +1,150 @@
+/*
+* Copyright (c) 2005-2006 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Default (implementation English) resource localisation file for 
+*               SINDE.
+*
+*/
+
+
+// LOCALISATION STRINGS
+
+
+// Name dialing with extensions (SINDE) START
+// ============================================================================
+
+// d:Command which is said by user when a call should be established to the
+// d:mobile number of a certain contact. %U is a name from phonebook.
+// d:Same string will be also said by text-to-speech as verification.
+// d:For example: "Adam Russell mobile".
+// d:Phonebook reference: qtn_phob_lbl_number_mobile
+// d:%U has to be either at the beginning or at the end of the string
+// d:(NOT in the middle). If the parameter would be in the middle, SIND
+// d:could not use the string as a voice tag. Also, parameter length cannot
+// d:be restricted (i.e. %U[25]) since this kind of formatting cannot be parsed
+// d:by SIND. 
+// l:None
+// r:3.2
+//
+#define qan_sind_extension_mobile               "%U mobile"
+
+// d:Command which is said by user when a call should be established to the 
+// d:fixed line number. %U denotes the name entered to phonebook by user.
+// d:Same string will be also said by text-to-speech as verification.
+// d:For example: "John Smith telephone".
+// d:Phonebook reference: qtn_phob_lbl_number_standard
+// d:%U has to be either at the beginning or at the end of the string
+// d:(NOT in the middle). If the parameter would be in the middle, SIND
+// d:could not use the string as a voice tag. Also, parameter length cannot
+// d:be restricted (i.e. %U[25]) since this kind of formatting cannot be parsed
+// d:by SIND. 
+// l:None
+// r:3.2
+//
+#define qan_sind_extension_general              "%U telephone"
+
+// d:Command which is said by user when a call should be established to the 
+// d:home number. %U denotes the name entered to phonebook by user.
+// d:Same string will be also said by text-to-speech as verification.
+// d:For example: "Emma Turner home".
+// d:Phonebook reference: qtn_phob_lbl_number_home
+// d:%U has to be either at the beginning or at the end of the string
+// d:(NOT in the middle). If the parameter would be in the middle, SIND
+// d:could not use the string as a voice tag. Also, parameter length cannot
+// d:be restricted (i.e. %U[25]) since this kind of formatting cannot be parsed
+// d:by SIND. 
+// l:None
+// r:3.2
+//
+#define qan_sind_extension_home                 "%U home"
+
+// d:Command which is said by user when a call should be established to the 
+// d:work number. %U denotes the name entered to phonebook by user.
+// d:Same string will be also said by text-to-speech as verification.
+// d:For example: "John Doe work".
+// d:Phonebook reference: qtn_phob_lbl_number_work
+// d:%U has to be either at the beginning or at the end of the string
+// d:(NOT in the middle). If the parameter would be in the middle, SIND
+// d:could not use the string as a voice tag. Also, parameter length cannot
+// d:be restricted (i.e. %U[25]) since this kind of formatting cannot be parsed
+// d:by SIND. 
+// l:None
+// r:3.2
+//
+#define qan_sind_extension_work                 "%U work"
+
+// d:Command which is said by user when a call should be established to the
+// d:video number of a certain contact. %U is a name from phonebook.
+// d:Same string will be also said by text-to-speech as verification.
+// d:For example: "Arnold Schwarzenegger video".
+// d:Phonebook reference: qtn_phob_lbl_video
+// d:%U has to be either at the beginning or at the end of the string
+// d:(NOT in the middle). If the parameter would be in the middle, SIND
+// d:could not use the string as a voice tag. Also, parameter length cannot
+// d:be restricted (i.e. %U[25]) since this kind of formatting cannot be parsed
+// d:by SIND. 
+// l:None
+// r:3.2
+//
+#define qan_sind_extension_video                "%U video"
+
+// d:Command which is said by user when message editor (combined editor for
+// d:SMS and MMS) should be opened with the specified contact. 
+// d:%U is a name from phonebook.
+// d:Same string will be also said by text-to-speech as verification.
+// d:For example: "George Clooney message".
+// d:%U has to be either at the beginning or at the end of the string
+// d:(NOT in the middle). If the parameter would be in the middle, SIND
+// d:could not use the string as a voice tag. Also, parameter length cannot
+// d:be restricted (i.e. %U[25]) since this kind of formatting cannot be parsed
+// d:by SIND. 
+// l:None
+// r:3.2
+//
+#define qan_sind_extension_message              "%U message"
+
+// d:Command which is said by user when e-mail editor should be opened with the
+// d:specified contact. %U is a name from phonebook.
+// d:Same string will be also said by text-to-speech as verification.
+// d:For example: "Bill Murray e-mail".
+// d:Phonebook reference: qtn_phob_lbl_email
+// d:%U has to be either at the beginning or at the end of the string
+// d:(NOT in the middle). If the parameter would be in the middle, SIND
+// d:could not use the string as a voice tag. Also, parameter length cannot
+// d:be restricted (i.e. %U[25]) since this kind of formatting cannot be parsed
+// d:by SIND. 
+// l:None
+// r:3.2
+//
+#define qan_sind_extension_email                "%U e-mail"
+
+// d:Command which is said by user when a call should be established to the 
+// d:VOIP number. %U denotes the name entered to phonebook by user.
+// d:Same string will be also said by text-to-speech as verification.
+// d:For example: "John Travolta internet call".
+// d:Phonebook reference: qtn_phob_lbl_voip
+// d:%U has to be either at the beginning or at the end of the string
+// d:(NOT in the middle). If the parameter would be in the middle, SIND
+// d:could not use the string as a voice tag. Also, parameter length cannot
+// d:be restricted (i.e. %U[25]) since this kind of formatting cannot be parsed
+// d:by SIND. 
+// l:None
+// r:3.2
+//
+#define qan_sind_extension_voip                 "%U internet call"
+
+// ============================================================================
+// Name dialing with extensions (SINDE) END
+
+
+// End of File

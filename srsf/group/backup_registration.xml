@@ -1,0 +1,6 @@
+<?xml version="1.0" standalone="yes"?>
+<backup_registration>
+   <dbms_backup policy="10201AFE"/>
+
+   <proxy_data_manager sid="0x10202BE9" /> 
+</backup_registration>

@@ -1,0 +1,4 @@
+EXPORTS
+	NewL__24CNssVoiceUIPluginHandler @ 1 NONAME R3UNUSED ; CNssVoiceUIPluginHandler::NewL(void)
+	"_._24CNssVoiceUIPluginHandler" @ 2 NONAME R3UNUSED ; CNssVoiceUIPluginHandler::~CNssVoiceUIPluginHandler(void)
+

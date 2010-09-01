@@ -1,0 +1,71 @@
+/*
+* Copyright (c) 2005 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  NSS voice commands localization resource
+*
+*/
+
+
+// INCLUDES
+#include <defaultvoicecommands.loc>
+#include <badef.rh>
+#include <uikon.rh>
+
+//  RESOURCE DEFINITIONS 
+// -----------------------------------------------------------------------------
+//   
+// ?resource_name
+// ?description
+//
+// -----------------------------------------------------------------------------
+//
+/*RESOURCE NSSVCOMMANDS nssvoicecommands
+    {
+    items =
+        {
+        VCOMMANDITEM
+            {
+            key = 0;
+            txt = qtn_command_calendar;
+            },
+        VCOMMANDITEM
+            {
+            key = 1;
+            txt = qtn_command_calendartoday;
+            }
+        };
+    }*/
+    
+RESOURCE RSS_SIGNATURE { }
+
+RESOURCE LBUF prompt_time24  { txt = qtn_prompt_time24; }
+RESOURCE LBUF prompt_time12am  { txt = qtn_prompt_time12am; }
+RESOURCE LBUF prompt_time12pm  { txt = qtn_prompt_time12pm; }
+RESOURCE LBUF prompt_operator  { txt = qtn_prompt_operator; }
+RESOURCE LBUF prompt_nooperator  { txt = qtn_prompt_nooperator; }
+RESOURCE LBUF prompt_batteryfull  { txt = qtn_prompt_batteryfull; }
+RESOURCE LBUF prompt_batteryalmostfull  { txt = qtn_prompt_batteryalmostfull; }
+RESOURCE LBUF prompt_batteryhalf  { txt = qtn_prompt_batteryhalf; }
+RESOURCE LBUF prompt_batteryalmostempty  { txt = qtn_prompt_batteryalmostempty; }
+RESOURCE LBUF prompt_batterylow  { txt = qtn_prompt_batterylow; }
+RESOURCE LBUF prompt_batteryinfonotavailable  { txt = qtn_prompt_battery_info_not_available; }
+RESOURCE LBUF prompt_networkexcellent  { txt = qtn_prompt_networkexcellent; }
+RESOURCE LBUF prompt_networkgood  { txt = qtn_prompt_networkgood; }
+RESOURCE LBUF prompt_networkrathergood  { txt = qtn_prompt_networkrathergood; }
+RESOURCE LBUF prompt_networklow  { txt = qtn_prompt_networklow; }
+RESOURCE LBUF prompt_networknone  { txt = qtn_prompt_networknone; }
+RESOURCE LBUF prompt_networkinfonotavailable  { txt = qtn_prompt_network_info_not_available; }
+
+// End of File
+
+

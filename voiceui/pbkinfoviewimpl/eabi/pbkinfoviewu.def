@@ -1,0 +1,8 @@
+EXPORTS
+	_ZN15CPbkInfoViewApi13ShowInfoViewLEi @ 1 NONAME
+	_ZN15CPbkInfoViewApi4NewLEv @ 2 NONAME
+	_ZTI15CPbkInfoViewApi @ 3 NONAME DATA 12 ; #<TI>#
+	_ZTI23CPbkInfoViewSindHandler @ 4 NONAME DATA 48 ; #<TI>#
+	_ZTV15CPbkInfoViewApi @ 5 NONAME DATA 20 ; #<VT>#
+	_ZTV23CPbkInfoViewSindHandler @ 6 NONAME DATA 108 ; #<VT>#
+

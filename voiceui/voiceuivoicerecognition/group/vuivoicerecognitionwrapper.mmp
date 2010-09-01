@@ -1,0 +1,55 @@
+/*
+* Copyright (c) 2006-2007 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  MMP file for VoiceUiRecognition.dll
+*
+*/
+
+
+#include <data_caging_paths.hrh>
+#include <platform_paths.hrh>
+
+TARGET          voiceuirecognition.dll
+TARGETTYPE      dll
+uid             0x1000008d 0x101F8543
+
+VENDORID        VID_DEFAULT
+
+CAPABILITY      CAP_GENERAL_DLL MultiMediaDD PowerMgmt NetworkControl
+
+SOURCEPATH      ../src
+SOURCE          vuicvoicerecog.cpp
+SOURCE          vuicvoicerecogdialog.cpp
+
+USERINCLUDE     ../inc
+USERINCLUDE     ../../rubydebug
+
+// This is a SYSTEMINCLUDE macro containing the applications
+// layer specific include directories
+APP_LAYER_SYSTEMINCLUDE
+
+#if defined(ARMCC)
+deffile ../eabi/voiceuivoicerecognitiona.def
+#elif defined( WINSCW )
+deffile ../bwinscw/voiceuivoicerecognitiona.def
+#elif defined( WINS )
+deffile ../BWINS/VoiceUiVoiceRecognitionA.DEF
+#else
+deffile ../BMARM/VoiceUiVoiceRecognitionA.DEF
+#endif
+
+LIBRARY         euser.lib
+LIBRARY         cone.lib
+LIBRARY         apgrfx.lib
+LIBRARY         apparc.lib
+

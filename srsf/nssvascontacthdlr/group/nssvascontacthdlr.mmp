@@ -1,0 +1,67 @@
+/*
+* Copyright (c) 2004-2006 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Project file NssVAS Contact Handler
+*
+*/
+
+
+#include <platform_paths.hrh>
+#include "data_caging_paths.hrh"
+
+target          nssvascontacthdlr.dll
+targettype      dll
+uid             0x1000008d 0x10201aef // UID: 270539503
+
+VENDORID        VID_DEFAULT
+
+SOURCEPATH      ../data
+START RESOURCE  nssvascontacthandler.rss
+HEADER
+
+TARGETPATH      RESOURCE_FILES_DIR
+LANGUAGE_IDS
+END
+
+sourcepath      ../src
+
+
+USERINCLUDE     ../inc  ../group  ../src ../../inc
+USERINCLUDE	    ../../group  // for srsfbldvariant.hrh
+
+// This is a SYSTEMINCLUDE macro containing the application
+// layer specific include directories
+APP_LAYER_SYSTEMINCLUDE
+
+SYSTEMINCLUDE   /epoc32/include/connect
+SYSTEMINCLUDE   /epoc32/include/mmf/common
+
+SOURCE          nssvasccontacthandler.cpp
+SOURCE          nssvasccontacthandlerimpl.cpp
+SOURCE          nssvasdatasyncwatcher.cpp
+SOURCE          nsschbackupobserver.cpp
+
+USERINCLUDE     ../../rubydebug
+
+LIBRARY         euser.lib  
+LIBRARY         cntmodel.lib 
+LIBRARY         nssvasapi.lib
+LIBRARY         pbkeng.lib
+LIBRARY         featmgr.lib
+LIBRARY         efsrv.lib
+LIBRARY         bafl.lib
+LIBRARY         sysutil.lib
+LIBRARY         centralrepository.lib
+LIBRARY         cenrepnotifhandler.lib
+
+CAPABILITY      CAP_GENERAL_DLL

@@ -1,0 +1,48 @@
+/*
+* Copyright (c) 2004-2006 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Project file for all VoiceUI modules.
+*
+*/
+
+
+#include <platform_paths.hrh>
+#include "voiceuibldvariant.hrh"
+#include "../vcommand/group/bld.inf"
+#include "../voiceuivoicerecognition/group/bld.inf"
+#include "../pbkinfoviewimpl/group/bld.inf"
+#include "../aiwpbkinfoviewprovider/group/bld.inf"
+
+#ifdef __VCOMMAND_CONTROL_PANEL
+#include "../vccontrolpanelplugin/group/bld.inf"
+#endif
+
+PRJ_PLATFORMS
+DEFAULT
+
+PRJ_EXPORTS
+#include "exports.inc"
+#include "../rom/exports.inc"
+
+PRJ_MMPFILES
+
+
+PRJ_EXTENSIONS
+
+#ifdef __SIND
+START EXTENSION s60/mifconv
+OPTION TARGETFILE voiceui.mif
+OPTION HEADERFILE voiceui.mbg
+OPTION SOURCES -c8,1 qgn_prop_profiles_small -c8,1 qgn_prop_fmgr_file_apps
+END
+#endif

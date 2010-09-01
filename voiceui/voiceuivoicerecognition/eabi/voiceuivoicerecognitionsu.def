@@ -1,0 +1,26 @@
+EXPORTS
+	_ZN11CVoiceRecog4NewLEv @ 1 NONAME
+	_ZN11CVoiceRecog5NewLCEv @ 2 NONAME
+	_ZN23CVoiceRecognitionDialog9ExecuteLDEv @ 3 NONAME
+	_ZN23CVoiceRecognitionDialogC1Ev @ 4 NONAME
+	_ZN23CVoiceRecognitionDialogC2Ev @ 5 NONAME
+	_ZN23CVoiceRecognitionDialogD0Ev @ 6 NONAME
+	_ZN23CVoiceRecognitionDialogD1Ev @ 7 NONAME
+	_ZN23CVoiceRecognitionDialogD2Ev @ 8 NONAME
+	_ZTI11CVoiceRecog @ 9 NONAME ; #<TI>#
+	_ZTI16CRecogToneReader @ 10 NONAME ; #<TI>#
+	_ZTI16CVoiceKeyWatcher @ 11 NONAME ; #<TI>#
+	_ZTI21CGlobalProgressDialog @ 12 NONAME ; #<TI>#
+	_ZTI23CVoiceRecognitionDialog @ 13 NONAME ; #<TI>#
+	_ZTI25CVoiceRecogPlaybackDialog @ 14 NONAME ; #<TI>#
+	_ZTI31CVoiceRecogHeadsetButtonMonitor @ 15 NONAME ; #<TI>#
+	_ZTV11CVoiceRecog @ 16 NONAME ; #<VT>#
+	_ZTV16CRecogToneReader @ 17 NONAME ; #<VT>#
+	_ZTV16CVoiceKeyWatcher @ 18 NONAME ; #<VT>#
+	_ZTV21CGlobalProgressDialog @ 19 NONAME ; #<VT>#
+	_ZTV23CVoiceRecognitionDialog @ 20 NONAME ; #<VT>#
+	_ZTV25CVoiceRecogPlaybackDialog @ 21 NONAME ; #<VT>#
+	_ZTV31CVoiceRecogHeadsetButtonMonitor @ 22 NONAME ; #<VT>#
+	_ZTI19CVoiceRecogTagCheck @ 23 NONAME ; #<TI>#
+	_ZTV19CVoiceRecogTagCheck @ 24 NONAME ; #<VT>#
+

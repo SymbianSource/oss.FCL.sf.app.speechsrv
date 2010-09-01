@@ -1,0 +1,39 @@
+/*
+* Copyright (c) 2007 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Localisation file for vcexecutor application.
+*
+*/
+
+
+// LOCALISATION STRINGS
+
+
+// *** QUERIES ***
+
+// d: Confirmation query when Bluetooth needs to be activated in off-line mode.
+// l: popup_note_window/opt2
+// r: 3.2
+//
+#define qtn_vcexec_bt_activate_in_offline "Do you want to activate bluetooth in off-line mode?"
+
+
+// *** NOTES ***
+
+// d: An information note when Bluetooth needs to be activated and it's disallowed in off-line mode.
+// l: popup_note_window/opt2
+// r: 3.2
+//
+#define qtn_vcexec_bt_offline_disabled "Bluetooth can't activated in off-line mode"
+
+// End of File

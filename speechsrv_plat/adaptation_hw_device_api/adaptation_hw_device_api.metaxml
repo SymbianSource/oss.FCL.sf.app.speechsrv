@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<api id="94ad4eb5a2cc8f421c09bbbb67e6cdeb" dataversion="2.0">
+  <name>Adaptation HW Device API</name>
+  <description>Interface for adaptation algorithm  for speaker independent speech recognition</description>
+  <type>c++</type>
+  <collection>srsf</collection>
+  <libs>
+    <lib name="asrsadaptationhwdevice.lib" />
+  </libs>
+  <release category="platform"/>
+  <attributes>
+     <!-- This indicates wether the api provedes separate html documentation -->
+     <!-- or is the additional documentation generated from headers. -->
+     <!-- If you are unsuere then the value is "no" -->
+     <htmldocprovided>no</htmldocprovided>
+     <adaptation>no</adaptation>
+  </attributes>
+</api>

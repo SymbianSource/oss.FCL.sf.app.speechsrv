@@ -1,0 +1,6 @@
+//  Standard lint options
+-i..\inc
+-i..\ptssrc
+env-vc6.lnt                     //  Microsoft's Visual C++ 6.0
+au-sm.lnt                       //  Scott Meyers (Effective C++)
+epoc32.lnt                      //  EPOC32 options

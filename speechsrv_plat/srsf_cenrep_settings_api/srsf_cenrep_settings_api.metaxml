@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<api id="81fead861fbe6b66a0a48906a807c42e" dataversion="2.0">
+  <name>SRSF CenRep settings API</name>
+  <description>Defines a set of CenRep keys which are used for TTS and recognition settings. Used in SRSF and in VoiceUI.</description>
+  <type>c++</type>
+  <collection>srsf</collection>
+  <libs>
+  </libs>
+  <release category="platform"/>
+  <attributes>
+     <!-- This indicates wether the api provedes separate html documentation -->
+     <!-- or is the additional documentation generated from headers. -->
+     <!-- If you are unsuere then the value is "no" -->
+     <htmldocprovided>no</htmldocprovided>
+     <adaptation>no</adaptation>
+  </attributes>
+</api>

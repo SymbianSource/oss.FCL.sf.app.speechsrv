@@ -1,0 +1,6 @@
+EXPORTS
+	DisableEventHandling__18CNssContactHandler @ 1 NONAME R3UNUSED ; CNssContactHandler::DisableEventHandling(void)
+	EnableEventHandling__18CNssContactHandler @ 2 NONAME R3UNUSED ; CNssContactHandler::EnableEventHandling(void)
+	NewL__18CNssContactHandler @ 3 NONAME R3UNUSED ; CNssContactHandler::NewL(void)
+	"_._18CNssContactHandler" @ 4 NONAME R3UNUSED ; CNssContactHandler::~CNssContactHandler(void)
+

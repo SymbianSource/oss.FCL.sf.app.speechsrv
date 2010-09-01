@@ -1,0 +1,133 @@
+/*
+* Copyright (c) 2006-2007 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Application resource file of VCExecutorApp
+*
+*/
+
+
+//  RESOURCE IDENTIFIER
+NAME    VCEA
+
+#include <appinfo.rh>
+#include <eikon.rsg>
+#include <eikon.rh>
+#include <avkon.rsg>
+#include <avkon.loc>
+#include <avkon.rh>
+#include <BTUI.rsg>
+#include "appcontroller.hrh"
+
+#include <vcexecutorapp.loc>
+
+RESOURCE RSS_SIGNATURE { }
+
+RESOURCE TBUF r_default_document_name { buf="VCExecutorApp"; }
+
+RESOURCE EIK_APP_INFO
+    {
+    status_pane = r_vcexecutor_status_pane;   
+    }
+
+//-----------------------------------------------------------------------------
+// Status pane
+//-----------------------------------------------------------------------------
+//
+RESOURCE STATUS_PANE_APP_MODEL r_vcexecutor_status_pane
+    {
+    layout = R_AVKON_STATUS_PANE_LAYOUT_IDLE;
+    }
+
+//-----------------------------------------------------------------------------
+// Empty title pane for hiding default title
+//-----------------------------------------------------------------------------
+//
+RESOURCE TITLE_PANE r_empty_title_pane   
+    {
+    txt = " ";
+    }
+    
+//-----------------------------------------------------------------------------
+// Empty app info so that the application won't be shown in the app grid
+//-----------------------------------------------------------------------------
+//
+RESOURCE LOCALISABLE_APP_INFO r_localisable_app_info
+    {
+    short_caption = "";
+    caption_and_icon = 
+    CAPTION_AND_ICON_INFO
+        {
+        caption = "";
+        number_of_icons = 0;
+        icon_file = "";
+        };
+    }
+
+//-----------------------------------------------------------------------------
+// Confirmation query
+// Displays a confirmation query on whether Bluetooth is to be activated in 
+// off-line mode
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_bt_activate_in_offline_query
+    {
+    flags   = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_YES_NO__YES;
+    items   =
+        {
+        DLG_LINE
+            {
+            type    = EAknCtQuery;
+            id      = EGeneralQuery;
+            control = AVKON_CONFIRMATION_QUERY
+                {
+                layout    = EConfirmationQueryLayout;
+                label     = qtn_vcexec_bt_activate_in_offline;
+                animation = R_QGN_NOTE_QUERY_ANIM;
+                };
+            }
+        };
+    }
+
+// ----------------------------------------------------------------------------
+// Confirmation query
+// Displays a confirmation query for leaving off-line mode
+// ----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_leave_offline_profile_confirmation_query
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_YES_NO__YES;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+            control = AVKON_CONFIRMATION_QUERY
+                {
+                layout = EConfirmationQueryLayout;
+                label = qtn_leave_offline_mode_query; // avkon.loc
+                };
+            }
+        };
+    } 
+
+RESOURCE TBUF r_bt_offline_disabled   { buf = qtn_vcexec_bt_offline_disabled; }
+
+RESOURCE TBUF	r_bt_general_error      { buf = qtn_vcexec_bt_offline_disabled; }
+
+// from avkon.loc
+RESOURCE TBUF	r_text_insert_sim       { buf = qtn_su_note_insert_sim; }
+
+// End of File

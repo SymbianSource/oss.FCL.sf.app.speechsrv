@@ -1,0 +1,63 @@
+/*
+* Copyright (c) 2005 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Compilation information for VoiceUIPlug-inHandler
+*
+*/
+
+
+PRJ_PLATFORMS
+DEFAULT
+// specify the platforms your component needs to be built for here
+// recommended value is DEFAULT
+
+PRJ_EXPORTS
+// Specify the source file followed by its destination here
+// copy will be used to copy the source file to its destination
+// If there's no destination then the source file will be copied
+// to the same name in /epoc32/include
+
+PRJ_MMPFILES
+// Specify the .mmp files required for building the important component
+// releasables.
+//
+// Specify "tidy" if the component you need to build doesn't need to be
+// released. Specify "ignore" if the MMP file exists but should be
+// ignored.
+// Example:
+/*
+/agnmodel/group/agnmodel.mmp
+#if defined(MARM)
+/agnmodel/group/agsvexe.mmp
+#endif
+*/
+nssvoiceuipluginhandler.mmp
+
+PRJ_TESTEXPORTS
+// Specify the exports needed by the productized test program.
+// These will be exported with command 'abld test export'.
+// Default location for productized test harness is /tsrc
+// Example:
+/*
+../tsrc/testdata/audio.wav /epoc32/winscw/c/testdata/audio.wav
+*/
+
+PRJ_TESTMMPFILES
+// Specify the .mmp files required for building the productized 
+// test harness. 'abld test build' will do the compilation.
+// Example:
+/*
+../tsrc/group/test.mmp
+*/
+
+// End of File  

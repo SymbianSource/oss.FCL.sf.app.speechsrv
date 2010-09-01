@@ -1,0 +1,47 @@
+/*
+* Copyright (c) 2004 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  DevASR resource file.
+*
+*/
+
+
+// INCLUDES
+#include "nssdevasr.rh"
+
+
+// RESOURCE DEFINITIONS 
+// -----------------------------------------------------------------------------
+//   
+// devASRInfo
+// DevASR resouce file.
+//
+// -----------------------------------------------------------------------------
+//
+RESOURCE DEVASR_INFO devASRInfo
+    {
+    sampling_rate = 8000;    // Specify in Hz
+    bits_per_sample = 16;    // Specify 8, 16, 32 bit
+    microphone_gain = 100;   // Specify in percentage of maximum supported gain
+    speaker_volume = 60;     // Specify in percentage of maximum supported volume
+    frames_to_silence = 0;   // Specify number of BYTES to write silence from the beginning of audio stream
+    frames_to_pad_end = 80;  // Specify number of frames to pad at the end of end-pointed buffer
+    frames_to_pad_start = 0; // Specify number of frames to add to the front of end-pointed buffer
+    buffer_size = 2048;      // Specify playback/recording buffer size in bytes
+    gather_buffers_wins = 1; // Specify number of buffers gathered in DevASR before sending them to RecoHwDevice
+    gather_buffers_thumb = 1;// Specify number of buffers gathered in THUMB build
+    }
+
+// End of File
+
+

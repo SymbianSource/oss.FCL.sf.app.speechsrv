@@ -1,0 +1,95 @@
+/*
+* Copyright (c) 2004-2007 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Project file NssVAS Api
+*
+*/
+
+
+#include <platform_paths.hrh>
+
+TARGET            nssvasapi.dll
+TARGETTYPE        dll
+UID               0x1000008d 0x10201aee // UID: 270539502
+
+VENDORID          VID_DEFAULT
+
+// This is a SYSTEMINCLUDE macro containing the application
+// layer specific include directories
+APP_LAYER_SYSTEMINCLUDE
+
+SYSTEMINCLUDE     /epoc32/include/connect
+SYSTEMINCLUDE     /epoc32/include/mmf/common
+
+USERINCLUDE       ../../group  // for srsfbldvariant.hrh
+USERINCLUDE       ../nssvascore/inc ../nssvasrecognition/inc 
+USERINCLUDE       ../nssvasdb/inc ../nssvasdb/nssvasdbeventnotifier/inc
+USERINCLUDE       ../../inc
+
+SOURCEPATH        ../nssvascore/src
+SOURCE            nssvasapimain.cpp
+SOURCE            nssvasccontext.cpp nssvascrrd.cpp nssvasctag.cpp nssvascspeechitem.cpp
+SOURCE            nssvasccontextbuilder.cpp nssvasccontextsrsportal.cpp
+SOURCE            nssvascspeechitembuilder.cpp nssvascspeechitemtrainer.cpp
+SOURCE            nssvasctrainingactiontracker.cpp
+SOURCE            nssvasctrainingparams.cpp
+SOURCE            nssvascspeechitemsrsportal.cpp nssvasctagreference.cpp
+SOURCE            nssvassiutilitywrapper.cpp nssvasttsutilitywrapper.cpp
+
+SOURCE            vascvpbkhandler.cpp
+
+SOURCEPATH        ../nssvasdb/src
+SOURCE            nssvasccontextmgr.cpp nssvascdbtagselectnotifier.cpp
+SOURCE            nssvasctagmgr.cpp nssvascvasdbbuilder.cpp nssvascvasdbmgr.cpp
+SOURCE            nssvascvasdatabase.cpp nssvasrvasdbsession.cpp 
+SOURCE            nssvasbackupobserver.cpp
+
+SOURCE            nssvascvasdb.cpp nssvastvasdbcreator.cpp
+
+SOURCEPATH        ../nssvasdb/nssvasdbeventnotifier/src
+SOURCE            nssvascvasdbeventmonitor.cpp nssvascvasdbeventnotifier.cpp nssvascvasdbevent.cpp
+
+SOURCEPATH        ../nssvasrecognition/src
+SOURCE            nssvascrecognitionhandler.cpp nssvascrecognitionhandlerbuilder.cpp 
+SOURCE            nssvascselectnotificationbuilder.cpp nssvasctagselectnotification.cpp
+SOURCE            nssvasctagselectdata.cpp
+SOURCE            nssvascadaptationitem.cpp
+
+USERINCLUDE       ../../rubydebug  
+
+// Database file name is read from a resource file.
+
+SOURCEPATH        .
+
+START RESOURCE    nssvasresource.rss
+HEADER
+#include "data_caging_paths.hrh"
+TARGETPATH        RESOURCE_FILES_DIR
+END
+
+LIBRARY           euser.lib efsrv.lib edbms.lib 
+LIBRARY           nsssispeechrecognitiondata.lib
+LIBRARY           bafl.lib 
+LIBRARY           nssttscommon.lib
+LIBRARY           sysutil.lib
+LIBRARY           commonengine.lib // for shared data client
+
+LIBRARY           cone.lib
+LIBRARY           cntmodel.lib
+LIBRARY           pbkeng.lib
+LIBRARY           vpbkeng.lib
+LIBRARY           ecom.lib
+LIBRARY           featmgr.lib
+LIBRARY           centralrepository.lib
+
+CAPABILITY        CAP_GENERAL_DLL

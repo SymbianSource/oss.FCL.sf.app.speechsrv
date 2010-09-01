@@ -1,0 +1,32 @@
+EXPORTS
+	??1CDevTTS@@UAE@XZ @ 1 NONAME ; CDevTTS::~CDevTTS(void)
+	?AddStyleL@CDevTTS@@QAEKABVTTtsStyle@@@Z @ 2 NONAME ; unsigned long CDevTTS::AddStyleL(class TTtsStyle const &)
+	?Balance@CDevTTS@@QAEHXZ @ 3 NONAME ; int CDevTTS::Balance(void)
+	?BufferProcessed@CDevTTS@@QAEXABVTDesC8@@@Z @ 4 NONAME ; void CDevTTS::BufferProcessed(class TDesC8 const &)
+	?CustomInterface@CDevTTS@@QAEPAXVTUid@@@Z @ 5 NONAME ; void * CDevTTS::CustomInterface(class TUid)
+	?DeleteStyleL@CDevTTS@@QAEXK@Z @ 6 NONAME ; void CDevTTS::DeleteStyleL(unsigned long)
+	?GetPositionL@CDevTTS@@QBEXAAVTTimeIntervalMicroSeconds@@@Z @ 7 NONAME ; void CDevTTS::GetPositionL(class TTimeIntervalMicroSeconds &) const
+	?GetPositionL@CDevTTS@@QBEXAAVTTtsSegment@@AAH@Z @ 8 NONAME ; void CDevTTS::GetPositionL(class TTtsSegment &, int &) const
+	?IsLanguageSupported@CDevTTS@@QBEHW4TLanguage@@@Z @ 9 NONAME ; int CDevTTS::IsLanguageSupported(enum TLanguage) const
+	?MaxVolume@CDevTTS@@QAEHXZ @ 10 NONAME ; int CDevTTS::MaxVolume(void)
+	?NewL@CDevTTS@@SAPAV1@AAVMDevTTSObserver@@@Z @ 11 NONAME ; class CDevTTS * CDevTTS::NewL(class MDevTTSObserver &)
+	?NumberOfStyles@CDevTTS@@QBEGXZ @ 12 NONAME ; unsigned short CDevTTS::NumberOfStyles(void) const
+	?Pause@CDevTTS@@QAEXXZ @ 13 NONAME ; void CDevTTS::Pause(void)
+	?PrimeSynthesisL@CDevTTS@@QAEXAAVCTtsParsedText@@@Z @ 14 NONAME ; void CDevTTS::PrimeSynthesisL(class CTtsParsedText &)
+	?PrimeSynthesisL@CDevTTS@@QAEXAAVMTtsSegmentStream@@@Z @ 15 NONAME ; void CDevTTS::PrimeSynthesisL(class MTtsSegmentStream &)
+	?SetAudioPriority@CDevTTS@@QAEXHW4TDevTTSAudioPreference@@@Z @ 16 NONAME ; void CDevTTS::SetAudioPriority(int, enum TDevTTSAudioPreference)
+	?SetBalance@CDevTTS@@QAEXH@Z @ 17 NONAME ; void CDevTTS::SetBalance(int)
+	?SetPositionL@CDevTTS@@QAEXABVTTimeIntervalMicroSeconds@@@Z @ 18 NONAME ; void CDevTTS::SetPositionL(class TTimeIntervalMicroSeconds const &)
+	?SetPositionL@CDevTTS@@QAEXABVTTtsSegment@@H@Z @ 19 NONAME ; void CDevTTS::SetPositionL(class TTtsSegment const &, int)
+	?SetVolume@CDevTTS@@QAEXH@Z @ 20 NONAME ; void CDevTTS::SetVolume(int)
+	?SetVolumeRamp@CDevTTS@@QAEXABVTTimeIntervalMicroSeconds@@@Z @ 21 NONAME ; void CDevTTS::SetVolumeRamp(class TTimeIntervalMicroSeconds const &)
+	?Stop@CDevTTS@@QAEXXZ @ 22 NONAME ; void CDevTTS::Stop(void)
+	?StyleL@CDevTTS@@QBEAAVTTtsStyle@@G@Z @ 23 NONAME ; class TTtsStyle & CDevTTS::StyleL(unsigned short) const
+	?StyleL@CDevTTS@@QBEAAVTTtsStyle@@K@Z @ 24 NONAME ; class TTtsStyle & CDevTTS::StyleL(unsigned long) const
+	?SynthesizeL@CDevTTS@@QAEXW4TDevTTSOutputMode@@@Z @ 25 NONAME ; void CDevTTS::SynthesizeL(enum TDevTTSOutputMode)
+	?Volume@CDevTTS@@QAEHXZ @ 26 NONAME ; int CDevTTS::Volume(void)
+	?LanguageIdentificationL@CDevTTS@@QAEXAAVCTtsParsedText@@HAAV?$RArray@W4TLanguage@@@@AAV?$RArray@H@@@Z @ 27 NONAME ; void CDevTTS::LanguageIdentificationL(class CTtsParsedText &, int, class RArray<enum TLanguage> &, class RArray<int> &)
+	?NormalizeAndSegmentTextL@CDevTTS@@QAEXAAVCTtsParsedText@@@Z @ 28 NONAME ; void CDevTTS::NormalizeAndSegmentTextL(class CTtsParsedText &)
+	?NormalizeTextL@CDevTTS@@QAEXAAVCTtsParsedText@@@Z @ 29 NONAME ; void CDevTTS::NormalizeTextL(class CTtsParsedText &)
+	?SetAudioOutputL@CDevTTS@@QAEXH@Z @ 30 NONAME ; void CDevTTS::SetAudioOutputL(int)
+

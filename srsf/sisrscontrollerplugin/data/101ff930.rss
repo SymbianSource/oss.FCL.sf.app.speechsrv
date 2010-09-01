@@ -1,0 +1,67 @@
+/*
+* Copyright (c) 2002 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  ECOM registration information of SD Controller Plugin.
+*
+*/
+
+
+//  INCLUDES
+#include <registryinfo.rh>
+#include <mmfplugininterfaceuids.hrh>
+#include "sipluginimplementationuids.hrh"
+
+
+//  RESOURCE DEFINITIONS 
+// -----------------------------------------------------------------------------
+//   
+// theInfo
+// SD Controller Plugin ECOM registration information.
+//
+// -----------------------------------------------------------------------------
+//
+RESOURCE REGISTRY_INFO theInfo
+    {
+	// UID of the Plugin DLL file.
+	dll_uid = KSIDllUidController;
+	interfaces = 
+		{
+		INTERFACE_INFO
+			{
+			// ECOM interface UID. The same for all MMF plugins.
+			// ECOM interface changes, when the list of exported functions changes.
+			// MMF interfaces are extended through Custom Commands, so extending the interface
+			// does not add new exported functions.
+			interface_uid = KMmfUidPluginInterfaceController;
+			implementations = 
+				{
+				IMPLEMENTATION_INFO
+					{
+					implementation_uid = KSIUidController;
+					version_no = 1;
+					display_name = "SI Controller Plugin";
+					default_data = " ";
+					// 0x101FF932 is MMF interface UID. MMF interface changes, when
+					// the list of custom commands is changed.
+					//
+					// The interface is speaker independent custom commands.
+					opaque_data = "<s>Nokia<i>0x101FF932<a>0x300000";
+					}
+				};
+			}
+		};
+    }
+            
+// End of File
+
+

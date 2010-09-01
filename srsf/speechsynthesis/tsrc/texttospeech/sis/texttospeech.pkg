@@ -1,0 +1,37 @@
+;
+; Copyright (c) 2007 Nokia Corporation and/or its subsidiary(-ies).
+; All rights reserved.
+; This component and the accompanying materials are made available
+; under the terms of "Eclipse Public License v1.0"
+; which accompanies this distribution, and is available
+; at the URL "http://www.eclipse.org/legal/epl-v10.html".
+;
+; Initial Contributors:
+; Nokia Corporation - initial contribution.
+;
+; Contributors:
+;
+; Description:  
+;
+
+;Language - standard language definitions
+&EN
+
+; standard SIS file header
+; @todo Change UID?
+#{"TextToSpeech"}, (0x1001ABAB), 1, 0, 0, TYPE=SA 
+
+;Localised Vendor name
+%{"Vendor-EN"}
+
+;Unique Vendor name
+:"Vendor"
+
+; Dependency to indicate compatibility with S60 3.1
+[0x102752AE], 0, 0, 0, {"S60ProductID"}
+
+;Files to install
+"\epoc32\release\armv5\udeb\texttospeech.exe"               - "!:\sys\bin\texttospeech.exe"
+"\epoc32\data\z\resource\apps\texttospeech.rsc"             - "!:\resource\apps\texttospeech.rsc"
+"\epoc32\data\z\resource\apps\texttospeech_aif.mif"         - "!:\resource\apps\texttospeech_aif.mif"
+"\epoc32\data\z\private\10003a3f\apps\texttospeech_reg.rsc" - "!:\private\10003a3f\import\apps\texttospeech_reg.rsc"

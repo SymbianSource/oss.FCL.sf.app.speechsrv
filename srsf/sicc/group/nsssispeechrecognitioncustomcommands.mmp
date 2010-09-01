@@ -1,0 +1,60 @@
+/*
+* Copyright (c) 2004-2006 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Project file for NssSiSpeechRecognitionCustomCommands
+*
+*/
+
+
+#include <platform_paths.hrh>
+#include          "../../group/srsfbldvariant.hrh"
+
+TARGET            nsssispeechrecognitioncustomcommands.dll
+TARGETTYPE        DLL
+UID               0x1000008d 0x101F92C
+
+VENDORID          VID_DEFAULT
+
+CAPABILITY        CAP_GENERAL_DLL
+
+#ifdef __SINDE_TRAINING
+#if defined(WINS)
+DEFFILE         ../bwins/nsssispeechrecognitioncustomcommands_sinde.def
+#elif defined(ARMCC)
+DEFFILE         ../eabi/nsssispeechrecognitioncustomcommands_sinde.def
+#else
+DEFFILE         ../bmarm/nsssispeechrecognitioncustomcommands_sinde.def
+#endif
+#endif // __SINDE_TRAINING
+
+SOURCEPATH        ../src
+SOURCE            nsssispeechrecognitioncustomcommands.cpp
+SOURCE            nsssispeechrecognitioncustomcommandparser.cpp
+SOURCE            nsssicustomcommanddata.cpp
+
+USERINCLUDE       ../inc ../src
+USERINCLUDE       ../../group  // for srsfbldvariant.hrh
+
+// This is a SYSTEMINCLUDE macro containing the middleware
+// layer specific include directories
+APP_LAYER_SYSTEMINCLUDE
+
+SYSTEMINCLUDE     /epoc32/include/mmf/common
+
+USERINCLUDE       ../../rubydebug
+
+LIBRARY           euser.lib
+LIBRARY           mmfcontrollerframework.lib
+LIBRARY           estor.lib
+LIBRARY           bafl.lib
+LIBRARY           nsssispeechrecognitiondata.lib

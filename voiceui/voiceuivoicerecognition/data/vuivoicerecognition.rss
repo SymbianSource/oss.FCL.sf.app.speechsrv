@@ -1,0 +1,447 @@
+/*
+* Copyright (c) 2007 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description: 
+*
+*/
+
+
+NAME RAPI
+
+#include <eikon.rh>
+#include <EIKCORE.rsg>
+#include <avkon.rsg>    
+#include <avkon.rh>
+#include <avkon.mbg>
+#include <avkon.loc>
+#include <badef.rh>
+#include <appinfo.rh>
+#include <AvkonIcons.hrh>
+#include <vuivoicerecognition.loc>
+#include <data_caging_paths_strings.hrh>
+
+#include "vuivoicerecognition.hrh"
+
+// CONSTANTS
+#define KVoiceStartSoundFile           "z:\\system\\sounds\\digital\\namediallerstarttone.wav"
+#define KVoiceConfirmationSoundFile    "z:\\system\\sounds\\digital\\namediallerconfirmtone.wav"
+#define KVoiceBTStartSoundFile         "z:\\system\\sounds\\digital\\btnamediallerstarttone.wav"
+
+RESOURCE RSS_SIGNATURE { }
+
+RESOURCE TBUF { buf = r_main_view_title; }
+
+RESOURCE EIK_APP_INFO
+    {
+    status_pane = r_main_status_pane;
+    }
+
+//-----------------------------------------------------------------------------
+//   
+//    r_main_status_pane
+//    Status pane for main view.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE STATUS_PANE_APP_MODEL r_main_status_pane
+    {
+    //Set status pane as empty to fix layouts
+    layout = R_AVKON_STATUS_PANE_LAYOUT_EMPTY;
+    panes =
+        {
+        SPANE_PANE
+            {
+            id = EEikStatusPaneUidTitle;
+            type = EAknCtTitlePane;
+            resource = r_main_view_title;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//   
+//    r_localisable_app_info
+//    menu captions and application icon
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE LOCALISABLE_APP_INFO r_localisable_app_info
+    {
+    short_caption = qtn_sivc_appl_grid;
+    caption_and_icon = 
+    CAPTION_AND_ICON_INFO
+        {
+        caption = qtn_sivc_appl_list;
+        number_of_icons = 1;
+        icon_file = APP_BITMAP_DIR"\\vuivoicerecognition_aif.mif";
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//   
+//    r_main_view_title
+//    Main view's title.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TITLE_PANE r_main_view_title
+    {
+    txt = qtn_sivc_title;
+    }
+
+//----------------------------------------------------
+//
+//      r_softkeys_select_quit__select
+//        N-Best list cba buttons
+//
+//----------------------------------------------------
+//
+RESOURCE CBA r_softkeys_select_quit__select
+    {
+    buttons =
+        {
+        CBA_BUTTON { id=EVoiceTagSoftKeySelect; txt=text_softkey_select; },
+        CBA_BUTTON { id=EVoiceTagSoftKeyQuit;   txt=text_softkey_quit; },
+        CBA_BUTTON { id=EVoiceTagSoftKeySelect; txt=qtn_msk_select; }
+        };
+    }
+    
+//----------------------------------------------------
+//
+//      r_softkeys_select_quit__select
+//        N-Best list cba buttons
+//
+//----------------------------------------------------
+//
+RESOURCE CBA r_softkeys_options_quit__select
+    {
+    buttons =
+        {
+        CBA_BUTTON { id=EAknSoftkeyOptions;     txt=text_softkey_option; },
+        CBA_BUTTON { id=EVoiceTagSoftKeyQuit;   txt=text_softkey_quit; },
+        CBA_BUTTON { id=EVoiceTagSoftKeySelect; txt=qtn_msk_select; }
+        };
+    }
+
+//----------------------------------------------------
+//
+//      r_softkeys_next_cancel__next
+//        Tutorial message cba buttons
+//
+//----------------------------------------------------
+//
+RESOURCE CBA r_softkeys_next_cancel__next
+    {
+    buttons =
+        {
+        CBA_BUTTON { id=EVoiceInfoSoftKeyNext;    txt=qtn_vc_softkey_next; },
+        CBA_BUTTON { id=EVoiceInfoSoftKeyCancel;  txt=text_softkey_cancel; },
+        CBA_BUTTON { id=EVoiceInfoSoftKeyNext;    txt=qtn_vc_softkey_next; }
+        };
+    }
+
+//----------------------------------------------------
+//
+//      r_softkeys_activate_cancel__activate
+//        Tutorial message cba buttons
+//
+//----------------------------------------------------
+//
+RESOURCE CBA r_softkeys_activate_cancel__activate
+    {
+    buttons =
+        {
+        CBA_BUTTON { id=EVoiceInfoSoftKeyActivate; txt=qtn_vc_softkey_activate; },
+        CBA_BUTTON { id=EVoiceInfoSoftKeyCancel;   txt=text_softkey_cancel; },
+        CBA_BUTTON { id=EVoiceInfoSoftKeyActivate; txt=qtn_vc_softkey_activate; }
+        };
+    }
+    
+//----------------------------------------------------
+//
+//      r_softkeys_ok_cancel__ok
+//        Verification query cba buttons
+//
+//----------------------------------------------------
+//
+RESOURCE CBA r_softkeys_ok_cancel__ok
+    {
+    buttons =
+        {
+        CBA_BUTTON { id=EVoiceTagSoftKeySelect;   txt=text_softkey_ok; },
+        CBA_BUTTON { id=EVoiceTagSoftKeyCancel;   txt=text_softkey_cancel; },
+        CBA_BUTTON { id=EVoiceTagSoftKeySelect;   txt=text_softkey_ok; }
+        };
+    }
+
+//----------------------------------------------------
+//
+//      r_progressnote
+//        Speak now progress dialog
+//
+//----------------------------------------------------
+//    
+RESOURCE DIALOG r_progressnote
+    {
+    flags = EAknProgressNoteFlags;
+    buttons = R_AVKON_SOFTKEYS_QUIT;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtNote;
+            id = EProgressDialogId;
+            control = AVKON_NOTE
+                {
+                layout = EProgressLayout;
+                };
+            }
+        };
+    }
+    
+//----------------------------------------------------
+//
+//      r_message_query
+//        Tutorial message dialog
+//
+//----------------------------------------------------
+//
+RESOURCE DIALOG r_message_query
+{
+   flags = EGeneralQueryFlags | EEikDialogFlagNoBorder | EEikDialogFlagNoShadow;
+   buttons = r_softkeys_select_quit__select;
+   items=
+   {
+      DLG_LINE 
+      {
+         type = EAknCtPopupHeadingPane;
+         id = EAknMessageQueryHeaderId;
+         itemflags = EEikDlgItemNonFocusing;
+         control = AVKON_HEADING
+         {
+         };
+      },
+      DLG_LINE
+      {
+         type = EAknCtMessageQuery;
+         id = EAknMessageQueryContentId;
+         control = AVKON_MESSAGE_QUERY
+         {
+         };
+      }
+   };
+}
+
+// ---------------------------------------------------------
+//   
+//   r_nbest_options_menu
+//   Menu title definition
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_BAR r_nbest_options_menu
+    {
+    titles =
+        {
+        MENU_TITLE 
+            {
+            menu_pane = r_nbest_menu_pane;
+            }
+        };
+    }
+    
+// ---------------------------------------------------------
+//   
+//   r_nbest_menu_pane
+//   Menu for "Options"
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_nbest_menu_pane
+    {
+    items = 
+        {
+        MENU_ITEM 
+            {    
+            command = EVoiceTagSoftKeySelect;  txt = qtn_vc_options_select;
+            },
+        MENU_ITEM 
+            {
+            command = EVoiceTagSoftKeyOpen;    txt = qtn_vc_nbest_options_open_contact;
+            },
+        MENU_ITEM 
+            {
+            command = EVoiceTagSoftKeyQuit;    txt = qtn_vc_nbest_options_quit;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//
+//      r_nbest_popup_list
+//        N-Best List query dialog
+//
+//----------------------------------------------------
+//
+RESOURCE AVKON_LIST_QUERY r_nbest_popup_list
+    {
+    flags = EGeneralQueryFlags;
+    softkeys = r_softkeys_select_quit__select;
+    items = 
+        {
+        AVKON_LIST_QUERY_DLG_LINE 
+            {
+            type = EAknCtListQueryControl;
+            id = EListQueryControl;
+            control = AVKON_LIST_QUERY_CONTROL
+                {
+                listtype = EAknCtDoubleGraphicPopupMenuListBox;
+                listbox = AVKON_LIST_QUERY_LIST;
+                heading = qtn_vc_nbest_list_header;
+                };            
+            }
+        };
+    }
+    
+RESOURCE ARRAY r_verification_query_item
+    {
+    items =
+        {
+        LBUF { txt = qtn_vc_verification_select; },
+        LBUF { txt = qtn_vc_verification_other; },
+        LBUF { txt = qtn_vc_verification_cancel; }
+        };
+    }
+    
+//----------------------------------------------------
+//
+//      r_verification_query
+//        Verification query dialog
+//
+//----------------------------------------------------
+//
+RESOURCE AVKON_LIST_QUERY r_verification_query
+    {
+    flags = EGeneralQueryFlags;
+    softkeys = r_softkeys_ok_cancel__ok;
+    items = 
+        {
+        AVKON_LIST_QUERY_DLG_LINE 
+            {
+            control = AVKON_LIST_QUERY_CONTROL
+                {
+                listtype = EAknCtSinglePopupMenuListBox;
+                listbox = AVKON_LIST_QUERY_LIST
+                    {
+                    array_id = r_verification_query_item;
+                    };
+                heading = " ";
+                };
+            }
+        };
+    }
+
+
+//----------------------------------------------------
+//
+//      r_nbest_row_format
+//        Row format for N-Best List listbox
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF r_nbest_row_format
+    {
+    buf = "%U\t%U\t";
+    }
+
+
+//----------------------------------------------------
+//   
+//    r_voice_start_sound_path
+//    Path to a sound file to play when starting voice dialing
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF r_voice_start_sound_path
+    {
+    buf = KVoiceStartSoundFile;
+    }
+
+//----------------------------------------------------
+//   
+//    r_voice_bt_start_sound_path
+//    Path to a sound file to play when starting voice dialing from bluetooth accessory
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF r_voice_bt_start_sound_path
+    {
+    buf = KVoiceBTStartSoundFile;
+    }
+    
+//----------------------------------------------------
+//   
+//    r_voice_confirmation_sound_path
+//    Path to a sound file to play when starting an application
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF r_voice_confirmation_sound_path
+    {
+    buf = KVoiceConfirmationSoundFile;
+    }
+
+RESOURCE TBUF   r_text_voice_system_error       { buf = text_voice_system_error; }
+RESOURCE TBUF   r_text_voice_no_matches         { buf = text_voice_no_matches; }
+RESOURCE TBUF   r_text_call_in_progress         { buf = text_call_in_progress; }
+RESOURCE TBUF   r_text_voice_no_tag             { buf = text_voice_no_tag; }
+
+RESOURCE TBUF   r_text_voice_speak_now          { buf = text_voice_speak_now; }      
+RESOURCE TBUF   r_qan_vc_tts_dialling           { buf = qan_vc_tts_dialling; }
+
+RESOURCE TBUF   r_qtn_vc_nbest_list_header      { buf = qtn_vc_nbest_list_header; }
+
+RESOURCE TBUF   r_qan_vc_verification_query     { buf = qan_vc_verification_query; }
+RESOURCE TBUF   r_qan_vc_verification_select    { buf = qan_vc_verification_select; }
+RESOURCE TBUF   r_qan_vc_verification_other     { buf = qan_vc_verification_other; }
+RESOURCE TBUF   r_qan_vc_verification_cancel    { buf = qan_vc_verification_cancel; }
+
+RESOURCE TBUF   r_qtn_vc_memory_low             { buf = qtn_err_eikon_mem; }
+
+// SIND Demo
+RESOURCE TBUF   r_text_sind_tutorial_page_intro_title        { buf = qtn_vc_tutorial_page1_title; }
+RESOURCE TBUF   r_text_sind_tutorial_page_intro_text_up      { buf = qtn_vc_tutorial_page1_text_up; }
+RESOURCE TBUF   r_text_sind_tutorial_page_intro_text_down    { buf = qtn_vc_tutorial_page1_text_down; }
+RESOURCE TBUF   r_text_sind_tutorial_page_command_title      { buf = qtn_vc_tutorial_page2_title; }
+RESOURCE TBUF   r_text_sind_tutorial_page_command_text_up    { buf = qtn_vc_tutorial_page2_text_up; }
+RESOURCE TBUF   r_text_sind_tutorial_page_command_text_down  { buf = qtn_vc_tutorial_page2_text_down; }
+RESOURCE TBUF   r_text_sind_tutorial_page_dial_title         { buf = qtn_vc_tutorial_page3_title; }
+RESOURCE TBUF   r_text_sind_tutorial_page_dial_text_up       { buf = qtn_vc_tutorial_page3_text_up; }
+RESOURCE TBUF   r_text_sind_tutorial_page_dial_text_down     { buf = qtn_vc_tutorial_page3_text_down; }
+RESOURCE TBUF   r_text_sind_tutorial_page_other_title        { buf = qtn_vc_tutorial_page4_title; }
+RESOURCE TBUF   r_text_sind_tutorial_page_other_text_up      { buf = qtn_vc_tutorial_page4_text_up; }
+RESOURCE TBUF   r_text_sind_tutorial_page_other_text_down    { buf = qtn_vc_tutorial_page4_text_down; }
+RESOURCE TBUF   r_text_sind_tutorial_page_try_title          { buf = qtn_vc_tutorial_page5_title; }
+RESOURCE TBUF   r_text_sind_tutorial_page_try_text_up        { buf = qtn_vc_tutorial_page5_text_up; }
+RESOURCE TBUF   r_text_sind_tutorial_page_try_text_down      { buf = qtn_vc_tutorial_page5_text_down; }
+RESOURCE TBUF   r_text_sind_tutorial_page_best_title         { buf = qtn_vc_tutorial_page_results_title; }
+RESOURCE TBUF   r_text_sind_tutorial_page_best_text_up       { buf = qtn_vc_tutorial_page6_text_up; }
+RESOURCE TBUF   r_text_sind_tutorial_page_best_text_down     { buf = qtn_vc_tutorial_page6_text_down; }
+RESOURCE TBUF   r_text_sind_tutorial_page_activation_title   { buf = qtn_vc_tutorial_page7_title; }
+RESOURCE TBUF   r_text_sind_tutorial_page_activation_text    { buf = qtn_vc_tutorial_page7_text; }
+RESOURCE TBUF   r_text_sind_tutorial_page_error_title        { buf = qtn_vc_tutorial_page_error_title; }
+RESOURCE TBUF   r_text_sind_tutorial_page_error_text_up      { buf = qtn_vc_tutorial_page_error_text_up; }
+RESOURCE TBUF   r_text_sind_tutorial_page_error_text_down    { buf = qtn_vc_tutorial_page_error_text_down; }
+RESOURCE TBUF   r_text_sind_tutorial_first_time_text_up      { buf = qtn_vc_tutorial_first_time1_text_up; }
+RESOURCE TBUF   r_text_sind_tutorial_first_time_text_down    { buf = qtn_vc_tutorial_first_time1_text_down; }
+
