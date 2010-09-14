@@ -1522,16 +1522,25 @@ void CNssContactHandlerImplementation::DoRemoveNamesAfterGetTagList( MNssTagList
             }
         }
         
-    TRAPD( err, // trapping is a fix to make the function non-leaving
+//    TRAPD( err, // trapping is a fix to make the function non-leaving
 
 	    // Add the tags to the to-be-deleted list.
 	    // (there are 1 or 2 tags in aTagList depending on
 	    //  whether nickname is also there or not)
-	    for ( TInt k( 0 ); k < aTagList->Count(); k++ )
+	    TRAPD(err,
+		for ( TInt k( 0 ); k < aTagList->Count(); k++ )
 	        {
 	        iDeleteTagListArray->AppendL( (*aTagList)[k] );
 	        }
-
+			);
+		if ( err != KErrNone )
+			{
+			// Destroy tag list
+	    	aTagList->Reset();
+	    	delete aTagList;
+	    	aTagList = 0;
+	        return;
+			}
 	    // We have processed this ID
 	    RUBY_DEBUG1( "CNssContactHandlerImplementation::DoRemoveNamesAfterGetTagList Before removal. iDelList.Count [%d]", iDelList.Count() );
 	    if( iDelList.Count() > 0 ) 
@@ -1571,11 +1580,11 @@ void CNssContactHandlerImplementation::DoRemoveNamesAfterGetTagList( MNssTagList
 	        RUBY_DEBUG0( "DoRemoveNamesAfterGetTagList Moving to the next phase" );
 	        DoRemoveNamesCallDeleteTag();
 	        }
-        );  // TRAPD
-        if( err != KErrNone ) 
-        	{
-        	RUBY_ERROR1( "CNssContactHandlerImplementation::DoRemoveNamesAfterGetTagList Leaves with [%d] inside", err );
-        	}
+//        );  // TRAPD
+//        if( err != KErrNone ) 
+//        	{
+//        	RUBY_ERROR1( "CNssContactHandlerImplementation::DoRemoveNamesAfterGetTagList Leaves with [%d] inside", err );
+//        	}
 		// Destroy tag list
 	    aTagList->Reset();
 	    delete aTagList;
