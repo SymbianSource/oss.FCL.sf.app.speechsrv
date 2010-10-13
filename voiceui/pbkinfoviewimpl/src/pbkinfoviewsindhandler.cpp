@@ -356,17 +356,9 @@ void CPbkInfoViewSindHandler::PlayVoiceCommandL( TInt aIndex )
     HBufC* contact = NULL;
     HBufC* type = NULL;
     TRAPD( err, contact = iTagArray[aIndex]->SpeechItem()->PartialTextL( KNameTrainingIndex ) );
-    if ( err != KErrNone && err != KErrNotFound) 
-        {
-        User::Leave( err );
-        }
-    CleanupStack::PushL( contact );
-    TRAPD( err2, type = iTagArray[aIndex]->SpeechItem()->PartialTextL( KExtensionTrainingIndex ) );
-    if ( err2 != KErrNone && err2 != KErrNotFound) 
-        {
-        User::Leave( err2 );
-        }
-    CleanupStack::PushL( type );
+    if ( err != KErrNone && err != KErrNotFound) User::Leave( err ); 
+    TRAPD( err2, iTagArray[aIndex]->SpeechItem()->PartialTextL( KExtensionTrainingIndex ) );
+    if ( err2 != KErrNone && err2 != KErrNotFound) User::Leave( err2 );
 
     // fetch whole tts string 
     const TDesC& text = iTagArray[aIndex]->SpeechItem()->Text();
@@ -449,7 +441,6 @@ void CPbkInfoViewSindHandler::PlayVoiceCommandL( TInt aIndex )
         // if there is only one part (contact), play normally
         iTagArray[aIndex]->SpeechItem()->PlayL( this );
         }
-    CleanupStack::PopAndDestroy( 2,contact );
     }
     
 // ----------------------------------------------------------------------------
