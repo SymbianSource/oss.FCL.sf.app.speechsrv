@@ -140,6 +140,7 @@ CSIDatabase::~CSIDatabase()
     delete iBackupObserver;
     iCriticalSection.Close();
 
+	iMutex.Close();
     iDb.Close();
     iDbSession.Close();
     iDatabaseOpen = EFalse;
